@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외부스타일 글꼴설치</title>
+    <!-- 외부리셋스타일 가져오기 -->
+    <link rel="stylesheet" href="./css/fonts.css"> 
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- 글꼴을 가져와야 리셋에서 설정 초기화되면 그제부터 문서작성시작
+    그래서 fonts.css가 먼저 와야하는 것이다. -->
+</head>
+<body>
+    <!-- 홈페이지를 어떻게 만들고 표준화 시켜서 제작할 것인가? -->
+    <!-- 바디를 제외한 사용자가 만든 모든 박스 -->
+    <div id="wrap">
+        <!-- wrap 안에 header / main / footer 로 나뉨. 
+        홈페이지의 3요소  -->
+        <!-- 웹표준HTML5 시멘틱 태그(의미있는 태그) -->
+        <header id="header">
+            <aside id="aside">
+                <a href="#">로그인</a>
+                <i>|</i>
+                <a href="#">회원가입</a>
+                <i>|</i>
+                <a href="#">인증서</a>
+                <i>|</i>
+                <a href="#">안내</a>
+                <i>|</i>
+                <a href="#">전체메뉴</a>
+                <i>|</i>
+                <a href="#">Language</a>
+                <i>|</i>
+                <a href="#">분야별업무사이트</a>
+                <!-- 선택 뒤로 깔끔히 보내는 단축키 물어보기 -->
+
+            </aside> <!-- 사이드 메뉴 -->
+            <nav id="nav">
+                <a href="#">민원요기요</a>
+                <a href="#">건강iN</a>
+                <a href="#">정책센터</a>
+                <a href="#">국민과함께</a>
+                <a href="#">공단요모조모</a>
+            </nav> <!-- 홈페이지 메뉴 -->
+            
+        </header> <!-- 머릿말 -->
+
+        <main id="main">
+            <!-- 세션이란 각 줄별로 나뉘는 영역단위 -->
+            <!-- 줄단위로 행단위를 구분해주는 것 -->
+            <!-- section#section$*9 -->
+            <section id="section1"></section>
+            <section id="section2"></section>
+            <section id="section3"></section>
+            <section id="section4"></section>
+            <section id="section5"></section>
+            <section id="section6"></section>
+            <section id="section7"></section>
+            <section id="section8"></section>
+            <section id="section9"></section>
+        </main>
+        <footer id="footer">
+            <address>
+                26464 강원특별자치도 원주시 건강로 32(반곡동) 국민건강보험공단 고객센터 :1577-1000(발신자 부담) 업무시간 : 09시~18시(월~금)
+            </address>
+        </footer>
+    </div>
+</body>
+</html>

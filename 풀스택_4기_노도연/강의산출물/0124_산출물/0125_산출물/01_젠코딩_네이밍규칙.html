@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>젠코딩_네이밍규칙_리셋만들기</title>
+
+    <style> /*내부 스타일*/
+        /* 초기화설정  8가지 속성 지정 */
+        *{
+            margin: 0; 
+            padding: 0;
+            /* 수직정렬을 안해놓으면 위아래 여백이 생겨버린다. 이걸 잡는 방법 */
+            vertical-align: middle; 
+            /* 위아래 가운데 배치해라 - middle */
+    
+            /* 이 세가지만 설정해줘도 납품용 기업용 홈페이지만드는데 있어서 문제없음 */
+            box-sizing: border-box;  /* 테두리, 패딩 값을 너비 높이 박스에 포함 */ 
+        }
+        body{
+            font: normal 14px/1 "굴림", "arial";
+            color: rgb(51, 51, 51);
+            background: rgb(255,255,255);
+        }
+        /* 모든 요소는 마진과 패딩을 초기화해주고 바디요소에서는 글꼴과 색상과 배경을 지정한다. */
+         
+        #wrap{
+            width: 50%; height: 200px;
+            margin: 0 auto 0 0 ; /* 왼쪽정렬 */
+            margin: 0 0 0 auto; /* 오른쪽정렬 */
+            margin: 0 auto 0 auto; /* 가운데정렬 */
+            margin: 0 auto; /* 가운데정렬 (마지막에 적용한 것이 적용됨) */
+            background: rgb(255, 0, 150); 
+            /* 빨강< 파랑  = 보라색 | 빨강>파랑 =핑크색 */
+            text-align: center;
+        }
+
+        .container{
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgb(0,200,255); /* solid 실선(색) 녹색<파랑 = 청록색 | 반대의 경우 맑은 초록 */
+            margin: 0 auto;
+            background: rgb(245,220,240); /*회색만드는 법(255.255.255)에서 줄여나가기 */
+            /* 빨강 +녹생 =노랑
+            빨강 +파랑 =자주
+            녹색 +파랑 =청록
+            빨강 +녹생 +파랑 =흰색 */
+        }
+        .input-text{
+            width: 50%;
+            margin: 0 auto;
+            
+        }
+
+        .input-text input {
+            width: 100%; /* 부모의 너비를 다 사용 | shift + alt + a 해당 부분만 주석처리 */
+            height: 40px;
+            color: #444;
+            font-size: 16px;
+            padding: 0 15px;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+
+        /*  위 오른쪽 아래 왼쪽  14 *150% => 14 * 1.5 = 14+7 =21 */
+
+        .box3{padding: 50px 50px 50px 50px; line-height: 150%;}         
+        .box3 p {padding: 10px 0; color: #c09;} /* 문단 위아래 여백 10px */
+        .box3 p span {margin: 0 0 0 20px; color: #555; } /* lorem 문장 오니쪽 여백 10px */
+
+        .gallery{
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;/* 오버플로우 :  800px 넘치는 너비는 감춘다. hidden*/
+            overflow: scroll;/* 오버플로우 :  scroll; 넘치는 너비는 scroll 가로세로나옴 scroll*/
+            overflow-x: scroll;/* 오버플로우-x :  scroll; 가로로 넘치는 영역을 스크롤바*/
+            overflow-y: scroll;/* 오버플로우-y :  scroll; 세로로 넘치는 영역을 스크롤바*/
+
+            
+        }
+        .gallery img{
+            width: 100%;
+            
+        }
+        .gallery img:nth-child(1){
+            width: 300px;
+        }
+        .gallery img:nth-child(2){
+            width: 600px;
+        }
+        .gallery img:nth-child(4){
+            width: 50%; /* 400px */
+        }
+        .gallery img:nth-child(5){
+            width: auto; /* 너비자동 :높이에 비례해서 조절 */
+            height: 500px;        
+        }
+       /*  이미지는 너비와 높이가 자동조절이 된다. 너비에 맞춰서 높이가 바뀐다. */
+       
+       /* 홈페이지 이용약관(필수) */
+       .text-box{
+        width: 800px;
+        height: 200px;
+        overflow-y:scroll;
+        margin: 0 auto;
+        border: 1px solid #ddd; /* 테두리 #ddd 많이 씀 */
+
+
+       }
+       .text-box .contents{
+        width: 100%;  /* 패딩 여백을 너비에 포함하는 너비를 써야한다. 그래야 홈페이지 영향 안줌 */
+        /* 매번 계산하기 어려움. 그렇기에 너비는 100% 잡고 패딩값을 요기에 포함하는 너비로 잡을 때는 */
+        /* box-sizing: border-box; */
+        padding: 20px; /* 상하좌우 20px 여백둬라! */
+        line-height: 160%; 
+        font-size: 12px;
+        color: #666;
+
+       }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">안산그린컴퓨터아카데미</div>
+    <br>
+    <div class="container"></div>
+    <br>
+    <!-- div.input-text>input[type="text" name="userId" id="userId"] -->
+    
+    <div class="input-text">
+        <input type="text" name="userId" id="userId">
+    </div>
+    <br>
+    
+    <div class="box-number">
+        <p class="p1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. At eum ipsam esse temporibus sint. Consequatur, explicabo? Officia vero repellendus nostrum optio ab id cumque natus quo aspernatur! Dolore, velit molestiae.</p>
+        <p class="p2">Tempora impedit, explicabo architecto officia eligendi ipsam perferendis vel eos nulla dolorem exercitationem illo ratione facere veniam dolores possimus eius assumenda corporis saepe illum, ut corrupti commodi quasi consectetur. Quia?</p>
+        <p class="p3">Suscipit, ipsam aspernatur. Rerum et ratione quae autem maiores dolorem enim vitae! Ab voluptate mollitia ea nam officia ipsam itaque alias nobis error expedita, vero doloribus harum animi dolor saepe.</p>
+        <p class="p4">Distinctio odit itaque libero praesentium fuga alias possimus? Dicta deserunt aut, sapiente atque nihil maxime. Quibusdam neque non minima sequi odit, provident placeat impedit numquam facere ullam. Aliquid, repellendus maxime!</p>
+        <p class="p5">Laudantium quis dolor unde nulla rerum atque magnam officia omnis! Necessitatibus velit officiis odit impedit, libero quaerat iusto est enim ducimus, corrupti fuga placeat reiciendis non distinctio. Consequuntur, voluptatem ratione.</p>
+    </div>
+    <br>
+    <div class="box2">
+        <p class="p01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nam dignissimos fugit, delectus ea tempore eius beatae, iure quos dicta dolor dolore mollitia doloribus sed ad esse provident quas quibusdam?</p>
+        <p class="p02">Quae quidem eveniet, neque temporibus cupiditate laudantium eos praesentium dolor ut voluptatem nostrum iste, maiores doloremque libero. Rerum iste, deleniti delectus accusantium id ab, ipsum doloribus, consequatur repellat consequuntur eius!</p>
+        <p class="p03">Deleniti, cum obcaecati. Doloribus eum neque modi debitis quisquam quia facilis. Ratione, ad, error odit tempore repellat quibusdam quo dolore molestias voluptates eligendi quos voluptas recusandae eaque ullam deleniti labore.</p>
+        <p class="p04">Quidem mollitia dolorum autem id velit minus ducimus. Voluptatem quas accusamus reprehenderit, autem veniam ipsum vitae incidunt, esse deserunt quidem nihil aut ut dolor deleniti obcaecati unde. Illo, delectus adipisci.</p>
+        <p class="p05">Cumque reprehenderit suscipit nostrum et, temporibus, maxime in vel consequuntur accusantium maiores voluptas ipsum nihil rerum harum voluptates libero. Sint excepturi officiis iusto pariatur magni quia ipsum nisi molestias voluptate?</p>
+    </div>
+    <br>
+    <div class="box2">
+        <p class="p001">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, ab aliquam, animi accusamus obcaecati aspernatur fugit dolor quas facilis rem, quam voluptate enim molestias sequi distinctio harum nihil consectetur in!</p>
+        <p class="p002">Omnis consequatur numquam, inventore corrupti voluptas pariatur saepe facere quia quidem tempore ipsa amet distinctio, ea porro hic, et dolores necessitatibus similique odio cupiditate. Autem doloremque in quae ipsam maiores!</p>
+        <p class="p003">Beatae corrupti facilis eveniet odit, doloribus ab, quis perspiciatis quo repudiandae dicta deserunt illum cum? Ipsa est optio consequuntur et quia. Corrupti commodi ex ullam sit. Vel tenetur voluptas ducimus?</p>
+        <p class="p004">Iure consequatur ipsum non veniam quasi soluta saepe cum iste rerum ipsam, error expedita aliquid dolor nam natus quaerat quia porro commodi. Odio dicta velit sint praesentium, esse aut illum.</p>
+        <p class="p005">Labore recusandae quibusdam exercitationem quia in, corporis aliquam earum delectus incidunt? Accusamus, sit. Necessitatibus corporis sequi voluptas fugit maiores debitis. Possimus sequi debitis voluptatum temporibus explicabo quas maxime, ut nemo.</p>
+    </div>
+    <br>
+
+    <div class="box3">
+        <p class="p1">
+            001
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni debitis incidunt ad tempore, rerum ratione, id numquam libero dolor laborum impedit exercitationem aut placeat neque laboriosam illum vel iure voluptatem.
+        </p>
+        <p class="p2">
+            002
+            Earum exercitationem minima perferendis provident! Natus veritatis sit ad, quisquam aut ab laboriosam odio ex, libero dolorum doloremque voluptate, nam nesciunt mollitia a! Dolore, doloribus perspiciatis! Illo ducimus labore porro.
+        </p>
+        <p class="p3">
+            003
+            At, debitis unde? Dolor, quidem dolores. Est ex beatae hic quisquam odit iusto ullam facilis repellat sint harum maxime eaque blanditiis quia, architecto officia alias, tenetur nostrum iure earum! Illo?
+        </p>
+        <p class="p4">
+            004
+            Excepturi modi aliquam similique nemo aut eius, perspiciatis eum rem asperiores enim assumenda consequatur laboriosam temporibus minus error voluptatem nam. Aliquid in eveniet vitae quam laudantium alias perferendis corrupti ut?
+        </p>
+        <p class="p5">
+            005
+            Laborum error cupiditate quae quibusdam iusto? Blanditiis quas deserunt rerum perspiciatis! Assumenda quidem ducimus laboriosam maxime, aut, explicabo facere pariatur amet enim id quibusdam expedita aliquid ipsa accusantium? Atque, aliquam?
+        </p>
+        <p class="p6">
+            006
+            Quod, praesentium. Atque doloremque perspiciatis cum doloribus tempora eos provident labore mollitia deserunt tempore, alias dolorem quam distinctio delectus aliquid molestias, dicta odit consequatur. Ab repellendus molestias dolorem recusandae veritatis!
+        </p>
+        <p class="p7">
+            007
+            Debitis veritatis harum nemo dicta, ipsa dolorem rerum quisquam doloremque ratione aut libero est? Fugit et nesciunt, assumenda quis porro facilis voluptatibus id nostrum culpa consequatur, nam nobis, natus sequi?
+        </p>
+        <p class="p8">
+            008
+            Voluptatem labore quae sapiente animi. Repudiandae soluta facilis, fugit cum dolorum asperiores fuga. Suscipit, aperiam iure enim non repudiandae maiores tempore molestias pariatur asperiores dolorum delectus necessitatibus consequuntur sapiente nihil!
+        </p>
+        <p class="p9">
+            009
+            Quas maiores odio reiciendis commodi ipsa! Neque ea suscipit in consequatur aut modi enim dolorem ipsum temporibus, perferendis magni cumque ipsa sapiente qui soluta obcaecati? Ipsa, similique? Voluptatum, ipsam ipsa.
+        </p>
+        <p class="p10">
+            010
+            Voluptate eligendi eius nesciunt reiciendis, at ipsam ea accusantium quisquam corporis aliquid ut iste, voluptates ad laudantium praesentium corrupti sit molestiae doloremque velit quidem, quas laborum vitae eos labore. Sed.
+        </p>
+        <p class="p11">
+            011
+            Ratione, in. Obcaecati iste non minima optio assumenda recusandae placeat. Maiores, qui! Odio recusandae alias distinctio, libero nostrum, autem error eius adipisci animi aliquid sint dolores cupiditate consequatur, ullam architecto.
+        </p>
+        <p class="p12">
+            012
+            Earum, ipsum quibusdam, cupiditate labore repellendus eum maxime delectus doloribus optio obcaecati odio distinctio commodi consequatur consectetur! Vel quos vitae tenetur consectetur fugiat, qui, dolorum odit excepturi assumenda sed fugit?
+        </p>
+        <p class="p13">
+            013
+            Pariatur voluptatibus corporis modi iure, a nemo quaerat reiciendis perspiciatis tenetur eos facilis quam, tempore quasi ipsa, dolor laudantium iusto officia ipsum culpa cum obcaecati dolorem magni explicabo! Error, repellat!
+        </p>
+        <p class="p14">
+            014
+            Commodi veniam quidem nulla iusto voluptatum expedita quo cumque error itaque similique natus quisquam, repudiandae labore, obcaecati tempora excepturi vitae aperiam corporis placeat possimus voluptas? Accusamus libero cupiditate voluptatem incidunt!
+        </p>
+        <p class="p15">
+            015
+            Esse voluptates quo dicta, doloremque soluta vel! Fugit possimus deleniti ad vitae vel voluptates commodi dolor itaque magni id. Eius debitis enim assumenda iste sunt error pariatur doloribus voluptates perferendis.
+        </p>
+        <p class="p16">
+            016
+            Accusantium minima, alias voluptates amet id, quis molestias sequi quibusdam, vitae impedit natus voluptas et aspernatur necessitatibus laborum magnam quos! Laboriosam dolore odit ipsam. Sapiente magni accusamus ex commodi necessitatibus!
+        </p>
+        <p class="p17">
+            017
+            Repellendus excepturi veniam corporis ut temporibus? Laboriosam voluptatibus necessitatibus natus dolor fugit, dolorum laudantium quasi. Molestias qui mollitia accusantium quia consequuntur dolorem, voluptates tenetur blanditiis magnam magni. Cumque, dicta quas.
+        </p>
+        <p class="p18">
+            018
+            Inventore optio, quidem aspernatur iure nemo id quos quia debitis sapiente expedita provident qui! Odio asperiores veniam molestiae aperiam! Suscipit mollitia iure placeat explicabo accusamus deleniti, illo dolore neque eius.
+        </p>
+        <p class="p19">
+            019
+            Sint nesciunt corrupti corporis porro delectus quos sunt, ipsum possimus nostrum voluptatibus vero dicta deleniti quas error deserunt rerum consequatur, optio eaque nisi, voluptate cum praesentium fugiat saepe velit. Necessitatibus?
+        </p>
+        <p class="p20">
+            020
+            Amet quod, ad voluptatum ipsum deserunt assumenda odit repellendus repudiandae necessitatibus illo saepe blanditiis laboriosam delectus placeat aspernatur officiis harum. Eius dolorum sunt qui reiciendis fugit doloremque sed id necessitatibus?
+        </p>
+        <p class="p21">
+            021
+            Cupiditate, temporibus! Provident ipsum consequatur necessitatibus voluptate similique mollitia eum culpa, aut ipsa molestiae quas quaerat, modi voluptatibus? Natus perspiciatis porro nemo incidunt voluptas cumque fugit dicta suscipit ex vitae!
+        </p>
+        <p class="p22">
+            022
+            Tenetur est saepe architecto optio dignissimos minus quia incidunt quos veniam. Beatae doloribus repudiandae error iusto. Porro, ea! Voluptatem tempora repellendus eaque odio hic non aut sapiente deserunt molestiae incidunt.
+        </p>
+        <p class="p23">
+            023
+            Libero eius accusamus temporibus inventore non quaerat repellat eaque totam labore iure suscipit voluptates mollitia, veniam aspernatur consequuntur cupiditate magnam nulla, nemo tempora sed deleniti voluptas. Quod soluta laudantium tempora?
+        </p>
+        <p class="p24">
+            024
+            Quidem perspiciatis sequi sunt dolorem similique quos eveniet, ipsam culpa quis odio fugit tempore amet distinctio vel aliquid asperiores pariatur exercitationem. Aperiam quasi ducimus mollitia ad commodi harum iure dicta!
+        </p>
+        <p class="p25">
+            025
+            Iste eius labore voluptates ex aspernatur nobis velit corrupti maxime ab veniam consequatur cum expedita, quis beatae repudiandae rem facilis architecto odit mollitia est consequuntur eum nesciunt dolor alias. Ratione.
+        </p>
+        <p class="p26">
+            026
+            Hic ab aliquam a laudantium possimus illo doloremque, asperiores similique, explicabo quos ipsam nihil odit mollitia sit quidem animi neque ratione numquam pariatur, ipsum commodi? Nam repellat voluptatibus veniam sed!
+        </p>
+        <p class="p27">
+            027
+            Inventore numquam asperiores harum similique ut unde repellendus assumenda esse, officia ipsum magnam enim delectus sit eligendi error porro non cumque eum libero ea blanditiis voluptatem saepe. Possimus, quis atque?
+        </p>
+        <p class="p28">
+            028
+            Rem iste eligendi perspiciatis distinctio odio odit nesciunt libero inventore soluta voluptatem? Vitae nostrum dicta temporibus reprehenderit provident consectetur tempora nesciunt, suscipit voluptatibus repellat libero, ullam quasi aut voluptatem corporis!
+        </p>
+        <p class="p29">
+            029
+            Pariatur hic mollitia sit ullam reiciendis recusandae earum illum minus aspernatur aliquid rem asperiores doloribus, dolore numquam quo deleniti magnam? Amet maxime eveniet animi eos quo mollitia voluptates suscipit tempora.
+        </p>
+        <p class="p30">
+            030
+            Doloribus perferendis repellat neque nesciunt quae aut mollitia possimus vero voluptatem. Omnis ratione tempora corrupti. Possimus cupiditate laborum aliquid pariatur et quis quidem atque asperiores, eligendi tenetur harum suscipit eum?
+        </p>
+        <p class="p31">
+            031
+            Perspiciatis doloremque at nesciunt incidunt praesentium labore, explicabo voluptate magni ut, esse nisi commodi nostrum, in error. Maiores voluptatum illo dolorem alias cupiditate in ea eligendi architecto, vel deserunt ducimus?
+        </p>
+        <p class="p32">
+            032
+            Aliquam aliquid nesciunt ipsum in repellendus culpa nemo laboriosam exercitationem velit! Omnis velit esse fugiat natus dolorum, unde aperiam quod neque tenetur, hic architecto nam labore? Minus quis cum accusamus!
+        </p>
+        <p class="p33">
+            033
+            Cumque nostrum voluptatem commodi at corporis quia autem ipsum esse ex fuga quas iure dicta, praesentium accusantium animi repellat blanditiis nulla placeat odit temporibus explicabo ipsa deleniti atque. Harum, odio?
+        </p>
+        <p class="p34">
+            034
+            Distinctio fugiat ipsum impedit, aut quo quae. Quasi error adipisci dolores in obcaecati, commodi sint tempore consequatur eum at quod enim minima, odit quia, ad dignissimos delectus molestias laudantium! Suscipit!
+        </p>
+        <p class="p35">
+            035
+            Iure quas animi voluptates dolore atque beatae natus autem aliquid quibusdam nisi magnam assumenda, ipsum suscipit, quis molestias iste ex libero provident reprehenderit accusantium placeat eius maxime, inventore aspernatur. Magnam!
+        </p>
+        <p class="p36">
+            036
+            Ut porro autem praesentium similique cum nihil saepe ipsam fugiat rerum vitae labore suscipit, dolorem accusantium odit eius ullam. Assumenda exercitationem pariatur quia error ab explicabo quidem ipsum! Consequatur, dolores.
+        </p>
+        <p class="p37">
+            037
+            Exercitationem, repellendus. In aspernatur numquam sed, fugit repellendus non modi? Vitae nesciunt maiores, est id itaque ab inventore temporibus sit consequuntur animi laboriosam! Doloribus magnam quibusdam enim molestias possimus quod.
+        </p>
+        <p class="p38">
+            038
+            Excepturi incidunt nobis iure dolorum vitae fuga neque corrupti aspernatur doloremque et facilis, omnis animi debitis laudantium modi ullam enim eveniet nulla recusandae saepe blanditiis! Cumque quisquam vitae expedita ex?
+        </p>
+        <p class="p39">
+            039
+            Excepturi quo delectus aliquid! Corporis magnam nulla voluptatum, dolorem placeat repudiandae cupiditate sunt a laboriosam, maxime reiciendis blanditiis iure enim facilis fugiat, est minima voluptatem rerum vitae! Aut, voluptate reprehenderit!
+        </p>
+        <p class="p40">
+            040
+            Vero, sed tempore. Aliquid deleniti obcaecati laborum consequuntur facilis corrupti enim tempore. Sapiente quidem culpa molestiae pariatur? Corporis autem natus, repudiandae est minima animi voluptatibus deleniti nostrum, delectus consequuntur sapiente.
+        </p>
+        <p class="p41">
+            041
+            Aliquid inventore vitae, sed corrupti sunt debitis rem quidem, voluptatibus eos ex atque ipsa rerum totam deserunt dolores, fuga accusamus. Ea excepturi exercitationem quidem esse unde aspernatur asperiores, non suscipit.
+        </p>
+        <p class="p42">
+            042
+            Consectetur deserunt, explicabo autem nobis ex asperiores culpa consequatur minus architecto numquam ut repellendus non, atque aspernatur at aperiam veniam doloremque perferendis nesciunt, voluptate similique natus? Magnam optio harum mollitia.
+        </p>
+        <p class="p43">
+            043
+            Vero facilis quidem vitae ullam odit! Placeat nisi recusandae provident consectetur vero perferendis nostrum, fuga fugit excepturi neque quo sequi odio, dignissimos saepe. Rerum pariatur vitae sunt, dolore sint numquam.
+        </p>
+        <p class="p44">
+            044
+            Magni nisi at, dolorem sint nemo fugiat eveniet consectetur, natus facere, dolor alias saepe praesentium? Natus exercitationem id ducimus nemo quasi dolorum eos. Praesentium non corporis laudantium, id delectus animi.
+        </p>
+        <p class="p45">
+            045
+            Possimus fugiat recusandae, mollitia perferendis ullam omnis eum eligendi voluptatibus aut natus vel aspernatur deserunt molestias ipsam provident. Consequuntur hic fugit sequi tempore, enim nemo ex porro! Maxime, eveniet nihil?
+        </p>
+        <p class="p46">
+            046
+            Dignissimos, totam commodi. Commodi animi sed sint quasi beatae expedita neque nam amet recusandae modi ullam ex, repellat facere quia corporis officia magni illum velit eos in minima suscipit similique.
+        </p>
+        <p class="p47">
+            047
+            Sunt cupiditate dolorum ipsum qui dolores voluptatem rem laudantium tempore minus? Perferendis ullam provident exercitationem, eligendi pariatur repellendus blanditiis ab eum, dolorem, alias non nihil quasi sed sequi cupiditate cum?
+        </p>
+        <p class="p48">
+            048
+            Id suscipit recusandae doloribus? Corporis reiciendis voluptatem voluptatibus veniam magnam reprehenderit, maxime ducimus, adipisci enim atque, eaque sunt eligendi? Aliquam consequuntur sapiente rerum nostrum, architecto neque animi pariatur rem voluptatem!
+        </p>
+        <p class="p49">
+            049
+            Molestiae non dolor eius atque, quo, similique placeat harum vitae commodi aut, ea culpa magni velit minus? Tempora vel nisi pariatur exercitationem similique officiis veniam reiciendis. Magni necessitatibus illum corrupti?
+        </p>
+        <p class="p50">
+            050
+            Qui maiores doloribus sed necessitatibus odio iure tempora pariatur ullam cupiditate et, libero placeat asperiores, excepturi repellendus? Aperiam, magnam repellendus. Quas esse recusandae placeat error officiis id natus at iusto.
+        </p>
+        <p class="p51">
+            051
+            Id maiores dolor maxime! Veritatis sequi, doloribus, facere quo dolorem vitae repellendus dicta hic numquam obcaecati quia reprehenderit voluptas consequuntur velit odit quidem culpa. Nulla, consequatur tempore. Neque, non inventore.
+        </p>
+        <p class="p52">
+            052
+            Debitis atque eos sequi quisquam ipsa? Dolore dolorum doloribus, earum eveniet, est neque commodi architecto dicta obcaecati magnam deserunt sapiente, laboriosam reprehenderit non? Veritatis magni, dolore consequatur magnam exercitationem blanditiis.
+        </p>
+        <p class="p53">
+            053
+            Qui tempore quas debitis consequuntur aliquid fugiat commodi ex aliquam accusamus, itaque ea ratione maxime placeat consequatur natus velit? Qui nulla laudantium minima. Nihil, quod explicabo tenetur enim magni dolorum!
+        </p>
+        <p class="p54">
+            054
+            Beatae dicta omnis quibusdam inventore suscipit quas vero veniam aut recusandae obcaecati ipsum officiis repellendus esse ad, voluptatibus incidunt, voluptates corporis unde ea voluptate. Optio aliquid repudiandae voluptatibus quasi eaque.
+        </p>
+        <p class="p55">
+            055
+            Laboriosam, neque laborum, perspiciatis autem officia nemo consectetur dolorem, voluptas nostrum nam cum possimus! Sint accusamus natus, voluptatem repellendus deleniti ipsa fugiat illum libero molestias blanditiis rem fugit facilis vel?
+        </p>
+        <p class="p56">
+            056
+            Natus unde quos neque aut, et omnis nam autem libero dicta molestiae! Eligendi commodi cumque a harum. Ab quas beatae adipisci, eos laudantium minus, placeat recusandae inventore non enim quaerat?
+        </p>
+        <p class="p57">
+            057
+            Fugit ad necessitatibus est, quae at laboriosam tenetur dolorem commodi quis explicabo delectus voluptatum repellendus esse provident sed reprehenderit quas! Sed error aperiam, officiis possimus pariatur fuga! Nostrum, id at.
+        </p>
+        <p class="p58">
+            058
+            Quasi laudantium omnis alias, porro distinctio a eius nesciunt aperiam eaque tempora eum saepe sequi corporis et, delectus quos aliquam illo! Nisi perferendis ab a veritatis, id maxime voluptate itaque.
+        </p>
+        <p class="p59">
+            059
+            Excepturi nihil iusto sapiente eligendi veritatis quae mollitia ullam molestiae hic impedit voluptatibus, eum repellendus cupiditate saepe nobis sint accusantium quis facere cumque numquam iure eius explicabo neque. Nostrum, itaque.
+        </p>
+        <p class="p60">
+            060
+            Iste similique facilis possimus ipsam vitae. Ex minima tempora assumenda libero dignissimos consectetur totam quia, nostrum veniam optio laborum tenetur in eligendi fuga obcaecati, exercitationem nobis aspernatur porro. Aperiam, doloribus.
+        </p>
+        <p class="p61">
+            061
+            Quisquam blanditiis repudiandae accusamus ut excepturi. Perferendis commodi sint laboriosam voluptates est saepe earum totam, doloremque nobis debitis nesciunt magni, porro impedit voluptate pariatur adipisci placeat culpa! Corporis, exercitationem nesciunt!
+        </p>
+        <p class="p62">
+            062
+            Ut, eaque hic at distinctio magnam asperiores sed consequatur necessitatibus minima vel dolore quidem tempora animi? Amet blanditiis aliquam, numquam eligendi, sapiente perferendis dolore in tenetur, asperiores molestiae illum. Modi!
+        </p>
+        <p class="p63">
+            063
+            Alias iure ab, necessitatibus non saepe reiciendis ut mollitia sequi exercitationem quas, quasi dolores, tempore ducimus! Itaque fugit vitae nisi? Tenetur dicta aliquam repudiandae eum velit non aliquid distinctio reprehenderit.
+        </p>
+        <p class="p64">
+            064
+            Velit labore sequi repudiandae nemo officiis quae rerum consectetur repellendus odit aspernatur, qui obcaecati atque. Voluptate aut nulla inventore cum, cupiditate doloribus culpa quia enim repudiandae unde, eaque, ducimus iure!
+        </p>
+        <p class="p65">
+            065
+            Cupiditate aliquid pariatur laborum debitis eius numquam maiores, fuga sit dolores quod animi, iste, eos aliquam officia nam qui adipisci consectetur aspernatur facere minima. Labore unde suscipit maxime perspiciatis perferendis!
+        </p>
+        <p class="p66">
+            066
+            Maxime nobis numquam voluptatum pariatur possimus aspernatur dolores, minima vel hic doloremque odit, at nam saepe eos nesciunt aliquam qui totam illum optio non quo voluptatibus. Vero sapiente consectetur vel!
+        </p>
+        <p class="p67">
+            067
+            Placeat quis aspernatur laudantium voluptatem corporis enim eos doloribus nesciunt perspiciatis dolore dolor maiores, vitae optio recusandae ducimus expedita saepe tempore esse unde praesentium. Neque ipsum laborum ducimus voluptatem qui?
+        </p>
+        <p class="p68">
+            068
+            Qui accusamus, sunt reprehenderit a sequi est architecto pariatur, nostrum odit in cupiditate praesentium rerum libero doloribus. Cumque suscipit dignissimos, quis ipsum corrupti fuga, blanditiis consequatur facilis nostrum, dolores ea.
+        </p>
+        <p class="p69">
+            069
+            Ab inventore fugit laboriosam possimus. Non nihil autem repellat. Voluptatum, veritatis voluptate. Voluptatibus, quibusdam aperiam! Nihil repellat, officia, nisi quasi, dolore laudantium dolor cumque minus sapiente doloribus ut officiis voluptatum.
+        </p>
+        <p class="p70">
+            070
+            Maiores repellat exercitationem sapiente quod totam ab assumenda, dolor atque cumque architecto. Enim nesciunt nulla blanditiis aliquid eveniet quis accusantium, perspiciatis nisi, iste at delectus ex, obcaecati laboriosam rerum tempora.
+        </p>
+        <p class="p71">
+            071
+            Voluptate expedita iure quis dolores cumque odit repellat rerum minus distinctio sapiente fuga provident exercitationem, dolor similique qui velit illo veritatis, doloribus eligendi. Commodi fugit quod maxime incidunt, voluptatem modi.
+        </p>
+        <p class="p72">
+            072
+            Repellat itaque nostrum aliquam nam consectetur odit eaque ipsam possimus maxime est alias voluptatem doloribus dolor sit minus enim blanditiis eos, tenetur eligendi et! Accusantium doloribus vel ad molestiae reprehenderit.
+        </p>
+        <p class="p73">
+            073
+            Inventore repudiandae quidem in laudantium nemo iure esse quod, hic molestiae ipsum ea necessitatibus dolor modi error aut quos delectus dolorum non ad quisquam maiores! Illum alias perferendis mollitia nihil?
+        </p>
+        <p class="p74">
+            074
+            Et quasi aliquam quibusdam consequuntur quisquam provident voluptas voluptate omnis ex amet blanditiis nostrum culpa ab velit, voluptatem alias. Voluptatem unde cumque aliquam sapiente porro dolores earum laborum cupiditate nostrum.
+        </p>
+        <p class="p75">
+            075
+            Iure, dolore, architecto iusto molestiae repellat ipsa odio deserunt, fuga labore facere tenetur optio praesentium. Accusantium pariatur consectetur temporibus cum quo, quis magnam corporis qui, ex distinctio delectus velit facilis?
+        </p>
+        <p class="p76">
+            076
+            Temporibus dolorem rem officia laudantium similique autem incidunt aliquid, culpa beatae quod reprehenderit facere et perferendis vitae magni distinctio in eum? Fugit magni ullam est cupiditate a corrupti voluptatum aliquid!
+        </p>
+        <p class="p77">
+            077
+            Quidem voluptates facilis omnis laudantium nesciunt inventore optio dolorum alias in aspernatur quam, atque dolore dolorem corporis quasi aliquam repellat animi voluptatem placeat temporibus harum beatae. Sapiente est reiciendis magnam!
+        </p>
+        <p class="p78">
+            078
+            Assumenda ex blanditiis provident fugit adipisci voluptatum cumque obcaecati ipsum commodi corrupti, magni esse inventore reprehenderit laudantium libero, doloremque, omnis harum dolore dicta nemo distinctio id deleniti. Eveniet, itaque sapiente.
+        </p>
+        <p class="p79">
+            079
+            Quia deserunt repudiandae repellat cumque quae accusantium doloremque, perferendis debitis a eveniet in tempore culpa consectetur possimus aliquam hic doloribus aspernatur magnam eaque et, accusamus, distinctio nisi? Sunt, asperiores nisi?
+        </p>
+        <p class="p80">
+            080
+            Quaerat incidunt itaque maiores soluta molestiae aliquid fugiat similique a pariatur suscipit minus recusandae sit laudantium ad, sapiente asperiores aliquam rerum reiciendis quasi veritatis doloremque nemo assumenda? Architecto, in inventore!
+        </p>
+        <p class="p81">
+            081
+            Repudiandae obcaecati debitis dolores laborum, omnis sit eveniet enim quo sequi libero quam, consequuntur exercitationem repellat totam quasi est qui eius at! Magni ipsum tempora, ut rem saepe doloribus earum!
+        </p>
+        <p class="p82">
+            082
+            Quas, nemo ducimus numquam facere perspiciatis quam nobis provident nihil magnam officiis ex quibusdam in rerum earum consectetur velit omnis sapiente architecto ipsam commodi, unde maxime consequuntur esse. Aut, facilis?
+        </p>
+        <p class="p83">
+            083
+            Ducimus cupiditate, obcaecati adipisci qui aliquam rem ullam in deleniti beatae veritatis, neque similique quas. Tempora ipsam consequatur ducimus, sunt pariatur nulla commodi necessitatibus voluptates dolorem, porro doloremque a voluptatibus?
+        </p>
+        <p class="p84">
+            084
+            Soluta quos eius ipsam fugiat vitae repudiandae magnam. Distinctio pariatur inventore aspernatur autem! Nihil totam nisi id dolor blanditiis magnam, ipsam repellat consectetur vero eaque quia aut alias ipsa deserunt!
+        </p>
+        <p class="p85">
+            085
+            Culpa unde numquam repellat exercitationem sint placeat, autem eius? Voluptatum porro impedit quidem rem alias enim quas exercitationem nihil nisi, recusandae voluptate vero ad quaerat quisquam fuga officiis soluta quos.
+        </p>
+        <p class="p86">
+            086
+            Maxime consequuntur temporibus nihil quas mollitia placeat, iste porro est praesentium sapiente necessitatibus quibusdam dignissimos labore impedit vitae provident in saepe dolore consequatur? Nulla odit officia fugiat? Vel, obcaecati fugit!
+        </p>
+        <p class="p87">
+            087
+            Ab possimus unde accusamus, inventore officiis sed, libero recusandae eveniet, ex ad nihil nobis similique voluptas iusto omnis minus asperiores consequuntur impedit magni cum dolore reprehenderit ipsam debitis esse? Consectetur.
+        </p>
+        <p class="p88">
+            088
+            Eligendi nihil, culpa quos id architecto beatae quae. Aut, illo numquam id ipsam omnis quis quae veniam doloribus a cupiditate suscipit deserunt natus deleniti sint explicabo tempora nulla officia minima?
+        </p>
+        <p class="p89">
+            089
+            Laudantium dicta voluptates cupiditate doloremque maxime est! Perferendis in nemo cumque quam. Quisquam inventore recusandae deserunt iure! Amet, quia. Enim ut ratione a obcaecati esse eius dolore ab eum accusantium.
+        </p>
+        <p class="p90">
+            090
+            Facilis placeat illum accusamus facere debitis ea obcaecati, asperiores quibusdam architecto earum nisi consequuntur. Repellat distinctio veritatis dolore, corporis nesciunt nobis sequi, praesentium ea laboriosam, soluta ad sit obcaecati? Doloribus.
+        </p>
+        <p class="p91">
+            091
+            Excepturi voluptatum voluptatem quod dolore suscipit nobis aspernatur enim beatae veniam quisquam a architecto magnam, necessitatibus quibusdam nostrum magni optio consectetur obcaecati eveniet eum? Explicabo distinctio assumenda amet facere qui.
+        </p>
+        <p class="p92">
+            092
+            Similique esse magni doloribus amet itaque illum pariatur quo maiores odit natus nihil iusto excepturi, dolorum ab enim consequuntur. Iste voluptatibus tempora perferendis maxime mollitia repudiandae perspiciatis possimus quibusdam modi.
+        </p>
+        <p class="p93">
+            093
+            Eaque velit maiores nesciunt in quod voluptas eveniet nobis! Assumenda at, reiciendis incidunt fugiat est atque aut voluptas similique illo provident recusandae, laboriosam, pariatur et exercitationem! Molestias iste accusamus maiores?
+        </p>
+        <p class="p94">
+            094
+            Vero, numquam! Dolor eaque obcaecati sed alias in odio, magnam ratione sapiente a dolorem, odit voluptate omnis unde voluptas maxime rem velit natus asperiores! Eaque exercitationem excepturi dolorum sunt delectus?
+        </p>
+        <p class="p95">
+            095
+            Minus tenetur ea expedita possimus quasi sed optio eius ratione ad. Aut fugiat in suscipit optio quasi tempora dolorum, ipsa asperiores nesciunt sunt soluta ea voluptate, molestiae veritatis rerum modi.
+        </p>
+        <p class="p96">
+            096
+            Repudiandae vero eum possimus facere iure aliquam. Qui, possimus maiores itaque voluptates ipsum aperiam architecto eum vero, doloribus, quaerat alias numquam error quia similique repellat mollitia vel ullam nemo rem.
+        </p>
+        <p class="p97">
+            097
+            Excepturi illo ratione cum corporis expedita aut, nulla natus corrupti. Reprehenderit sunt odio asperiores corporis deserunt ipsam beatae, culpa, itaque temporibus sit modi est placeat quasi in expedita iste cumque.
+        </p>
+        <p class="p98">
+            098
+            At aspernatur, nulla itaque labore vitae, deleniti ullam atque dolore nam, facere iste suscipit. Autem ratione, architecto nisi perferendis veniam possimus ea qui eius minus, necessitatibus, tempore aspernatur nihil libero.
+        </p>
+        <p class="p99">
+            099
+            Ut vel atque, aut et exercitationem voluptatum quod ab mollitia quae molestias nulla architecto, numquam accusantium, non excepturi eos quibusdam dolor nisi! Ad nesciunt eius corporis delectus, doloribus quisquam dicta?
+        </p>
+        <p class="p100">
+            100
+            Quaerat veritatis natus, iure sunt vero voluptate odio quia dolor laudantium excepturi, provident dolorum tempora fugit consequuntur maiores eius quo quis ad ipsa porro dolores fugiat sed, itaque ipsum? Quia?
+        </p>
+    </div>
+
+    <!-- div.box3>p.p$*100>{$$$}lorem -->
+    <br>
+    <!-- div.box3>p.p$*100>{$$$}span>lorem -->
+    <div class="box3">
+        <p class="p1">001<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur magnam aliquid, eius aut quasi amet perspiciatis, laboriosam eveniet nam earum quo, dolorem saepe exercitationem cum voluptatem. Assumenda commodi optio dignissimos?</span></p>
+        <p class="p2">002<span>Est provident dolorem dolorum dolores reiciendis accusamus. Accusantium ipsam, quasi nesciunt minima officiis repellendus voluptate dolores aliquam, repellat sunt animi id laboriosam et architecto exercitationem, quam earum explicabo! Ex, nisi!</span></p>
+        <p class="p3">003<span>Recusandae dolore a alias. Libero, a odit. Tempora asperiores nam adipisci consectetur, reiciendis alias. Rerum sint tempore optio! Officiis voluptatibus labore quaerat ad corrupti voluptas cupiditate eum, harum sint nihil?</span></p>
+        <p class="p4">004<span>Id facilis iure sed aut quasi incidunt eaque dolores velit dignissimos sit ab, adipisci sunt quibusdam rerum odio alias voluptates eligendi. Neque hic repudiandae dolorem accusantium ipsum porro incidunt reiciendis.</span></p>
+        <p class="p5">005<span>Velit, animi. Culpa, eveniet tempora facere iste nulla possimus quos beatae delectus odit voluptates, veniam nihil iusto omnis maiores reprehenderit et non hic. Nihil ad quam fugit vitae! Ut, vitae.</span></p>
+        <p class="p6">006<span>Eaque, fugiat magnam. Nulla suscipit ex tempora quis, ipsam officiis? Veniam minus possimus id aperiam, quis enim quia consequuntur vel quod, provident consectetur cupiditate dolores, molestias aliquid sapiente at non!</span></p>
+        <p class="p7">007<span>Vitae quod iusto dolores tempora necessitatibus temporibus assumenda molestias dolore aliquam quaerat impedit magnam autem dignissimos ullam, eveniet excepturi minima alias nobis nemo consectetur illo! Distinctio unde ratione rerum ad.</span></p>
+        <p class="p8">008<span>Perferendis, eius asperiores maxime porro iure earum! Quibusdam iure, suscipit ducimus hic ad provident fugiat quam facilis recusandae, quae magni tempora nemo, sed enim architecto accusantium? Ipsam animi maiores omnis.</span></p>
+        <p class="p9">009<span>Cumque modi molestiae autem ex aperiam ratione hic, quibusdam sapiente provident et dicta asperiores similique nobis quisquam excepturi recusandae necessitatibus odio reiciendis aspernatur cum vel. Consequatur pariatur eveniet molestiae iste.</span></p>
+        <p class="p10">010<span>Sit eaque, magnam tempora maiores corporis sapiente excepturi voluptatem cumque nam perspiciatis accusamus eligendi sed ipsum similique totam deleniti hic cum quod quisquam dolor delectus a earum illum pariatur! In!</span></p>
+        <p class="p11">011<span>Minima suscipit ratione quisquam laboriosam natus esse non quidem ipsa quasi sit? Tempora cumque quam praesentium fuga excepturi laudantium, quisquam dignissimos rem repudiandae earum nulla! Dignissimos repudiandae voluptas impedit similique.</span></p>
+        <p class="p12">012<span>Nesciunt, sequi ducimus soluta provident libero cumque sunt aut aliquam eveniet, non vero sed repudiandae ipsa doloremque sit natus exercitationem at. Ea ut totam a perferendis cum quaerat nostrum asperiores?</span></p>
+        <p class="p13">013<span>Voluptas similique veniam laboriosam impedit voluptatem ducimus repudiandae, facilis et officia, neque aspernatur eveniet eos dolore consequuntur reprehenderit temporibus recusandae unde qui dolorum harum ullam perferendis non? Odit, aut suscipit?</span></p>
+        <p class="p14">014<span>Nam magni veniam consequatur odio dicta quo aliquam maxime dolorum, modi et, asperiores alias deleniti corporis! Consequatur iure asperiores cumque soluta! Molestiae totam, reiciendis adipisci expedita officiis natus amet. Recusandae.</span></p>
+        <p class="p15">015<span>A voluptates perspiciatis animi. Dolorem quasi, deleniti delectus ad rerum possimus molestias culpa velit consequuntur laboriosam sunt veniam modi est officiis odio illo voluptas voluptatum reprehenderit quos. Unde, esse quo?</span></p>
+        <p class="p16">016<span>Dicta animi numquam necessitatibus ut quasi ipsum aspernatur, non, maiores suscipit voluptatibus asperiores. Consequuntur corrupti perspiciatis enim magni. Unde est fuga voluptates quas? Asperiores repellendus voluptatibus modi voluptates consequatur reiciendis?</span></p>
+        <p class="p17">017<span>Dolorum eveniet atque incidunt porro dolor, minima mollitia. Impedit quae officiis nisi accusamus dolores amet, veniam excepturi eveniet optio incidunt dolorum aliquid praesentium labore sequi ad. Est eaque veritatis temporibus?</span></p>
+        <p class="p18">018<span>Veniam quae tempora et itaque? Ut, possimus enim molestiae nesciunt laboriosam id necessitatibus excepturi assumenda, ab quos harum cupiditate corrupti consequatur officiis magnam dolorum dolores maiores quam voluptates? Reprehenderit, dolorum.</span></p>
+        <p class="p19">019<span>Blanditiis, voluptatibus tenetur sint sed quis placeat odit commodi, aspernatur similique repudiandae doloribus illo ipsam, perspiciatis totam dolorem tempora inventore eveniet aliquid magnam error? Inventore ut accusamus blanditiis eos expedita.</span></p>
+        <p class="p20">020<span>Consequuntur iste esse natus, ipsum, voluptas temporibus enim quidem tempora ut blanditiis aspernatur placeat deserunt velit iure voluptatum! Beatae quae magnam quo eius soluta facilis ratione incidunt eaque consectetur id.</span></p>
+        <p class="p21">021<span>Vel fugit optio nobis dolorem ipsam, facilis distinctio soluta fugiat sequi architecto doloremque aperiam assumenda illo error et iusto eaque nemo ad. Natus, assumenda veritatis voluptatem exercitationem provident voluptatum dolores.</span></p>
+        <p class="p22">022<span>Eius, veniam, reiciendis iste tenetur voluptatum totam fugit aspernatur illum amet minima nisi accusamus nulla, non cupiditate nesciunt officiis mollitia enim consequuntur commodi dolorum at fuga! Culpa vel quisquam et?</span></p>
+        <p class="p23">023<span>Ducimus accusantium aperiam labore aut culpa optio ex error adipisci quo itaque. Exercitationem inventore ipsum quidem recusandae delectus facere excepturi voluptate quod animi possimus. Corrupti et quibusdam esse! Quidem, maiores?</span></p>
+        <p class="p24">024<span>Nemo iste fugit illo, modi aliquam, laboriosam assumenda quos voluptatum quia eius numquam voluptates sequi commodi sunt? Explicabo a doloribus neque, quas dolorum deserunt illo assumenda deleniti architecto iusto similique?</span></p>
+        <p class="p25">025<span>Aut corporis officia cumque reprehenderit! Quis suscipit quia harum voluptas tempore, blanditiis unde numquam autem repellendus magni accusamus dolores odit, nulla optio aut deleniti minus repellat. Dolor provident corrupti eligendi.</span></p>
+        <p class="p26">026<span>Excepturi minus aspernatur voluptatibus ullam perferendis consequuntur illo enim inventore laboriosam, quisquam, non porro omnis deserunt nobis fuga accusantium sunt, atque ratione! Excepturi voluptatem recusandae sunt optio voluptas ad odio!</span></p>
+        <p class="p27">027<span>Aliquam ab eius accusamus nostrum vero nobis at placeat omnis impedit vel quo distinctio, natus molestiae esse temporibus? Atque eveniet dolorem numquam nihil aperiam autem repellat alias cumque dolores odio.</span></p>
+        <p class="p28">028<span>Velit officia provident, reiciendis esse dolores nulla labore, magni, aliquid sunt ipsa nesciunt illo porro nisi totam consectetur numquam ab maiores. Unde velit modi dolorem rem ipsam laborum. Praesentium, ex.</span></p>
+        <p class="p29">029<span>Officia blanditiis aliquam quibusdam fuga consequuntur sint! Voluptatibus, nostrum alias non cupiditate ad sunt veritatis ipsa, incidunt iste odio beatae recusandae, eius laudantium nisi aut dolore nulla et temporibus accusantium!</span></p>
+        <p class="p30">030<span>Aliquam reprehenderit officia, tempore animi vitae iusto nulla sint ullam doloremque perferendis suscipit nihil pariatur laborum ipsam cumque temporibus! Odit ratione illum, fuga est harum voluptas omnis voluptates non illo.</span></p>
+        <p class="p31">031<span>Facere dolore odit non commodi unde accusamus, rem nesciunt ipsam sapiente quidem. Minus rerum inventore error? Aliquam nobis in maxime laboriosam itaque et voluptatem, velit quaerat sit, totam repellendus ratione?</span></p>
+        <p class="p32">032<span>Reiciendis, officia obcaecati voluptas excepturi fugiat libero nobis esse quas suscipit sit cumque voluptate vero quia. Unde, nesciunt numquam assumenda, labore a et cupiditate modi commodi ratione ex eaque blanditiis!</span></p>
+        <p class="p33">033<span>Quibusdam praesentium reiciendis quidem eligendi corrupti laborum, autem soluta tempore excepturi voluptates ut, tenetur accusantium in incidunt libero eveniet fuga id hic fugiat. Adipisci nam quidem, ea impedit asperiores unde.</span></p>
+        <p class="p34">034<span>Laboriosam sunt cum illum dicta facere nam aut ullam consequuntur libero sit quidem dolorum asperiores optio quae doloribus eligendi repudiandae minus molestiae sequi itaque ea, deleniti aliquam in? Unde, itaque.</span></p>
+        <p class="p35">035<span>Hic placeat tempore at illum quasi? Culpa debitis fugiat quis nesciunt, sequi suscipit libero nostrum reiciendis eius incidunt voluptatibus qui dolore quas aspernatur, rem officiis ex recusandae. Quam, perferendis dolorum?</span></p>
+        <p class="p36">036<span>Aperiam reiciendis quod totam ad in! Repellendus eveniet vero est, hic pariatur voluptatibus repudiandae praesentium ut minus cumque cum dicta quas itaque voluptatem nemo consequuntur quibusdam ducimus temporibus non ipsum!</span></p>
+        <p class="p37">037<span>Quibusdam nostrum numquam maxime officia nulla exercitationem sint molestias nihil explicabo aperiam perferendis consequatur eaque quaerat corrupti omnis, iste ea velit ex minima odio quas unde! Id eaque numquam at.</span></p>
+        <p class="p38">038<span>Sit totam ea culpa, necessitatibus minus perferendis. Explicabo, natus? Rerum ducimus accusantium itaque ratione natus accusamus non, earum ex sint exercitationem velit excepturi obcaecati. Tempore ut blanditiis asperiores hic nulla!</span></p>
+        <p class="p39">039<span>Maiores nihil repudiandae aliquid sed delectus eum commodi illum totam molestias, asperiores a temporibus ratione laudantium neque perferendis placeat distinctio voluptates fuga dignissimos similique accusantium iure ut facere aliquam. Accusantium.</span></p>
+        <p class="p40">040<span>Saepe libero voluptatibus fugit deserunt esse. Accusantium ipsum consequatur eius illo facere beatae alias rem odit tempore ad dolorum nemo similique quisquam id dignissimos quas minima, voluptate maxime nam eveniet.</span></p>
+        <p class="p41">041<span>Rerum, voluptates id! Tempore eum excepturi ratione, iste cupiditate consequatur dicta nostrum id quidem, quas doloribus repellat necessitatibus fuga sequi tenetur in, quisquam ducimus quaerat velit magnam nisi vero dolores!</span></p>
+        <p class="p42">042<span>Quaerat labore voluptate deserunt porro, aliquam illo ipsam provident corporis molestiae. Aliquid provident quis sint earum, repellendus, incidunt corporis ex reprehenderit labore atque a recusandae, exercitationem nulla ad harum error?</span></p>
+        <p class="p43">043<span>Exercitationem voluptas voluptate possimus iste. Pariatur, quaerat, eaque magnam dolor doloribus dolorem esse nisi, voluptates sequi quos neque temporibus odio eos vero quod impedit. Quia consectetur libero officiis omnis dolores.</span></p>
+        <p class="p44">044<span>Nostrum quibusdam quidem eius nemo, tempora dolore repellendus odit placeat sunt aliquam possimus optio blanditiis eveniet sequi magnam rerum dicta in dolorem ipsam veritatis odio ipsum. Aperiam fugit veritatis quis!</span></p>
+        <p class="p45">045<span>Ut corporis esse et aspernatur, nemo voluptatem quis delectus, laudantium tempora rem nihil modi dolorem minima minus odit dignissimos, aperiam cumque unde. Temporibus rem accusamus necessitatibus dolor asperiores, atque mollitia?</span></p>
+        <p class="p46">046<span>Quaerat qui enim aliquam labore minima, voluptates at nam molestias eligendi similique aspernatur sequi neque recusandae. Quasi nihil quisquam laborum quis distinctio quibusdam minus, modi asperiores, cupiditate ad nobis. Dolor!</span></p>
+        <p class="p47">047<span>Ad, a error aliquid necessitatibus reiciendis cum dolorem nam odio deserunt nesciunt quisquam nobis rem amet, alias ducimus repudiandae expedita asperiores nisi, dolores corporis officiis. Provident corporis iusto eveniet illum.</span></p>
+        <p class="p48">048<span>Hic illo cupiditate nobis iste itaque dolorem quas eum fuga magni deserunt illum alias ipsum aspernatur quod perspiciatis amet nam earum perferendis est nihil libero, ut debitis natus. Modi, iure.</span></p>
+        <p class="p49">049<span>Quidem accusamus labore obcaecati consequatur omnis officiis tempora! Esse, unde suscipit. Possimus enim magnam amet suscipit quod aspernatur doloremque rem pariatur est nihil dolorem sapiente temporibus, similique perspiciatis quidem corrupti.</span></p>
+        <p class="p50">050<span>Natus commodi voluptas consequuntur repellendus, debitis at vel, officia amet facilis illo modi quasi excepturi non ducimus, distinctio reiciendis quis voluptatem totam. Quia provident minus nisi, itaque sunt similique omnis?</span></p>
+        <p class="p51">051<span>Sapiente veritatis cumque, nulla ea excepturi tempora debitis vel magnam in voluptatem quibusdam, veniam molestias labore. Soluta, libero exercitationem dignissimos odio cumque dolor hic autem? Beatae eius ex neque laborum?</span></p>
+        <p class="p52">052<span>Necessitatibus molestias dolorem nihil quae autem distinctio, tempore corporis quibusdam delectus sunt! Quis deserunt maxime mollitia debitis cumque impedit tempora nemo officia laborum enim porro, quos error quo, sint voluptatum.</span></p>
+        <p class="p53">053<span>Aut quae voluptates harum similique magni veniam ullam labore ut quasi provident totam optio corrupti sit necessitatibus quas exercitationem amet, unde eligendi laborum eius dicta iure temporibus beatae. Ex, magnam.</span></p>
+        <p class="p54">054<span>Veniam, cumque quisquam eius quam illo magni rerum, aperiam quis facere nulla, adipisci atque voluptate quaerat pariatur eligendi odit eaque totam cum animi voluptatum optio repellat porro explicabo obcaecati. Eveniet?</span></p>
+        <p class="p55">055<span>Autem veritatis quas deleniti fugit, nihil labore voluptates expedita officia facere odit beatae accusantium consequatur corrupti unde architecto culpa eveniet eius quaerat illum dolore rem voluptatem. Odit esse voluptatibus optio!</span></p>
+        <p class="p56">056<span>Quod nesciunt totam, nisi minima tenetur nobis vero mollitia! Nisi sapiente consectetur dolorem tempora laborum at, quasi possimus dolore atque, recusandae itaque cupiditate consequuntur reprehenderit debitis excepturi quibusdam, ab dignissimos!</span></p>
+        <p class="p57">057<span>Unde minus quas cum ducimus! Tempora sit illo voluptatibus eos doloribus architecto aperiam suscipit sed libero nam fugit nulla, porro dolores, corporis sint voluptate quasi qui esse vel, temporibus fugiat.</span></p>
+        <p class="p58">058<span>Voluptatibus rem aspernatur pariatur esse tempora, iusto, reiciendis assumenda facilis debitis quis eveniet corporis, dolor unde porro maxime quae obcaecati. Sunt amet ratione perspiciatis qui, ab voluptatem autem quas nulla!</span></p>
+        <p class="p59">059<span>Esse blanditiis nam eligendi ex expedita. Enim facere rem illo vero eaque, repellat aperiam nam cum expedita dolores perspiciatis dolore doloribus iure labore consequatur aliquam laudantium totam? Porro, incidunt accusantium?</span></p>
+        <p class="p60">060<span>Ratione voluptates facilis eligendi magni consequuntur in possimus dolorum reiciendis perspiciatis eveniet quas itaque placeat molestiae blanditiis ab repellendus amet quidem, fugit libero quisquam, autem quis? Excepturi maxime reprehenderit veritatis.</span></p>
+        <p class="p61">061<span>Id assumenda in omnis illo reprehenderit! Voluptatum officiis tempora atque, eius sapiente mollitia ratione ex est beatae iste nobis, veniam, delectus labore optio odit nesciunt velit. Cumque cum iusto eum?</span></p>
+        <p class="p62">062<span>Quasi sint porro rem cum asperiores minima fugit consequatur aliquam, officia sequi quis dicta odit aspernatur omnis. Necessitatibus nostrum vel amet nemo, ab sed minima ad aliquid, suscipit temporibus libero.</span></p>
+        <p class="p63">063<span>Natus recusandae laudantium, voluptates similique voluptatem quibusdam libero quos veritatis suscipit sit et tenetur vel tempore debitis quo magnam eaque nemo aliquam est ad? Aperiam enim quasi doloribus magni quaerat.</span></p>
+        <p class="p64">064<span>Repudiandae porro cupiditate magnam accusantium libero animi molestiae, voluptates praesentium suscipit nesciunt perspiciatis nobis, distinctio, repellendus natus neque deserunt. Sit laboriosam iste quisquam mollitia itaque provident optio dolor nobis aliquid.</span></p>
+        <p class="p65">065<span>Laborum deserunt voluptatum eaque ex corrupti saepe ad dolorem ipsam quo quia. Obcaecati magni aliquam iste mollitia sed nulla provident, incidunt earum eveniet id! Doloribus error consequuntur veniam iusto possimus.</span></p>
+        <p class="p66">066<span>Suscipit rerum saepe eos est labore, sunt blanditiis corrupti vitae libero omnis, fugiat praesentium sit quod incidunt officia? Nemo assumenda ea ratione itaque sequi rem hic reprehenderit illo quidem nihil?</span></p>
+        <p class="p67">067<span>Ab eum deserunt ullam qui. Hic magnam corrupti animi laboriosam fuga culpa voluptas provident error, debitis architecto quaerat nostrum beatae impedit tenetur sapiente soluta itaque molestiae, recusandae ex? Vel, odit.</span></p>
+        <p class="p68">068<span>Facilis similique officiis quasi vero accusantium, sequi blanditiis aliquid quas dolore cumque. Omnis sequi assumenda at fuga. Adipisci optio unde, sed, molestias nostrum eaque veniam aspernatur sit consectetur repellat eos?</span></p>
+        <p class="p69">069<span>Corporis ex, rem reprehenderit esse ad quas, aperiam sunt delectus deserunt nam, tempore labore iusto! Iste animi beatae alias provident saepe accusamus deleniti voluptates nulla ea corrupti itaque, earum eaque.</span></p>
+        <p class="p70">070<span>Laborum, labore. Quisquam dolorum repudiandae aspernatur quidem exercitationem numquam, aperiam animi veniam accusantium asperiores! Beatae obcaecati neque, quam veniam tenetur eaque iusto vero dicta expedita voluptatum voluptate suscipit, iste et.</span></p>
+        <p class="p71">071<span>Voluptatibus perspiciatis reprehenderit necessitatibus quae, voluptatem harum aperiam illum saepe quis ut assumenda. At eos temporibus ratione. Quas, possimus perferendis magnam facilis aliquam laboriosam labore! Quae cupiditate ea exercitationem eos.</span></p>
+        <p class="p72">072<span>Dolorum tenetur sed ratione sequi quidem libero! Rerum dolor tempore harum natus soluta. Maxime, eos unde velit delectus distinctio beatae itaque voluptates et, quisquam, accusamus dicta perspiciatis saepe soluta odio.</span></p>
+        <p class="p73">073<span>Aperiam culpa quaerat, libero temporibus sunt maxime nostrum sapiente eligendi sequi soluta omnis vitae, dicta et molestiae vero numquam itaque sit quod maiores vel tenetur accusantium voluptate natus porro? Autem!</span></p>
+        <p class="p74">074<span>Commodi at quo aliquid minus dolorem temporibus, earum porro sapiente omnis fugiat nobis nihil neque veniam expedita numquam eius tempore. In nostrum neque incidunt impedit ex nulla aspernatur deserunt reprehenderit.</span></p>
+        <p class="p75">075<span>Autem maiores qui soluta totam unde quae sapiente quos fugit omnis sequi consequuntur, ex ipsum iste possimus dignissimos atque impedit quam, eum, molestiae ullam animi corrupti delectus! Soluta, magnam consectetur!</span></p>
+        <p class="p76">076<span>Minima officia harum voluptate soluta animi doloremque fugiat exercitationem natus! Vel nemo velit quia repellendus corporis soluta, iusto tenetur doloribus blanditiis pariatur? Ducimus, tempora aliquam! Molestiae cupiditate perferendis exercitationem facere!</span></p>
+        <p class="p77">077<span>Nobis optio voluptatum expedita modi consequatur accusantium, maiores odit, placeat repellat quibusdam saepe fugiat ullam cumque nisi voluptatibus repudiandae qui atque repellendus rerum error. Excepturi eveniet impedit quidem culpa autem!</span></p>
+        <p class="p78">078<span>Explicabo tenetur dolorem, culpa, recusandae, ullam quaerat quibusdam quidem mollitia dolor dicta voluptas. Suscipit quibusdam repudiandae optio vitae ad aperiam impedit officiis laborum, aspernatur ea, ratione expedita quidem sint illo!</span></p>
+        <p class="p79">079<span>Exercitationem nihil assumenda ipsam ratione sit vel porro numquam explicabo saepe quia, nulla aperiam delectus hic unde quaerat, doloremque ad quisquam libero voluptatibus. Quam, esse! Voluptas est necessitatibus doloremque suscipit.</span></p>
+        <p class="p80">080<span>Architecto quisquam iusto itaque quae corrupti debitis cum nulla ad, officiis, beatae perspiciatis facere neque ea! Consectetur, libero nostrum hic unde officiis incidunt quas eius sit cumque. Magnam, repellat beatae.</span></p>
+        <p class="p81">081<span>Temporibus, consectetur cum. Minima sit adipisci expedita perferendis velit ducimus esse est nihil voluptas autem perspiciatis, quis cupiditate itaque. Non id voluptatem quis molestiae reiciendis voluptates possimus vel explicabo sequi.</span></p>
+        <p class="p82">082<span>Quas esse assumenda obcaecati voluptas! Totam rerum error consectetur expedita optio? Ab porro ipsum commodi ad, sunt eveniet inventore, nesciunt illo expedita, labore vel vitae molestias minus quo possimus fugiat!</span></p>
+        <p class="p83">083<span>Veniam, laborum harum ipsa temporibus consectetur hic est sed corporis dolor rerum impedit nam quidem! Atque, quis quod molestiae, aliquam eveniet quos sequi mollitia numquam quae, distinctio assumenda explicabo. Vel!</span></p>
+        <p class="p84">084<span>Facere dolores consectetur inventore. Voluptas dicta dolorum, vel perferendis expedita quis aut nisi dolor blanditiis voluptate alias fugiat placeat atque qui suscipit vero provident ab libero minus tempore earum nobis!</span></p>
+        <p class="p85">085<span>Provident optio est nesciunt ea aspernatur et! Sunt molestias aliquid odio vitae illo in rerum obcaecati. Ea reiciendis voluptatum possimus commodi ratione laudantium, amet reprehenderit, suscipit vero, impedit quia consectetur?</span></p>
+        <p class="p86">086<span>Vero nobis quaerat numquam temporibus excepturi id vel earum modi, sint voluptatum ipsa blanditiis ipsum omnis, minus reprehenderit aliquam debitis deserunt, dignissimos consectetur commodi voluptas dolorum! Vero quos eligendi et!</span></p>
+        <p class="p87">087<span>Dignissimos reprehenderit repudiandae illo magnam in quis inventore nostrum ipsum odit qui, accusamus, officia corporis? Eum magnam rerum explicabo, excepturi architecto natus dolor distinctio officiis eos magni necessitatibus perferendis quis.</span></p>
+        <p class="p88">088<span>Veritatis ipsam sit optio nisi ad, voluptate aperiam vero saepe nam itaque! Maiores adipisci delectus tempore esse est quo, fugit dolore voluptatum odio praesentium reiciendis explicabo sint voluptates quam tenetur!</span></p>
+        <p class="p89">089<span>Fuga rem magnam praesentium dicta nostrum itaque asperiores alias accusamus esse odit corporis exercitationem voluptas quia cumque omnis soluta veritatis inventore earum, porro, sit ipsa hic deleniti? Ipsa, animi excepturi.</span></p>
+        <p class="p90">090<span>Commodi veniam placeat dolor doloribus eius, similique illo itaque recusandae in reiciendis sapiente officia odit veritatis nobis delectus molestiae vel ratione modi voluptate quasi ab fugit! Fugit nesciunt repellendus temporibus!</span></p>
+        <p class="p91">091<span>Sint ad rem excepturi voluptates rerum nihil repudiandae. Quae quod possimus sit neque mollitia corporis harum aspernatur a, eos voluptatibus, esse error ea, eum eaque ullam quos architecto dolores commodi?</span></p>
+        <p class="p92">092<span>Repellendus quos qui iure illo et! Voluptas quasi ratione incidunt molestiae id alias beatae accusamus adipisci assumenda facilis ipsa fugit, rem illo quam iste dignissimos neque et repellendus omnis dolores.</span></p>
+        <p class="p93">093<span>Deserunt, accusamus. Eaque neque ullam sed ad non cum harum accusantium facilis nisi nulla numquam explicabo, ipsa tempore earum eius temporibus porro optio? Earum, eos perspiciatis. Possimus voluptas voluptate repudiandae?</span></p>
+        <p class="p94">094<span>Praesentium unde quia quaerat quis. Unde blanditiis earum nulla amet ipsa, officia quae suscipit non! Ut inventore optio sint earum dolorem exercitationem harum illum perferendis necessitatibus soluta. Tempore, debitis doloremque!</span></p>
+        <p class="p95">095<span>Doloremque totam molestias unde beatae nemo tenetur fugit, ipsum quia! Exercitationem dolorem ducimus non voluptates recusandae, dolore aliquam cumque sed expedita quo ex similique architecto. Enim repudiandae dicta nam temporibus!</span></p>
+        <p class="p96">096<span>Aliquam molestiae cum illum repudiandae, possimus quia architecto saepe vero dolorem laborum porro harum quas blanditiis beatae cupiditate sit necessitatibus inventore ad ducimus ab sed consequuntur. Voluptatibus earum reprehenderit ab!</span></p>
+        <p class="p97">097<span>Quis modi minima maxime mollitia minus necessitatibus sit soluta sequi ex deleniti animi, magnam reprehenderit optio. Voluptatum facilis deserunt, maxime tempore maiores accusantium perspiciatis iusto totam omnis. Tempora, modi voluptate?</span></p>
+        <p class="p98">098<span>Earum minus maiores veritatis perspiciatis sint, ipsa deleniti eaque. Quisquam doloribus culpa repellendus dolorum voluptas omnis sapiente aut, tenetur repellat. Officiis repellendus ea maxime quos aut porro eveniet error aliquam.</span></p>
+        <p class="p99">099<span>Consequatur optio laboriosam fugit libero a expedita vitae laborum perspiciatis saepe sit animi praesentium eum, enim ipsum commodi, eos, adipisci pariatur quidem at distinctio inventore amet doloremque! Non, suscipit optio.</span></p>
+        <p class="p100">100<span>Repellendus illum praesentium cum, aspernatur odio doloribus, hic eum, mollitia molestiae eaque laudantium minus sunt cupiditate. Tempora ipsam aliquid modi maxime. Aliquid dolorem earum quas esse dolore in dignissimos asperiores.</span></p>
+    </div>
+    <br>
+    <!-- 이미지 src="이미지주소" alt="액박 떳을 때 표시되는 이름" -->
+    <div class="gallery">
+        <img src="./img/1ad345a3-6204-4f09-85f4-e7b97e36f095.jpg" alt="이미지소개1">
+        <img src="./img/018d5734-727f-4470-885b-ae1a0e0896de.jpg" alt="이미지소개2">
+        <img src="./img/99c10e49-bda2-469a-be08-2d7f6c64915a.jpg" alt="이미지소개3">
+        <img src="./img/3248f4f7-a3ec-41b9-bd64-d865ec492f84.jpg" alt="이미지소개4">
+        <img src="./img/46efd25d-695c-4294-8b2f-3595173828d8.jpg" alt="이미지소개5">
+    </div>
+
+    <div class="text-box">
+        <div class="contents">
+            제1장 총 칙
+
+            제1조 (목적)
+            본 약관은 국민건강보험공단(이하 "공단") 사이트가 제공하는 서비스(이하 "서비스")의 이용조건·절차, 공단과 이용자·회원의 권리·의무·책임사항 및 그 밖에 필요한 사항을 규정함을 목적으로 합니다.
+
+            제2조 (용어의 정의)
+            본 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+
+            1."이용자"란 본 약관에 따라 공단이 제공하는 서비스를 받는 자를 말합니다.
+            2."회원"이란 이용자 중 공단 사이트에 정보를 제공하여 ID(고유번호)와 비밀번호를 발급받아 회원등록을 한 자를 말하며, 사업장회원·미적용 사업장회원으로 구분합니다.
+            가."사업장회원"이란 「국민건강보험법」에 따라 공단이 지정한 사업장을 대표하는 자를 말합니다.
+            나."미적용 사업장회원"이란 국민건강보험에 가입하지 않은 사업장으로 국민연금공단, 근로복지공단 중 1개 이상 가입하고, 공단 사회보험통합징수포털 및 EDI 서비스 등 이용을 위해 회원가입을 원하는 사업장을 대표하는 자를 말합니다.
+            3."ID"란 회원의 식별과 서비스 이용을 위하여 회원이 설정한 영문자, 숫자 또는 영문자와 숫자의 조합을 말합니다.
+            4."비밀번호"란 ID와 일치된 회원임을 확인하고 비밀보호를 위해 회원이 설정한 영문자와 숫자, 특수문자의 조합을 말합니다.
+            5."해지"란 공단 또는 회원이 이용계약을 종료시키는 것으로 회원탈퇴를 의미합니다.
+            6."인증서"란 「전자서명법」에 따라 전자서명 인증사업자가 발급하는 인증서로 전자서명 생성 정보가 고객에게 유일하게 속한다는 사실 등을 확인하고 이를 증명하는 전자적 정보를 말합니다.
+            7.그 밖에 제1호부터 제6호까지에서 정의한 것을 제외하고 본 약관에서 사용하는 용어의 정의는 관계 법령 및 서비스 안내에서 정하는 바에 따릅니다.
+            제3조 (약관의 효력과 변경)
+            1본 약관은 공단 사이트에서 제공하는 서비스를 이용하는 모든 이용자에 대하여 그 효력을 발생합니다.
+            2본 약관의 내용은 사전 고지 없이 변경할 수 있고, 서비스의 일부 화면 또는 그 밖의 방법 등으로 공지하거나 그 내용을 이용자에게 통지함으로써 효력이 발생합니다.
+            3회원은 변경된 약관에 동의하지 않을 경우 탈퇴를 요청할 수 있으며, 이용자는 변경된 약관의 효력발생일 이후에도 서비스를 계속 사용할 경우 약관의 변경사항에 동의한 것으로 간주됩니다.
+            제4조 (약관 외 준칙)
+            본 약관에 명시되지 않은 사항은「개인정보 보호법」,「전기통신기본법」,「전기통신사업법」,「정보통신망 이용촉진 및 정보보호 등에 관한 법률」,「전자서명법」, 「정보통신에 관한 심의규정」, 그 밖의 관련 법령 및 공단이 별도로 정한 규정에 따릅니다.
+
+            제2장 서비스 이용계약 및 탈퇴
+
+            제5조 (이용계약의 성립)
+            1이용계약은 이용자가 온라인으로 공단 사이트에서 제공하는 양식에 요구하는 사항을 기록하여 가입을 완료하거나 본인인증을 완료하는 것으로 성립됩니다.
+            2공단은 다음 각 호의 어느 하나에 해당하는 경우 계약을 취소할 수 있습니다.
+            1.본인의 실명으로 신청하지 않은 경우
+            2.다른 사람의 명의를 사용하여 신청한 경우
+            3.회원가입 신청 시 필요내용을 허위로 기재하여 신청한 경우
+            4.공단 사이트를 이용하여 법령과 본 약관이 금지하는 행위를 하는 경우
+            5.다른 사람의 서비스 이용을 방해하거나 그 정보를 도용하는 등 공단 사이트의 서비스 제공에 악영향을 줄 수 있다고 판단되는 경우
+            6.그 밖에 공단이 정한 이용 신청 요건이 만족되지 않았을 경우
+            3공단은 다음 각 호의 어느 하나에 해당하는 경우에는 그 사유가 해소될 때까지 이용계약의 성립을 유보할 수 있습니다.
+            1.서비스 이용설비에 여유가 없는 경우
+            2.기술상 서비스 제공에 장애가 있는 경우
+            제6조 (회원정보 보안)
+            1ID(고유번호)와 비밀번호에 관한 모든 관리책임은 회원에게 있습니다.
+            2자신의 ID(고유번호)가 다른 사람에 의해 무단 이용되는 경우 회원은 반드시 공단에 그 사실을 통보해야 합니다.
+            3공단 서비스 회원가입 절차를 완료하는 순간부터 회원은 입력한 정보의 비밀을 유지할 책임이 있습니다.
+            제7조 (계약사항의 변경)
+            1이용자는 이용신청 시 기재한 사항이 변경되었을 경우 이를 신속히 수정하여야 하며, 이를 수정하지 않아 발생하는 문제에 대한 책임은 이용자에게 있습니다.
+            2회원 ID는 원칙적으로 변경이 불가하며 부득이한 사유로 인하여 변경하고자 하는 경우에는 해당 아이디를 탈퇴하고 재가입해야 합니다.
+            제8조 (회원 탈퇴 및 이용제한)
+            1회원이 서비스 이용계약을 해지하고자 하는 때에는 공단이 정한 절차에 따라 본인이 탈퇴신청을 하여야 합니다.
+            2공단은 회원이 다음 각 호의 어느 하나에 해당하는 행위를 하였을 경우 사전통지 없이 이용계약을 해지하거나 서비스 이용을 중지하고 관계당국에 고발할 수 있습니다.
+            1.다른 사람의 개인정보, ID 및 비밀번호를 도용한 경우
+            2.서비스 운영을 방해한 경우
+            3.가입한 이름이 실명이 아닌 경우
+            4.동일 사용자가 다른 ID로 이중등록을 한 경우
+            5.공공질서 및 미풍양속에 저해되는 내용을 유포시킨 경우
+            6.통신설비의 오동작이나 정보 등의 파괴를 유발시키는 컴퓨터 바이러스 프로그램 등을 유포하는 경우
+            7.공단, 다른 회원 또는 제3자의 지적재산권을 침해하는 경우
+            8.방송통신심의위원회 등 외부기관의 시정 요구가 있거나 선거관리위원회의 중지, 경고 또는 시정명령을 받는 선거법 위반행위가 있는 경우
+            9.공단의 서비스를 이용하여 얻은 정보를 공단의 사전 승낙 없이 복제 또는 유통시키거나 상업적으로 이용하는 경우
+            10.게시판 등에 음란물을 게재하거나 음란사이트를 연결(링크)하는 경우
+            11.관련 법령, 이용약관 그 밖에 공단이 정한 이용조건에 위반한 경우
+            제9조 (회원정보의 사용에 대한 동의)
+            회원의 개인정보에 대해서는 공단의 개인정보 보호정책이 적용됩니다. 단, 공단이 운영하는 웹페이지에 포함된 링크 또는 배너 등을 클릭하여 다른 사이트로 옮겨갈 경우 공단의 개인정보 보호정책이 적용되지 않습니다.
+
+            제3장 서비스 제공 및 이용
+
+            제10조 (서비스의 내용)
+            공단은 이용자에게 공단이 자체 개발하는 서비스, 다른 업체와 협력 개발한 서비스, 다른 업체가 개발한 서비스 및 그 밖에 공단에서 별도로 정하는 각종 서비스 등을 제공합니다. 단, 공단의 사정상 각 서비스별로 제공 일정 및 제공방법을 변경하거나 지연제공 또는 그 제공을 하지 아니할 수 있습니다.
+
+            제11조 (인증서의 이용)
+            1공단은 이용자가 일부 서비스(개인정보 관련)를 이용하는 경우 이용자에게 인증서를 통하여 이용자의 신원을 확인할 수 있습니다.
+            2공단은 공단 사이트의 서비스 안정성 및 보안성 확보를 위하여 필요한 경우 이용자에게 아이핀, 휴대폰 본인인증 및 인증서를 요구할 수 있습니다.
+            제12조 (서비스 이용시간)
+            1서비스의 이용시간은 공단의 업무상 또는 기술상 특별한 지장이 없는 한 연중무휴, 1일 24시간 가능함을 원칙으로 합니다. 단, 사이트 정기점검 등 필요로 인하여 공단이 정한 날 또는 시간은 예외로 합니다.
+            2제1항에 본문에도 불구하고 공단 사이트의 일부 서비스의 이용가능 시간을 별도로 정할 수 있습니다. 이 경우 사전에 공지를 통해 그 내용을 알립니다.
+            제13조 (게시물의 관리 및 삭제)
+            1게시물 내용에 대한 권리와 책임은 게시자에게 있습니다.
+            2공단은 공단 사이트에 게시된 내용(이용자 간 전달 포함)을 사전통지 없이 편집, 이동할 수 있는 권리를 보유하며, 다음의 경우 사전 통지 없이 삭제할 수 있습니다.
+            1.욕설, 특정인에 대한 비방 등 인권침해 소지가 분명한 경우
+            2.특정인, 특정단체 또는 특정물건에 대한 선전인 경우
+            3.허위사실을 유포하거나, 상업적 목적이 분명한 경우
+            4.공단의 서비스 성격에 부합하지 않는 내용인 경우
+            5.동일한 내용을 2회 이상 반복 게시한 경우
+            6.이용자가 자신이 입력한 이용자게시물의 삭제를 요구한 경우
+            7.본 약관 제8조 제2항에 해당 하는 경우
+            8.본 약관 및 공단 사이트의 운영기준, 기타 관계 법령에 위배되는 경우
+            3공단 사이트에 게시된 내용이 일정기간 이상 경과된 경우 게시물을 삭제할 수 있습니다.
+            제14조 (서비스의 중단)
+            1공단은 다음 각 호의 어느 하나에 해당하는 경우 서비스의 전부 또는 일부를 중단할 수 있습니다.
+            1.기능 개선을 위한 정기점검
+            2.일부 서비스 장애복구
+            3.천재지변, 재해 또는 국가비상사태
+            4.그 밖에 제1호부터 제3호까지에 준하는 사유로서 서비스 중단이 불가피한 경우
+            2서비스의 전부 또는 일부가 중단될 경우 공단은 중단사유, 중단기간 등의 안내정보를 홈페이지 및 모바일앱에 게시하여야 한다. 다만, 제1항 제3호 등 불가항력으로 인한 서비스의 중단은 제외한다.
+            제15조 (정보의 제공)
+            공단은 서비스를 운영함에 있어서 필요하다고 인정되는 다양한 정보를 공단 사이트에 게시하거나 이메일, 우편, 문자(알림톡) 등의 방법으로 이용자에게 제공할 수 있습니다. 공단은 이용자에게 공통의 정보를 통지하고자 하는 경우, 1주일 이상 공단 사이트에 게시함으로써 개별통지에 갈음할 수 있습니다.
+
+            제4장 의무 및 책임
+
+            제16조 (공단의 의무)
+            1공단은 계속적·안정적으로 서비스를 제공하기 위하여 노력할 의무가 있습니다.
+            2공단은 관계법령 등에 정해진 경우가 아니면 이용자의 정보를 본인의 동의 없이 제3자에게 누설·배포하지 않습니다.
+            3공단은 이용자가 안정적으로 서비스를 이용할 수 있도록 이용자의 개인정보보호를 위한 보안시스템을 갖추어야 합니다.
+            4공단은 이용자의 개인정보를 관련 법령 및 공단 사이트의 개인정보 보호정책에 따라 보호합니다.
+            제17조 (이용자의 의무)
+            1이용자는 서비스 이용과 관련하여 다음 각 호의 어느 하나에 해당하는 행위를 하여서는 안 됩니다.
+            1.다른 사람의 개인정보, 인증서의 정보를 부정 사용하거나 자신의 개인정보, 인증서 등을 제3자에게 이용하게 하는 행위
+            2.서비스를 이용하여 얻은 정보를 회원의 개인적인 이용 외에 복사, 가공, 번역, 2차적 저작 등을 통하여 복제, 공연, 방송, 전시, 배포, 출판 등에 사용하거나 제3자에게 제공하는 행위
+            3.다른 사람의 명예를 손상시키거나 불이익을 주는 행위
+            4.공단의 저작권, 제3자의 저작권 등 기타 권리를 침해하는 행위
+            5.공공질서 및 미풍양속에 위반되는 내용의 정보, 문장, 도형, 동영상, 음성 등을 유포하는 행위
+            6.서비스와 관련된 설비의 오동작이나 정보 등의 파괴 및 혼란을 유발시키는 컴퓨터 바이러스 감염자료를 등록 또는 유포하는 행위
+            7.서비스의 안정적 운영을 방해할 수 있는 정보를 전송하거나 수신자의 의사에 반하여 광고성 정보를 전송하는 행위
+            8.방송통신심의위원회, 소비자보호단체 등 공신력 있는 기관으로부터 시정요구를 받는 행위
+            9.선거관리위원회의 중지, 경고 또는 시정명령을 받는 선거법 위반 행위
+            10.그 밖에 관계 법령에 위배되는 행위
+            2이용자는 본 약관에서 규정하는 사항과 서비스 이용안내 또는 주의사항 등 공단이 공지 또는 통지하는 사항을 준수하여야 합니다.
+            3이용자는 공단의 사전승낙 없이는 서비스를 이용하여 영업 활동을 할 수 없으며, 그 영업 활동의 결과와 이용자가 약관을 위반한 영업 활동을 이용하여 발생한 결과에 대하여 공단은 책임을 지지 않습니다.
+            4이용자는 서비스의 이용 권한, 그 밖의 이용 계약상 지위를 다른 사람에게 양도, 증여할 수 없으며, 이를 담보로 제공할 수 없습니다.
+            5이용자는 공단의 사전승낙 없이는 서비스의 전부 또는 일부 내용 및 기능을 전용할 수 없습니다.
+            6이용자 서비스를 이용하여 얻은 정보를 가공, 판매하는 행위 등 서비스에 게재된 자료를 상업적으로 사용할 수 없습니다.
+            제5장 손해배상 등
+
+            제18조 (손해배상)
+            공단은 무료로 제공되는 서비스와 관련하여 이용자에게 어떠한 손해가 발생하더라도 공단이 고의로 행한 범죄행위를 제외하고 이에 대하여 책임을 지지 않습니다.
+
+            제19조 (면책사항)
+            1공단은 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제됩니다.
+            2공단은 이용자의 귀책사유로 인한 서비스의 이용 장애에 대하여 책임을 지지 않습니다.
+            3공단은 이용자가 서비스를 이용하여 기대하는 수익을 상실한 것에 대하여 책임을 지지 않으며 그 밖에 서비스를 통하여 얻은 자료로 인한 손해 등에 대하여도 책임을 지지 않습니다.
+            4공단은 이용자가 게재한 정보, 자료, 사실의 신뢰도, 정확성 등 내용에 대하여는 책임을 지지 않습니다.
+            제20조 (관할법원)
+            1서비스 이용과 관련하여 공단과 이용자 및 회원 사이에 분쟁이 발생한 경우, 대한민국 법을 적용하며, 본 분쟁으로 인한 소는 대한민국의 법원에 제기합니다.
+            2이 약관에 명시되지 않은 사항은 「전기통신사업법」 등 관계법령과 상관습에 따릅니다.
+            3본 서비스 이용에 관한 분쟁에 대해 소송이 제기될 경우 공단 소재지를 관할하는 법원으로 합니다.
+            부 칙
+            (시행일) 본 약관은 2015년 9월 1일부터 시행합니다.
+
+            부 칙
+            (시행일) 본 약관은 2022년 8월 1일부터 시행합니다.
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
