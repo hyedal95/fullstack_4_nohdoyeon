@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* 전체 족보 */
+/* 헤더 */
+#header{}
+#header #aside{}
+#header #aside a{}
+#header #aside i{}
+
+#header #nav {}
+#header #nav a{}
+
+/* 메인 */
+#main{}
+#main #section1{}
+#main #section2{}
+#main #section3{}
+#main #section4{}
+#main #section5{}
+#main #section6{}
+#main #section7{}
+#main #section8{}
+#main #section9{}
+
+/* 푸터 */
+#footer{}

@@ -1,0 +1,43 @@
+192.168.110.24 선생님 ip주소
+
+ipconfig
+
+ip address
+
+4class 구성
+
+192.168.110.24
+
+0~255⇒8비트⇒256*256*256*256 =>약32억
+
+1~254
+
+1비트 ⇒ 전기 스위치1개 
+
+전원 스위치1개 표현할 수 있는 가지수
+
+대문자26개 
+
+소문자26개
+
+숫자10개
+
+기호+  - / * !@#$%^&*(){}[]’’””:;<>?/|\ ~,. 29개 
+
+       91개  ⇒미국문자는 7비트 + 1비트(오류검출(체크) =패리티비트)= 8bit    
+8(10진수)(0 1 2 3 4 5 6 7 8 9)
+1000(2진수) (0 1)
+
+                                      1 0 0 0 
+               256 128 64 32 16 8 4 2 1
+
+
+
+8진수( 0 1 2 3 4 5 6 7)=> 4 2 1 
+7(8진수)
+
+16진수(0 ~9 , ABCDEF) 16개 =>(0~15(F)) =>8 4 2 1 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
