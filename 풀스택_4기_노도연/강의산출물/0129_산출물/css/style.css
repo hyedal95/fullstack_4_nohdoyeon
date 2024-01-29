@@ -1,0 +1,314 @@
+#wrap{width: 100%;}
+#wrap #header{width: 100%;}
+#wrap #main {width: 100%;}
+#wrap #main .section {width: 100%; padding: 80px 0; border-bottom: 1px solid #ccc;}
+#wrap #main .section .container {width: 1050px; margin: 0 auto;
+background-color: #fafafa;}
+#wrap #main .section .container .title {width: 100%; padding: 0 0 50px 0;    text-align: center; }
+#wrap #main .section .container .title h2{
+    font-size: 28px; 
+    font-weight: 600;
+}
+#wrap #main .section .container .title h4{
+    font-size: 16px; 
+    color: rgb(153, 153, 153);
+    padding: 15px 0 0 0;
+}
+#wrap #main .section .container .content {
+    width: 100%;
+
+}
+
+
+
+
+#wrap #main #section1{}
+/* #wrap #main #section1 .container {} */
+/* #wrap #main #section1 .container .title {} */
+/* #wrap #main #section1 .container .content {} */
+
+/* 센션1 둥근 박스1 */
+#wrap #main #section1 .container .content{
+    display: flex;
+    justify-content:center; /* 가운데 정렬 */
+    justify-content:space-around; /* 자식요소에서 margin: 0 auto;와 같다  */
+    justify-content:space-between; /* 박스에 좌우 끝으로 나뉘어 정렬 */
+    justify-content:space-evenly; /* 모든 좌우여백 동일하게 정렬 */
+}
+#wrap #main #section1 .container .content .circle-box {
+    width: 300px; 
+    height: 300px;
+    background-color: #f88;
+    /* margin: 0 auto; */ /* 플렉스에서 자식요소가 마진으로 수직 수평 정렬 할 수 있다. */
+    border-radius: 150px;
+    /* 부모요소는 반드시 높이 너비가 있어야 정렬이 가능하다 */
+    display: flex;
+    align-items: center; /* 수직정렬 */
+    justify-content: center; /* 수평정렬 */
+}
+#wrap #main #section1 .container .content .circle-box span {
+    font-size: 30px;
+    font-weight: 1000;
+}
+/* 센션1 둥근 박스2 */
+#wrap #main #section1 .container .content .circle-box2{
+    width: 300px;
+    height: 300px;
+    background-color: #8f8;
+    /* margin: 0 auto; */
+    border-radius: 150px;
+    /* span요소 정렬 */
+    display: flex;
+    justify-content: center;  /* 수평정렬 */
+    align-items: center; /* 수직정렬 */
+    /* 플렉스를 사용하면 text-align: center; 적용안된다. 
+    플렉스 사용하지 않고 정렬할 경우에는 패딩또는 줄높이로 조정해줘야하지만, 계산해줘야함. */
+}
+#wrap #main #section1 .container .content .circle-box2 span{
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+/* 섹션2 박스 */
+/* 플렉스 사용 안하고 마진값만 가지고 좌우 정렬 */
+#wrap #main #section2{}
+#wrap #main #section2 .container .content{}
+#wrap #main #section2 .container .content .box{
+    width: 300px;
+    height: 60px;
+    background-color: #7df;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0 auto 0 auto; /* 가운데 */
+    margin: 0 0 0 auto; /* 오른쪽에 붙이고 0, 왼쪽은 모든(auto) 여백을 줘라*/
+    margin: auto 0 0 0; /* 왼쪽에 붙이고 0, 오른쪽은 모든(auto) 여백을 줘라*/
+    margin: 0 auto; /* 가운데 */
+
+}
+#wrap #main #section2 .container .content .box span{
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+
+
+#wrap #main #section3{}
+#wrap #main #section3 .container .content{
+    display: flex;
+    justify-content:flex-end; /* 우측 끝 오른쪽 정렬*/
+    justify-content:flex-start; /* 좌측 끝  왼쪽 정렬*/
+    justify-content:center; /* 가운데 정렬 */
+}
+/* 섹션3박스 */
+/* 플렉스 사용 부모가 자식을 정렬하기 */
+#wrap #main #section3 .container .content .box{
+    width: 300px;
+    height: 60px;
+    background-color: rgb(212, 217, 45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrap #main #section3 .container .content .box span{
+font-size: 20px;
+font-weight: 1000;
+}
+
+#wrap #main #section4{}
+
+/* 섹션4박스 */
+/*  
+박스 1=> 왼쪽정렬
+박스 2=> 왼쪽정렬 
+박스 3=> 오른쪽정렬
+이런 경우에는 자식요소가 마진을 이용 정렬하면 된다. 
+
+보통 서브 메뉴를 이런식으로 정렬하여 사용한다.
+*/
+#wrap #main #section4 .container .content{
+    display:flex;
+    justify-content:flex-start;
+}
+#wrap #main #section4 .container .content .box{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrap #main #section4 .container .content .box:nth-child(1){ 
+    background-color: #7df;
+}
+#wrap #main #section4 .container .content .box:nth-child(2){ 
+    background-color:#fd7;
+}
+#wrap #main #section4 .container .content .box:nth-child(3){
+    background-color:#f7d;
+    margin: 0 0 0 auto;
+}
+#wrap #main #section4 .container .content .box span{
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+
+#wrap #main #section5{}
+
+/* 섹션5박스 */
+/* 플렉스는 부모가 자식을 조정한다. */
+#wrap #main #section5 .container .content{
+    display: flex;
+    justify-content: flex-start;
+}
+#wrap #main #section5 .container .content .box{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrap #main #section5 .container .content .box:nth-child(1){
+
+    background-color: #fd7;
+}
+#wrap #main #section5 .container .content .box:nth-child(2){
+
+    background-color: #d7f;
+}
+#wrap #main #section5 .container .content .box:nth-child(3){
+
+    margin: 0 auto 0 0;
+    background-color:#f88;
+}
+#wrap #main #section5 .container .content .box:nth-child(4){
+    margin: 0 0 0 auto;
+    background-color:#8f8;
+}
+#wrap #main #section5 .container .content .box span{
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+#wrap #main #section6{}
+
+/* 섹션6박스 */
+/* 플렉스는 부모가 자식을 조정한다. */
+#wrap #main #section6 .container .content{
+    height: 500px;
+    display: flex;
+    flex-direction: row; /* 가로방향 */
+    flex-wrap: nowrap; /* 줄바꿈없다 */
+    /* 약식 */
+    flex-flow: row nowrap; /* 가로방향 */
+
+    flex-direction: column; /* 세로방향 */
+    flex-wrap: nowrap; /* 줄바꿈없다 */
+    /* 약식 */
+    flex-flow: column nowrap; /* 세로방향 */
+    align-items: center; /* 세로가 column인경우 가로정렬은 align-items: center;를 사용한다. */
+
+    /* 가로방향 flex-flow: row nowrap; 
+    가로가운데 justify-content: center;*/
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+#wrap #main #section6 .container .content .box{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0; /* 늘어나지 않는다. */
+    flex-grow: 1; /* 부모요소의 너비에 맞게 늘어난다. */
+    /* 길이를 일일이 계산할 수 없으니 grow 네가 맞춰라ㅏ!!! */
+    flex-shrink: 1;
+    flex-basis: 기본값(auto) 0;
+    flex: 0 1 auto; /* 늘어나지 않고 축소가능 높이 기본높이 60px 유지 */
+    flex: 1 1 0; /* 늘어나고 축소가능 높이 기본높이 60px */
+    flex: 0 0 auto; /* 늘어나지않고 축소불가능 기본높이(설정된 높이) */
+    
+
+
+}
+#wrap #main #section6 .container .content .box:nth-child(1){
+    background-color:rgb(234, 255, 234);
+}
+#wrap #main #section6 .container .content .box:nth-child(2){
+    background-color:rgb(149, 140, 48);
+}
+#wrap #main #section6 .container .content .box:nth-child(3){
+    background-color:rgb(17, 65, 209);
+}
+#wrap #main #section6 .container .content .box:nth-child(4){
+    background-color:rgb(161, 29, 117);
+}
+#wrap #main #section6 .container .content .box span{
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+/* 섹션7박스  마켓컬리 갤러리박스*/
+#wrap #main #section7 .container{ 
+    width: 1050px; 
+    background: none; /* 1050+여백18 =1068px */
+    overflow: hidden; /* 실제길이는 1050이지만, 갤러리박스의 1068의 길이에서 18의 여백을 가려준다. */
+} /* 1050px */
+
+#wrap #main #section7 .container .content .gallery-box{
+    width: 1068px; 
+    
+
+}
+#wrap #main #section7 .container .content .gallery-box ul{
+    width: 100%;
+    display: flex;
+}
+#wrap #main #section7 .container .content .gallery-box ul li{
+    width: 25%
+}
+#wrap #main #section7 .container .content .gallery-box ul li .img-box{
+    width: auto;
+    margin: 0 18px 0 0;
+    overflow: hidden;
+} /* 마진 사용하는 경우에는 너비 :auto; 사용해야 너비가 늘어나지 않는다. */
+#wrap #main #section7 .container .content .gallery-box ul li .img-box img{
+    width: 100%;
+    transition: all 0.3s;  /* 0.3초간 커지는 장면이 보이는 효과 */
+}
+#wrap #main #section7 .container .content .gallery-box ul li .img-box img:hover{
+    transform: scale(1.03, 1.03); 
+} /* 103% 커지는 모습 */
+
+/* 섹션8박스  슬라이드 20개*/
+#wrap #main #section8 .container{
+    overflow: hidden; 
+} 
+
+#wrap #main #section8 .container .content .slide-box{
+    width: 1068px;
+}
+#wrap #main #section8 .container .content .slide-box ul{
+    width: 500%;
+    display: flex;
+    margin-left: -100%; /* (0%~-500%) */
+} /* 4개 100% * 5 500% */
+#wrap #main #section8 .container .content .slide-box ul li{
+    width: 25%;
+} /* 100%/4=25% */
+#wrap #main #section8 .container .content .slide-box ul li .img-box{
+    width: auto;
+    margin: 0 18px 0 0;
+    overflow: hidden;
+} 
+#wrap #main #section8 .container .content .slide-box ul li .img-box img{
+    width: 100%;
+    transition: all 0.3s;
+}
+#wrap #main #section8 .container .content .slide-box ul li .img-box img:hover{
+    transform: scale(1.03 , 1.03);
+
+} 
+
+
+
+#wrap #footer{width: 100%;}

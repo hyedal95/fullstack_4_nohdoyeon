@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 박스(Flex box)</title>
+    <!-- 플렉스 박스란? 줄이 바뀌는 것을 한 줄로 만들어지게 해주거나, 좌우정렬, 수직정렬, 수평정렬을 도와주는 역할을 한다. -->
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <div id="wrap">
+        <header id="header"></header>
+        <main id="main">
+            <section id="section1" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스1</h2>
+                    </div>
+                    <div class="content">
+                        <div class="circle-box">
+                            <span>DISPLAY</span>
+                        </div>
+                        <br>
+                        <div class="circle-box2">
+                            <span>플렉스박스</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section2" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스2</h2>
+                    </div>
+                    <div class="content">
+                        <div class="box">
+                            <span>Flex</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section3" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스3</h2>
+                    </div>
+                    <div class="content">
+                        <div class="box">
+                            <span>FLEX</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section4" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스4 플렉스와 마진사용</h2>
+                    </div>
+                    <div class="content">
+                        <div class="box">
+                            <span>박스1</span>
+                        </div>
+                        <div class="box">
+                            <span>박스2</span>
+                        </div>
+                        <div class="box">
+                            <span>박스3</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section5" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스5</h2>
+                    </div>
+                    <div class="content">
+                        <div class="box"><span>박스1</span></div>
+                        <div class="box"><span>박스2</span></div>
+                        <div class="box"><span>박스3</span></div>
+                        <div class="box"><span>박스4</span></div> 
+                    </div>
+                </div>
+            </section>
+<!--             <section id="section6" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스6 "개인 연습"<br>
+                            생년월일 나타내기
+                        </h2>
+                    </div>
+                    <div class="content">
+                        <div class="box"><span>9</span></div>
+                        <div class="box"><span>5</span></div>
+                        <div class="box"><span>0</span></div>
+                        <div class="box"><span>9</span></div>
+                        <div class="box"><span>0</span></div>
+                        <div class="box"><span>5</span></div>
+                    </div>
+                </div>
+                
+            </section> -->
+
+            <section id="section6" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스6</h2>
+                    </div>
+                    <div class="content">
+                        <div class="box"><span>박스1</span></div>
+                        <div class="box"><span>박스2</span></div>
+                        <div class="box"><span>박스3</span></div>
+                        <div class="box"><span>박스4</span></div>
+                    </div>
+                </div>
+            </section>
+            <section id="section7" class="section">
+                <div class="container">
+                        <div class="title">
+                            <h2>설 선물특가 실시간 랭킹🔥</h2>
+                            <h4>지금 주목해야할 인기 상품 최대 79% 할인</h4>
+                        </div>
+                        <div class="content">
+                            <div class="gallery-box">
+                                <ul>
+                                    <li>
+                                        <div class="img-box">
+                                            <img src="./img/s2_slide01.jpg" alt="이미지1">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="img-box">
+                                            <img src="./img/s2_slide02.jpg" alt="이미지2">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="img-box">
+                                            <img src="./img/s2_slide03.jpg" alt="이미지3">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="img-box">
+                                            <img src="./img/s2_slide04.jpg" alt="이미지4">
+                                        </div>
+                                    </li>                    
+                                </ul>
+                            </div>
+                        </div>
+            </section>
+            <section id="section8" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>설 선물특가 실시간 랭킹🔥</h2>
+                        <h4>지금 주목해야할 인기 상품 최대 79% 할인</h4>
+                    </div>
+                    <div class="content">
+                        <div class="slide-box">
+                            <ul>
+                                <li>
+                                    <div class="img-box">
+                                        <img src="./img/s2_slide01.jpg" alt="1">
+                                    </div>
+                                </li>
+                                <li><div class="img-box"><img src="./img/s2_slide02.jpg" alt="2"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide03.jpg" alt="3"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide04.jpg" alt="4"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide05.jpg" alt="5"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide06.jpg" alt="6"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide07.jpg" alt="7"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide08.jpg" alt="8"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide09.jpg" alt="9"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide10.jpg" alt="10"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide11.jpg" alt="11"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide12.jpg" alt="12"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide13.jpg" alt="13"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide14.jpg" alt="14"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide15.jpg" alt="15"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide16.jpg" alt="16"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide17.jpg" alt="17"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide18.jpg" alt="18"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide19.jpg" alt="19"></div></li>
+                                <li><div class="img-box"><img src="./img/s2_slide20.jpg" alt="20"></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section9" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스9</h2>
+                    </div>
+                    <div class="content"></div>
+                </div>
+            </section>
+            <section id="section10" class="section">
+                <div class="container">
+                    <div class="title">
+                        <h2>플렉스박스10</h2>
+                    </div>
+                    <div class="content"></div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+
+</body>
+</html>
