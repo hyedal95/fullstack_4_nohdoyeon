@@ -1,0 +1,97 @@
+@import url('./fonts.css');
+@import url('./reset.css');
+
+/* 웹문서의 공통기본 */
+#wrap{width: 100%;}
+#wrap #header{width: 100%;}
+#wrap #main{width: 100%;}
+#wrap #main .section{width: 100%; padding: 80px  ; }
+
+#wrap #main .section .container{width: 1050px; margin: 0 auto;}
+#wrap #main .section .container .title{width: 100%; text-align: center; padding: 0 0 30px 0;}
+#wrap #main .section .container .title h2{
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+}
+#wrap #main .section .container .title h3{
+    font-size: 16px;
+    font-weight: 400;
+    color: #999;
+    padding-top: 15px;
+}
+
+#wrap #main .section .container .content{width: 100%;position: relative;}
+
+/* 슬라이드 컨테이너 */
+#wrap #main #section1 .container .content .slide-container{width: 100%; overflow: hidden;}
+#wrap #main #section1 .container .content .slide-container .slide-content{width:1068px;}
+/* 슬라이드 애니메이션 대상 선택자 좌우로 이동 */
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap{width:500%; display: flex; transition: all 0.6s;}
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap .slide{width: 25%;}
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap .slide .img-box{width: auto; margin: 0 18px 0 0; overflow: hidden;}
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap .slide .img-box img{width: 100%; transition: all 0.3s;}
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap .slide .img-box img:hover{transform: scale(1.05);}
+
+/* 슬라이트 좌우 화살버튼 */
+/* 포지션 작업 postiton:absolute; 포지션 :앱솔루트는 부모영역이 렐러티브가 설정되어야 한다.  */
+/* 포지션 작업을 하는 이유는 화살버튼을 content 영역안에서 자유롭게 배치하기 위해서이다. */
+#wrap #main #section1 .container .content .slide-left-arrow{
+    position: absolute; 
+    top: 50%; left: -30px;
+    margin-top: -30px;
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+#wrap #main #section1 .container .content .slide-left-arrow a{
+    display: block; /* a태그는 인라인 요소이므로 블록처리 */
+    width: 100%;
+    height: 100%;
+    background: url(../img/icon_left_circle_gray.svg) no-repeat 0 0;
+   /*  background: rgb(255,0,0); */
+   text-indent: -100px; overflow: hidden;
+}
+/* 마우스 오버시 배경이미지 보라색 화살 이미지로 변경  (알맹이는 다 지워도 된다.) */
+#wrap #main #section1 .container .content .slide-left-arrow a:hover{
+    background-image: url(../img/icon_left_circle_purple.svg);
+}
+#wrap #main #section1 .container .content .slide-right-arrow{
+    position: absolute;
+    top: 50%; right: -30px;
+    margin-top: -30px; /* 영역의 높이가 60px이기 때문에 -30px함으로써 가운데 정렬이 가능해진다. */
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+#wrap #main #section1 .container .content .slide-right-arrow a{
+    display: block; /* a태그는 인라인 요소이므로 블록처리 */
+    width: 100%;
+    height: 100%;
+    background: url(../img/icon_left_circle_gray.svg) no-repeat 0 0;
+    /* background: rgb(255,0,0); */
+    transform: rotate(180deg); /* 방향전환 */
+    /* 접근성고려한 버튼  투명버튼 글자를 숨기기 위해 블라인드 처리를 한다.*/
+    /* 블라인드(blind) 작업이 필요 : 이유는 글자가 보인다. 그래서 숨긴다.*/
+    /* 글자를 버튼 영역 밖으로 내보낸다.  그리고 오버플로우 히든으로 숨긴다.*/
+    /* 글자를 밖으로 내보내기 하는 방법은 뭘 사용할까? */
+    /* 왼쪽으로 60px 밖으로 text-indent: -60px; */
+    text-indent: -100px; overflow: hidden;
+
+}
+/* 마우스 오버시 배경이미지 보라색 화살 이미지로 변경 (알맹이는 다 지워도 된다.) */
+#wrap #main #section1 .container .content .slide-right-arrow a:hover{
+    background-image: url(../img/icon_left_circle_purple.svg);
+    /* transform: rotate(180deg);*/
+}
+
+#wrap #footer{width: 100%;}
+
+/* 회사는 근면성실한 사람을 원한다. */
+/* class는 - 사용한다. 중복 사용가능 but id는 유일성을 가진다. */
+/* backgroud는 요소 안에 너비와 높이가 있어야 표현할 수 있다. 
+이미지가 나올 공간을 위해서 너비 높이를 정해준 것이다. 
+그래서 아까 이미지가 안 나온거구나 */
+/* transform: rotate(180deg); 방향 180도 전환해줘라 */
+/* 자바스크립트 , 제이쿼리는 클래스명이 꼭 필요하다. */
+/* 블라인드작업이란, 스타일적용이 되었을 때 안보이게 했다가 , 스타일 적용 해제되면 글자 보이게한다. */

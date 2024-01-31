@@ -1,0 +1,107 @@
+@import url('./fonts.css'); /* 글꼴(fonts.css) 가져오기 */
+@import url('./reset.css'); /* 리셋(reset.css) 가져오기 */
+/* 캐러셀 슬라이드 제작 */
+#wrap{width: 100%;}
+#wrap #header{width: 100%;}
+
+#wrap #main{width: 100%;}
+섹션, 컨테이너, 타이틀, 콘텐츠 공통요소
+#wrap #main .section{width: 100%;padding: 80px 0;}
+#wrap #main .section .container{
+    width: 1050px;margin: 0 auto; /* overflow: hidden; */} /* 슬라이드 콘텐츠 오버영역 숨기기 */
+#wrap #main .section .container .title {padding: 0 0 30px 0;text-align: center;}
+#wrap #main .section .container .title h2 {font-size: 28px;font-weight: 600;color: #222;}
+#wrap #main .section .container .title h3{padding-top: 15px;font-size: 16px;color: #999;}
+/* 슬라이드 박스, 좌우화살버튼의 부모 영역  (포지션:렐러티브; 기본값)*/
+#wrap #main .section .container .content{width: 100% ; position: relative;} 
+
+/* 섹션1 캐러셀 슬라이드 */
+#wrap #main #section1 .container .content .slide-container {width: 1068px; overflow: hidden;}
+#wrap #main #section1 .container .content .slide-container .slide-content{width: 1068px; }
+/* 케러셀 슬라이드 애니메이션 우측에서 좌측으로 부드럽게 이동 */
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap{width: 500%; display: flex;transition: all 1s;}
+/* 슬라이드 애니메이션 구현*/
+/* 슬라이드1 */
+/* #wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap{margin-left: 0%;}  */
+/* 슬라이드2 */
+/* #wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap{margin-left: -100%;} */
+/* 슬라이드3 */
+/* #wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap{margin-left: -200%;}  */
+/* 슬라이드4 */
+/* #wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap{margin-left: -300%;}  */
+/* 슬라이드5 */
+/* #wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap{margin-left: -400%;}  */
+/* 다시 슬라이드1 */
+/* #wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap{margin-left: 0%;}  */
+
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap .slide {width: 25%;}
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap .slide .img-box{margin: 0 18px 0 0; width: auto; overflow: hidden;} 
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap .slide .img-box img{width: 100%;transition: all 0.3s;}
+#wrap #main #section1 .container .content .slide-container .slide-content .slide-wrap .slide .img-box img:hover{transform: scale(1.05);}
+
+/* 이전 화살버튼박스 */
+#wrap #main #section1 .container .content .pre-slide-box{
+    display: block; 
+    width: 60px; 
+    height: 60px; 
+    position: absolute;
+    top: 50%; left: -30px; 
+    margin-top: -30px;
+} 
+/* span태그에는 너비 높이를 줄 수 없다. */
+/* 
+포지션 : 앱솔루트(absolute) 절대좌표
+수직좌표 :top(맨위), bottom(맨아래) / 
+수평좌표 :left(왼쪽) ,right(오른쪽) 
+기본좌표 : top:0; left:0; 
+*/
+
+#wrap #main #section1 .container .content .pre-slide-box .pre-btn{
+    display: block; 
+    width: 100%;
+    height:100%;
+    /* background : url(../img/icon_left_circle_gray.svg) no-repeat left top; */
+    background : url(../img/icon_left_circle_gray.svg) no-repeat 0 0;
+    background-size: 100% 100%;
+} /* a링크 태그는 너비 높이를 줄 수 없다. */
+#wrap #main #section1 .container .content .pre-slide-box .pre-btn:hover{
+    display: block; 
+    width: 100%;
+    height:100%;
+    /* background : url(../img/icon_left_circle_gray.svg) no-repeat left top; */
+    background : url(../img/icon_left_circle_purple.svg) no-repeat 0 0;
+    background-size: 100% 100%;
+} /* a링크 태그는 너비 높이를 줄 수 없다. */
+
+/* 다음 화살버튼박스 */
+#wrap #main #section1 .container .content .next-slide-box{
+    display: block; 
+    width: 60px; 
+    height: 60px; 
+    position: absolute;
+    top: 50%; right: -30px; 
+    margin-top: -30px;
+
+}
+#wrap #main #section1 .container .content .next-slide-box .next-btn{
+    display: block; 
+    width: 100%;
+    height:100%;
+    background: url(../img/icon_left_circle_gray.svg) no-repeat 0 0;
+    background-size: 100% 100%;
+    transform: rotate(180deg); /* rotate(각도) 회전 */
+    
+}
+#wrap #main #section1 .container .content .next-slide-box .next-btn:hover{
+    display: block; 
+    width: 100%;
+    height:100%;
+    background: url(../img/icon_left_circle_purple.svg) no-repeat 0 0;
+    background-size: 100% 100%;
+    transform: rotate(180deg); /* rotate(각도) 회전 */
+    
+}
+
+
+
+#wrap #footer{}
