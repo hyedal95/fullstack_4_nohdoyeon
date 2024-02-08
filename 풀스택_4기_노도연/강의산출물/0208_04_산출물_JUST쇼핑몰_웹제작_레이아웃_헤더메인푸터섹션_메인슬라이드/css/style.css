@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import url('./reset.css');
+
+#wrap{width: 1200px; margin: 0 auto;} /* 1200px에 가운데 정렬 꼭 해줘야한다. */
+#wrap #header{width: 100%; height: 100px; background-color: #c99;}
+
+#wrap #main{width: 100%; height: 500px; background-color: #9c9;}
+#wrap #main #section1{width: 100%; height: 300px; background-color: #cc9;}
+
+
+#wrap #main #section2{width: 100%; height: 200px; background-color: #c9c;}
+
+#wrap #footer{width: 100%; height: 100px; background-color: #99c;}
