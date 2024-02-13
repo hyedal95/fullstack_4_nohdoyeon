@@ -1,0 +1,184 @@
+@import url('./reset.css');
+
+#wrap{width: 1200px; height: 100%; margin: 0 auto;}
+
+#wrap #header{width: 100%; height: 100px;  display: flex; position: relative; z-index: 3;}
+/* 헤더 로고 */
+#wrap #header .left{width: 200px; display: flex; justify-content: center; align-items: center;}
+#wrap #header .left h2{width: 200px; height: 40px; display: flex; justify-content: center; align-items: center;}
+#wrap #header .left h2 a{font-size: 28px;}
+#wrap #header .left h2 a span:nth-child(1){color: rgb(255, 200, 0);}
+#wrap #header .left h2 a span:nth-child(2){color: rgb(11, 111, 199);}
+/* 네이게이션 */
+#wrap #header .right{position: relative; width: 1000px;  display: flex; align-items: center; justify-content: flex-end; padding-right: 20px;}
+#wrap #header .right #nav{
+    width: 720px; height: 50px;
+}
+#wrap #header .right #nav > ul{width: 100%; height: 100%;display: flex;}
+#wrap #header .right #nav > ul> li:nth-child(4){
+    border-right: 1px solid#994444;
+}
+#wrap #header .right #nav > ul > li{
+    width: 25%; height: 100%;
+    border-top: 1px solid #994444;
+    border-left: 1px solid#994444;
+    border-bottom: 1px solid #994444; }
+#wrap #header .right #nav > ul > li a{
+    font-size: 20px; font-weight: 600;
+    width: 100%; height: 100%;display: flex; align-items: center; justify-content:center;}
+#wrap #header .right #nav > ul > li a:hover{
+    background-color: rgb(157, 223, 4);
+    color: #333;
+}
+
+/* 서브메뉴 */
+#wrap #header .right  #nav .sub-nav{
+    display: none;
+    width: 720px; 
+    height: auto;
+    position: absolute; 
+    background-color: #fff;
+    top: 75px;
+    z-index: 500;
+}
+#wrap #header .right #nav .sub-nav .container {width: 100%; }
+#wrap #header .right #nav .sub-nav .container > ul{width: 100%;  display: flex; padding: 20px auto;}
+#wrap #header .right #nav .sub-nav .container > ul>li{width: 25%;}
+#wrap #header .right #nav .sub-nav .container > ul>li ul{width: 100%;}
+#wrap #header .right #nav .sub-nav .container > ul>li ul li{width: 100%;}
+#wrap #header .right #nav .sub-nav .container > ul>li ul li a{width: 100%; height: 30px; display: flex; align-items: center; justify-content:center; }
+#wrap #header .right #nav .sub-nav .container > ul>li ul li a:hover{
+    color: #aa0;
+    background-color: brown;
+}
+
+
+
+#wrap #main{width: 100%; height: 500px;  z-index: 2; position: relative;}
+
+/* 메인슬라이드 */
+#wrap #main #section1{width: 100%; height: 300px;  overflow: hidden; user-select: none;}
+#wrap #main #section1 .slide-container{width: 100%; height: 100%;}
+#wrap #main #section1 .slide-container .slide-content{width: 100%; }
+#wrap #main #section1 .slide-container .slide-content .slide-wrap{
+    width: 100%; 
+    margin-top: -300px;  /* 첫번째이미지 */ 
+    position: relative;
+    top: 0; /* 해당 top 이용해서 애니메이션 */
+   /*  transition: all 0.3s; */}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide{
+    width: 100%;height: 300px;
+    background: url() no-repeat 50% 50%;
+    background-size: 100% auto;
+    display: flex;
+    align-items: center; /* h2 박스 가운데 수직정렬 */
+}
+
+/* 이미지 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide1{
+    background-image: url(../images/banner_img.jpg) ;
+    background-size: 115% auto;
+    background-position: 55% 32%; 
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide2{
+    background-image: url(../images/banner_img2.jpg) ;
+    background-size: 115% auto;
+    background-position: 55% 32%; 
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide3{
+    background-image: url(../images/banner_img3.png) ;
+    background-size: 115% auto;
+    background-position: 55% 32%; 
+}
+
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide span{
+    width: 100%;
+    height: 50px;
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    background-color: #aa0;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide1 span{
+    background-color: rgb(233, 74, 6);
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide2 span{
+    background-color: rgb(93, 173, 8);
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide3 span{
+    background-color: rgb(8, 41, 173);
+}
+
+
+
+
+
+
+
+
+#wrap #main #section2{width: 100%; height: 200px; display: flex; padding: 10px 0;}
+
+
+#wrap #main #section2 .left{width: 400px; height: 100%; }
+/* 공지사항&갤러리박스 */
+#wrap #main #section2 .left .container{width: 100%; height: 100%; position: relative; padding-top: 35px;}
+/* 공지사항&갤러리박스 */
+/* 타이틀 */
+
+#wrap #main #section2 .left .container .title{
+    display: flex; padding-left: 10px;
+    width: 100%; height: 36px; background-color: rgb(117, 117, 22);
+    position: absolute; top:0; left: 0; z-index: 2;
+}
+/* 공지사항버튼 */
+#wrap #main #section2 .left .container .title button{
+    height: 36px;
+    padding: 0 10px; 
+    background: #fff; 
+    border: 0; 
+    border-radius: 5px 5px 0 0; /* 탑왼쪽 탑오른쪽 바텀오른쪽 바텀왼쪽 순 */
+    z-index: 10;
+}
+/* 공지사항버튼 */
+#wrap #main #section2 .left .container .title .notice-btn{
+    border: 1px solid #ccc;  cursor: default; border-bottom: 0; 
+}
+#wrap #main #section2 .left .container .title .notice-btn.on{
+    border: 1px solid #ccc; border-bottom: 0; background: #f3f3f3; cursor: pointer;
+}
+
+/* 갤러리버튼 */
+#wrap #main #section2 .left .container .title .gallery-btn{
+    border: 1px solid #333; 
+    border-bottom: 0;
+    background-color: #ec8c8c; 
+    cursor: pointer;
+}
+#wrap #main #section2 .left .container .title .gallery-btn.on{
+    border: 1px solid #ccc; border-bottom: 0; background: #b29e9e; cursor: default;
+}
+
+/* 콘텐츠영역 */
+#wrap #main #section2 .left .content{
+    width: 100%;
+    height: 145px;
+    background-color: #fff;
+    border:1px solid #5f5f5f;
+    position: relative;
+    z-index: 1;
+
+
+}
+
+#wrap #main #section2 .center{width: 400px;height: 100%; background-color: rgb(75, 125, 210); padding-left: 10px;}
+#wrap #main #section2 .right{width: 400px;height: 100%;  background-color: rgb(104, 104, 71); padding: 0 0 0 10px;}
+
+#wrap #footer{width: 100%; height: 100px;display: flex; z-index: 1; position: relative;}
+#wrap #footer .left{width: 200px; height: 100%; background-color: rgb(234, 177, 136);}
+#wrap #footer .center{width: 800px;height: 100%;background-color: chocolate;}
+#wrap #footer .right{width: 200px;height: 100%;background-color: rgb(234, 177, 136);}
