@@ -1,0 +1,272 @@
+@import url('./reset.css');
+#wrap {width:1200px;margin:0 auto;}
+#wrap #header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: relative;
+    z-index: 3;
+}
+#wrap #header .left {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#wrap #header .left h1 {width:100%;}
+#wrap #header .left h1 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:40px;
+    font-size: 24px;
+    font-weight: 600;
+}
+#wrap #header .left h1 a em {color: rgba(255,50,100,1);}
+#wrap #header .left h1 a strong {color: rgba(50,190,220, 1);}
+#wrap #header .left h1 a i {color: rgba(250,120,0, 1);}
+#wrap #header .left h1 a span {color: rgba(50,190,220, 1);}
+
+#wrap #header .right {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    position: relative;
+}
+#wrap #header .right #nav {width:720px;}
+#wrap #header .right #nav ul {width:100%;display: flex;}
+#wrap #header .right #nav ul li {
+    width:25%;
+    border: 1px solid #ddd;
+    border-right: 0;
+}
+#wrap #header .right #nav ul li:last-child {
+    border-right: 1px solid #ddd;
+}
+
+/* 메인버튼 */
+#wrap #header .right #nav ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #111;
+    height: 50px;
+    transition: all 0.3s;
+}
+#wrap #header .right #nav ul li a:hover {
+    color:#fff;
+    background: #e37;
+    color: #fff;
+}
+
+/* 서브메뉴 */
+#wrap #header .right .sub {
+    display: none;
+    width: 720px;
+    position: absolute;
+    right:20px;
+    top:76px;   
+    background: #fff; 
+}
+#wrap #header .right .sub .container {width: 100%;}
+#wrap #header .right .sub .container > ul {width: 100%;display: flex;padding: 10px 0;}
+#wrap #header .right .sub .container > ul > li {width: 25%;}
+#wrap #header .right .sub .container > ul > li ul {width: 100%;}
+#wrap #header .right .sub .container > ul > li ul li {width: 100%;}
+#wrap #header .right .sub .container > ul > li ul li a {
+    display: flex;
+    font-size: 14px;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+#wrap #header .right .sub .container > ul > li ul li a:hover {
+    color:#fff;
+    background: #e37;
+    color: #fff;
+}
+
+
+
+#wrap #main {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    z-index: 2;
+}
+#wrap #main #section1 {width: 100%;height: 300px;overflow: hidden; user-select: none;}
+#wrap #main #section1 .slide-container {width: 100%;}
+#wrap #main #section1 .slide-container .slide-content {width: 100%;}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap {
+    width: 100%;
+    margin-top:-300px;
+    position: relative;
+    top: 0;
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide {
+    width: 100%;
+    height: 300px;
+    background: url() no-repeat 50% 50%;
+    background-size: 100% auto;
+    display: flex;
+    align-items: center;  /* h2 타이틀 수직 가운데 정렬 */
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide1 {
+    background-image: url(../images/banner_img.jpg);
+    background-size: 118% auto;
+    background-position: 50% 32%; 
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide2 {
+    background-image: url(../images/banner_img2.jpg);
+    background-position: 50% 0; 
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide3 {
+    background-image: url(../images/banner_img3.png);
+    background-size: 107% auto;
+    background-position: 50% 31%; 
+}
+
+/* 타이틀1 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide h2 {
+    width: 100%;
+    height: 80px;
+    background: rgba(255,50,100, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 30px;
+}
+/* 타이틀2 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide2 h2 {
+    background-color: rgba(50,190,220, 0.9);
+}
+
+/* 타이틀3 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide3 h2 {
+    background-color: rgba(250,120,0, 0.9);
+}
+
+#wrap #main #section2 {width: 100%;height: 200px;display: flex; padding: 10px 0;}
+
+/* 공지사항 갤러리 */
+#wrap #main #section2 .left {width: 400px;height: 100%;}
+
+#wrap #main #section2 .left .container{width: 100%; height: 100%; position: relative; padding-top: 35px; } /* 180px */
+#wrap #main #section2 .left .container .title{
+    padding-left: 10px;
+    width: 100%; height: 36px; display: flex; position: absolute; z-index: 2; top: 0; left: 0;}
+#wrap #main #section2 .left .container .title button{
+    padding: 0 10px;
+    width: auto; 
+    height: 100%; 
+    border: 1px solid #ccc; 
+    border-radius: 5px 5px 0 0 ;
+    background-color: #fff;
+
+}
+/* 공지사항 버튼 */
+#wrap #main #section2 .left .container .title button.notice-btn{border-bottom: 0;}
+#wrap #main #section2 .left .container .title button.notice-btn.on{background-color: #f0f0f0;cursor: pointer; border-bottom: 1px solid #ccc;}
+/* 갤러리 버튼 */
+#wrap #main #section2 .left .container .title button.gallery-btn{background-color: #f0f0f0; cursor: pointer;}
+#wrap #main #section2 .left .container .title button.gallery-btn.on{border-bottom: 0; background-color: #fff; cursor: default;}
+
+
+#wrap #main #section2 .left .container .content{width: 100%; height: 145px; background-color: #fff; border: 1px solid #ccc; position: relative; padding: 10px;}
+/* 공지사항 내용 */
+#wrap #main #section2 .left .container .content .notice{width: 100%; height: 100%; }
+
+/* 공지사항 리스트 */
+#wrap #main #section2 .left .container .content .notice ul{width: 100%; height: 100%;}
+#wrap #main #section2 .left .container .content .notice ul li::before{
+    content: " ";
+    width: 3px;
+    height: 3px;
+    background-color: #111;
+    border-radius: 1.5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -1.5px;
+}
+#wrap #main #section2 .left .container .content .notice ul li{
+    width: 100%; 
+    height: 20%; 
+    border-bottom: 1px solid #ccc;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 4px 0 4px 10px;
+    position: relative;
+}
+#wrap #main #section2 .left .container .content .notice ul li:last-child{
+    border-bottom: 0;
+}
+#wrap #main #section2 .left .container .content .notice ul li a{
+    width: 260px;
+} /* a링크는 너비를 가질 수 없음 */
+#wrap #main #section2 .left .container .content .notice ul li a:hover{
+    color: #000;
+    background-color: #ccc;
+    text-decoration: underline;
+}
+#wrap #main #section2 .left .container .content .notice ul li a em{
+    width: 100%; 
+    display: block; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 15px;  /* 밑줄라인 보이게 해주기위해 공간 확보 */
+
+}
+#wrap #main #section2 .left .container .content .notice ul li span{
+    width: 100px;  
+    color: #999; 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+
+/* 갤러리 내용 */
+#wrap #main #section2 .left .container .content .gallery{ 
+    width: 100%; height: 100%; background-color: #fff; display: none;
+    
+}
+
+/* 갤러리 이미지 */
+#wrap #main #section2 .left .container .content .gallery ul{width: 100%; height: 100%; display: flex; align-items: center;} /* 디스플레이 플렉시 영역 적용될려면 꼭 높이를 넣어줘야함 */
+#wrap #main #section2 .left .container .content .gallery ul li{width: 33.333%;  }
+#wrap #main #section2 .left .container .content .gallery ul li a{display: block; width: auto; margin: 0 10px; overflow: hidden; } /* 마진쓰면 너비 오토 꼭 해주기  */
+#wrap #main #section2 .left .container .content .gallery ul li a img{width: 100%; transition: all 0.3s;}
+#wrap #main #section2 .left .container .content .gallery ul li a img:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+#wrap #main #section2 .center {width: 400px;height: 100%;background-color: rgba(0,0,200, 0.2);}
+#wrap #main #section2 .right {width: 400px;height: 100%;background-color: rgba(0,0,200, 0.4);}
+
+#wrap #footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+#wrap #footer .left {width: 200px;height: 100%;background-color: rgba(200,0,200, 0.2);}
+#wrap #footer .center {width: 800px;height: 100%;background-color: rgba(200,0,200, 0.4);}
+#wrap #footer .right {width: 200px;height: 100%;background-color: rgba(200,0,200, 0.2);}
