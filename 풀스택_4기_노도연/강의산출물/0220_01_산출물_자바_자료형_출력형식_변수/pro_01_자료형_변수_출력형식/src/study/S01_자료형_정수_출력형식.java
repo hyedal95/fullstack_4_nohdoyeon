@@ -1,0 +1,61 @@
+package study;
+
+public class S01_자료형_정수_출력형식 {
+    public static void main(String[] args) {
+        // 출력형식
+        // 1. println() - 줄바꿈
+        // 2. print()   - 줄바꿈안됨
+        // 3. printf()  - 줄바꿈안됨 => 출력형식(Format설정 가능)
+
+        int num1 = 10;
+        int num2 = 26;
+        int num3;
+        num3 = 17;
+        int hap;
+
+        hap = (num1 - num2) + num3 * 5;
+        // 연산 우선 순위 () > *, / > +, - 동위연산자
+        
+        // 출력문1
+        System.out.println("출력문1");
+        System.out.println("println() 줄바꿈 출력");
+        System.out.println();
+        //주석. System.out.println(hap + "= (num1 - num2) + num3 * 5");
+        System.out.println(hap + "= (" + num1 + " - " + num2 + " ) +" + num3+ " * "+ 5 + '\n');
+        System.out.println();
+
+        // 주석 결과 =>
+        // 69= (num1 - num2) + num3 * 5
+        // 결과 =>
+        // 출력문1
+        // println()
+        //
+        // 69= (10 - 26 ) +17 * 5
+        //
+
+        // 출력문2
+        // \n => New Line 줄바꿈 
+        System.out.print("출력문2");
+        System.out.print("print() 줄바꿈 없이 출력");
+        System.out.print("");
+        System.out.print(hap + "= (" + num1 + " - " + num2 + " ) +" + num3+ " * "+ 5);
+        System.out.print("\n");
+
+        // 결과 =>
+        // 출력문2print()69= (10 - 26 ) +17 * 5
+
+        // 출력문3
+        // 십진수 Decimal = %d
+        // \n => New Line 줄바꿈
+        // System.out.printf("정수1 = (정수2 - 정수3) + 정수4 * 정수5", 1 , 2, 3, 4, 5 );
+        // System.out.printf("%d = (%d - %d) + %d * %d", hap , num1, num2, num3, 5 );
+        System.out.printf("출력문3\n");
+        System.out.printf("printf() 줄바꿈 없이 출력 => 출력형식(Format설정 가능)\n");
+        System.out.printf("%d = (%d - %d) + %d * %d\n", hap , num1, num2, num3, 5 );
+
+        // 결과 =>
+        // 출력문3
+        // printf() 줄바꿈 없이 출력 => 출력형식(Format설정 가능)
+        // 69 = (10 - 26) + 17 * 5
+    }
+}
