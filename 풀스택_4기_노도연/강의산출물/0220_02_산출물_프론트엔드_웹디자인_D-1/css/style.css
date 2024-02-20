@@ -1,0 +1,148 @@
+@import url('./reset.css');
+
+#wrap{width: 100%; display: flex; flex-flow: row wrap; /*가로 줄바꿈*/}
+#wrap #header{
+    position: relative;
+    z-index: 3;
+    width: 200px; 
+    height: 850px; 
+}
+/* 로고 */
+#wrap #header .top{width: 100%; height: 150px; background-color: rgba(200,0,0,0.2); }
+/* 네비게이션 */
+#wrap #header .bottom{
+    width: 100%; height: 700px;
+    padding: 10px;
+}
+/* 메인메뉴 */
+#wrap #header .bottom #nav{width: 100%;}
+#wrap #header .bottom #nav > ul{
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    width: 100%; 
+    margin-top: 20px;
+}
+#wrap #header .bottom #nav > ul > li{width: 100%;}
+#wrap #header .bottom #nav > ul > li > a{
+    width: 100%; 
+    height: 50px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    font-weight: 600;
+    border-top: 1px solid #333;
+}
+#wrap #header .bottom #nav > ul > li > a:hover{
+    background-color: #fcf;
+    color: #333;
+}
+#wrap #header .bottom #nav > ul > li > a.on{
+    background-color: #fcf;
+    color: #333;
+}
+/* 서브메뉴 */
+#wrap #header .bottom #nav > ul > li .sub{
+    border-top: 1px solid #333;
+    width: 100%;
+    display: none;
+    background-color: #f7f7f7;
+}
+/* #wrap #header .bottom #nav > ul > li .sub4{display: block;} */
+#wrap #header .bottom #nav > ul > li .sub > ul {
+    width: 100%;
+}
+#wrap #header .bottom #nav > ul > li .sub > ul > li {width: 100%;}
+#wrap #header .bottom #nav > ul > li .sub > ul > li > a{
+    width: 100%;
+    height: 35px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    font-weight: 500;
+}
+#wrap #header .bottom #nav > ul > li .sub > ul > li > a:hover{
+    background-color: #fcf;
+    color: #fff;
+}
+
+#wrap #header .bottom aside{
+    width: 100%; 
+}
+#wrap #header .bottom aside span{
+    padding-top: 30px;
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+#wrap #header .bottom aside span a{font-size: 13px; color: #3ac;}
+#wrap #header .bottom aside span a:hover{
+    color: #66f;
+}
+#wrap #header .bottom aside span i{
+    
+    font-size: 11px; color: #ccc; margin: 0 5px;}
+
+/* 메인 */
+#wrap #main{
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 200px); 
+    height: 850px; 
+}
+/* 메인슬라이드 */
+#wrap #main #section1{width: 100%; height: 400px; }
+#wrap #main #section1 .slide-container{width: 100%; height: 400px;}
+#wrap #main #section1 .slide-container .slide-content{width: 100%;height: 400px; overflow: hidden;}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap{
+    width: 100%; height: 2000px; /* 400px *5개 */
+    margin-top: -400px;
+    position: relative; /* 해당 포지션 안쓰면 애니메이션 안된다 */
+    top: 0;
+
+} /* 요기가 중요 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide{
+    width: 100%;height: 400px;
+    background: url() no-repeat 50% 20%;
+    background-size: cover;
+}
+
+/* 메인이미지 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide1{
+    background-image: url(../images/wedding-img1.jpg);
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide2{
+    background-image: url(../images/wedding-img2.jpg);
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide3{
+    background-image: url(../images/wedding-img3.jpg);
+}
+
+#wrap #main #section2{width: 100%; height: 200px;background-color: #fcf;}
+#wrap #main #section3{width: 100%; height: 250px;background-color: #cff;}
+
+#wrap #footer{
+    position: relative;
+    z-index: 1;
+    width: 100%; 
+    height: 100px; 
+    display: flex;
+}
+
+#wrap #footer .left{
+    width: 200px; 
+    height: 100px;
+    background-color: #cc9;
+}
+#wrap #footer .center{
+    width: calc(100% - 500px); 
+    height: 100px; 
+    background-color: #c99;}
+#wrap #footer .right{
+    width: 300px; 
+    height: 100px; 
+    background-color: #9c9;
+}
