@@ -1,0 +1,163 @@
+경로 이동 cd (체인지 디렉토리)---파일경로
+
+cd C:\Program Files\java\jdk-08\bin\java.exe
+
+
+자바실행파일 ==> java.exe ==> java (확장자는 안 적어도됨)
+자바실행파일 ==> java.exe ==> java 버전 확인 -version 
+자바실행파일 ==> java.exe ==>java -version
+openjdk version "1.8.0_43"
+자바프로그램 작성 => 자바 시작하기.java 
+
+
+OpenJDK Runtime Environment (build 1.8.0_43-b03)
+OpenJDK Client VM (build 25.40-b25, mixed mode)
+
+C:\Program Files\java\jdk-08\bin\java.exe
+
+<언어(Language 랭귀지)번역 프로그램종류>
+1.어셈블러 : 저급언어 언어번역프로그램 (전체를 한꺼번에 번역한다.)
+   - 어셈블리어
+2.컴파일러 : 고급언어 언어번역프로그램 (전체를 한꺼번에 번역한다.) 
+   - 프로그램 작성(원시프로그램) => 번역(컴파일러) => 실행가능한형태의 파일(바이너리 파일)[목적프로그램] => 실행
+   - JAVA,C,C#,C++, ....
+   - 바이너리 파일(Binary File) : 2진파일 
+	(Bi) : 0 또는 1을 말하는 이진 파일을 말한다. 
+3.인터프리터 : 행단위로 즉시 실행  
+   - 자바스크립트
+   - 파이썬
+
+자바번역(컴파일)실행파일 javac(c:컴파일)
+자바컴파일 실행 javac.exe 
+자바컴파일 실행 javac
+자바컴파일 실행 javac -version
+javac 1.8.0_43
+
+자바 시작하기.java  => 자바번역(컴파일)실행파일 javac => 자바 시작하기.class
+
+C:\Program Files\java\jdk-08\bin\javac.exe
+
+루트로 이동 (Change Directory 약어 cd)
+cd \(역슬래쉬)
+
+자바 8  => 경로(Path 패스)=> C:\Program Files\java\jdk-08\bin
+cd C:\Program Files\java\jdk-08\bin
+
+자바8버전확인
+java -version
+openjdk version "1.8.0_43"
+
+javac -version
+javac 1.8.0_43
+
+자바 11  => 경로(Path 패스)=> C:\Program Files\java\jdk-11\bin
+cd C:\Program Files\java\jdk-11\bin
+
+자바 11 버전확인  
+java -version
+openjdk version "11.0.0.1" 2023-05-09
+OpenJDK Runtime Environment 18.9 (build 11.0.0.1+3-5)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.0.1+3-5, mixed mode)
+
+javac -version
+javac 11.0.0.1
+
+자바17 => 경로(Path 패스)=> C:\Program Files\java\jdk-17\bin
+cd C:\Program Files\java\jdk-17\bin
+
+자바17 버전 확인
+java -version
+openjdk version "17" 2021-09-14
+OpenJDK Runtime Environment (build 17+35-2724)
+OpenJDK 64-Bit Server VM (build 17+35-2724, mixed mode, sharing)
+
+javac -version
+javac 17
+
+자바 21 => 경로(Path 패스)=> C:\Program Files\java\jdk-21\bin
+cd C:\Program Files\java\jdk-21\bin
+
+자바21 버전 확인
+java -version
+openjdk version "21" 2023-09-19
+OpenJDK Runtime Environment (build 21+35-2513)
+OpenJDK 64-Bit Server VM (build 21+35-2513, mixed mode, sharing)
+
+javac -version
+javac 21
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+c드라이브 최상위 위치 루트로 이동
+cd \
+
+현재 위치에 자바 실행파일이 없어서 오류 나타남
+C:\>java -version
+'java'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+배치 파일이 아닙니다.
+
+현재 위치가 어디든지 위치에 관계없이 자바를 실행하도록 환경설정을 해준다.
+시스템 -환경설정
+1. 시작메뉴 => (윈도우)설정 =>시스템 =>정보(맨아래) => 우측에 고급 시스템 설정 클릭 =>환경 변수 => 시스템 변수 =>
+   패스 => 편집 => 복사붙이기 => 확인 => 닫기
+
+1. 시작메뉴 => (윈도우)설정 =>시스템 =>정보(맨아래) => 우측에 고급 시스템 설정 클릭 =>환경 변수 => 시스템 변수 =>
+   새로만들기 =>JAVA_HOME =>C:\Program Files\java\jdk-08(자바경로)
+   새로만들기 =>JAVA_HOME =>C:\Program Files\java\jdk-11(자바경로)
+   새로만들기 =>JAVA_HOME =>C:\Program Files\java\jdk-17(자바경로)
+   새로만들기 =>JAVA_HOME =>C:\Program Files\java\jdk-21(자바경로)
+
+원본
+%INTEL_DEV_REDIST%redist\intel64_win\compiler;%INTEL_DEV_REDIST%redist\intel64\compiler;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files (x86)\Brackets\command;C:\Program Files\dotnet\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;
+
+수정 추가 자바8
+%INTEL_DEV_REDIST%redist\intel64_win\compiler;%INTEL_DEV_REDIST%redist\intel64\compiler;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files (x86)\Brackets\command;C:\Program Files\dotnet\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Program Files\java\jdk-08\bin;
+
+수정 추가 자바 8 (앞에다가)
+C:\Program Files\java\jdk-08\bin;%INTEL_DEV_REDIST%redist\intel64_win\compiler;%INTEL_DEV_REDIST%redist\intel64\compiler;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files (x86)\Brackets\command;C:\Program Files\dotnet\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;
+
+수정 추가 자바 11 (앞에다가)
+C:\Program Files\java\jdk-11\bin;%INTEL_DEV_REDIST%redist\intel64_win\compiler;%INTEL_DEV_REDIST%redist\intel64\compiler;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files (x86)\Brackets\command;C:\Program Files\dotnet\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;
+
+수정 추가 자바 17 (앞에다가)
+C:\Program Files\java\jdk-17\bin;%INTEL_DEV_REDIST%redist\intel64_win\compiler;%INTEL_DEV_REDIST%redist\intel64\compiler;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files (x86)\Brackets\command;C:\Program Files\dotnet\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;
+
+수정 추가 자바 21 (앞에다가)
+C:\Program Files\java\jdk-21\bin;%INTEL_DEV_REDIST%redist\intel64_win\compiler;%INTEL_DEV_REDIST%redist\intel64\compiler;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files (x86)\Brackets\command;C:\Program Files\dotnet\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;
+
+
+*시스템 환경 변수 등록 사용********************
+시스템 환경변수 등록 => JAVA_HOME
+1. 환경변수 >>시스템 변수 >>새로만들기  
+
+
+수정 추가 자바 버전관계없이 변수를 등록 =>JAVA_HOME => %JAVA_HOME%
+경로 직접 사용
+C:\Program Files\java\jdk-21\bin;
+
+시스템 환경 변수 등록 사용
+C:\Program Files\java\jdk-08
+C:\Program Files\java\jdk-11
+C:\Program Files\java\jdk-17
+C:\Program Files\java\jdk-21
+
+%JAVA_HOME%\bin;
+
+%JAVA_HOME%\bin;%INTEL_DEV_REDIST%redist\intel64_win\compiler;%INTEL_DEV_REDIST%redist\intel64\compiler;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Program Files (x86)\Brackets\command;C:\Program Files\dotnet\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;
+
+
+도스창(터미널) 
+윈도우+ R => 실행창 =>cmd => java -version
+
+ 
+
+
+컴퓨터의 가장 기본은 경로이동이다. 
+경로주소는 탐색기를 이용해서 저장한 위치의 경로를 복사하면된다.
+
+
+터미널창에서 실행한다.
+윈도우 R CMD 터미널창 열림
+
+경로이동 체인지 디렉토리
+cd  cd 할 떄는 파일명을 뺀다. 
