@@ -1,0 +1,307 @@
+@import url('./reset.css');
+
+#wrap{width: 100%; display: flex; flex-flow: row wrap; /*가로 줄바꿈*/}
+#wrap #header{
+    position: relative;
+    z-index: 3;
+    width: 200px; 
+    height: 850px; 
+}
+/* 로고 */
+#wrap #header .top{
+    border-bottom: 1px solid #eee;
+    width: 100%; height: 150px; background-color: #fff; }
+/* 로고 */
+#wrap #header .top h1{width: 100%; height: 100%;}
+#wrap #header .top h1 a{width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+#wrap #header .top h1 a img{
+    transition: all 0.2s;
+    width: 70%; height: auto;}
+
+#wrap #header .top h1 a:hover img{
+    filter: grayscale(0.5);
+    
+}
+
+
+
+/* 네비게이션 */
+#wrap #header .bottom{
+    width: 100%; height: 700px;
+    padding: 10px;
+}
+/* 메인메뉴 */
+#wrap #header .bottom #nav{width: 100%;}
+#wrap #header .bottom #nav > ul{
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    width: 100%; 
+    margin-top: 20px;
+}
+#wrap #header .bottom #nav > ul > li{width: 100%;}
+#wrap #header .bottom #nav > ul > li > a{
+    width: 100%; 
+    height: 50px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    font-weight: 600;
+    border-top: 1px solid #333;
+}
+#wrap #header .bottom #nav > ul > li > a:hover{
+    background-color: #fcf;
+    color: #333;
+}
+#wrap #header .bottom #nav > ul > li > a.on{
+    background-color: #fcf;
+    color: #333;
+}
+/* 서브메뉴 */
+#wrap #header .bottom #nav > ul > li .sub{
+    border-top: 1px solid #333;
+    width: 100%;
+    display: none;
+    background-color: #f7f7f7;
+}
+/* #wrap #header .bottom #nav > ul > li .sub4{display: block;} */
+#wrap #header .bottom #nav > ul > li .sub > ul {
+    width: 100%;
+}
+#wrap #header .bottom #nav > ul > li .sub > ul > li {width: 100%;}
+#wrap #header .bottom #nav > ul > li .sub > ul > li > a{
+    width: 100%;
+    height: 35px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    font-weight: 500;
+}
+#wrap #header .bottom #nav > ul > li .sub > ul > li > a:hover{
+    background-color: #fcf;
+    color: #fff;
+}
+
+#wrap #header .bottom aside{
+    width: 100%; 
+}
+#wrap #header .bottom aside span{
+    padding-top: 30px;
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+#wrap #header .bottom aside span a{font-size: 13px; color: #3ac;}
+#wrap #header .bottom aside span a:hover{
+    color: #66f;
+}
+#wrap #header .bottom aside span i{
+    
+    font-size: 11px; color: #ccc; margin: 0 5px;}
+
+/* 메인 */
+#wrap #main{
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 200px); 
+    height: 850px;
+    border-left: 1px solid #ddd; 
+}
+/* 메인슬라이드 */
+#wrap #main #section1{width: 100%; height: 400px; }
+#wrap #main #section1 .slide-container{width: 100%; height: 400px;}
+#wrap #main #section1 .slide-container .slide-content{width: 100%;height: 400px; overflow: hidden;}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap{
+    width: 100%; height: 2000px; /* 400px *5개 */
+    margin-top: -400px;
+    position: relative; /* 해당 포지션 안쓰면 애니메이션 안된다 */
+    top: 0;
+
+} /* 요기가 중요 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide{
+    width: 100%;height: 400px;
+    background: url() no-repeat 50% 20%;
+    background-size: cover;
+}
+
+/* 메인이미지 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide1{
+    background-image: url(../images/wedding-img1.jpg);
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide2{
+    background-image: url(../images/wedding-img2.jpg);
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap .slide3{
+    background-image: url(../images/wedding-img3.jpg);
+}
+/* 섹션2 */
+#wrap #main #section2{
+    background-color: #fff;
+    width: 100%; height: 200px; padding: 10px;}
+#wrap #main #section2 .container{
+    width: 100%; 
+    height: 100%; 
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 숨김처리 */
+#wrap #main #section2 .container .title{}
+/* 배너 */
+/* 이미지영역 */
+#wrap #main #section2 .container .content{
+    width: 100%; height: 100%;
+    background-color: rgba(100,0,0,0.05);
+}
+#wrap #main #section2 .container .content a{
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%;
+    padding-right: 150px; display: flex;position: relative;} 
+#wrap #main #section2 .container .content a .left{margin-right: 20px;} 
+#wrap #main #section2 .container .content a .left img{height: 80px;} 
+/* 글 내용 */
+#wrap #main #section2 .container .content a .right{width: auto;} 
+#wrap #main #section2 .container .content a .right h3{
+    padding-bottom: 15px;
+    font-size: 16px; font-weight: 800;} 
+#wrap #main #section2 .container .content a .right p{
+    line-height: 170%;
+    font-size: 14px;} 
+/* 콘텐츠 안 화살표 */
+#wrap #main #section2 .container .content a .arrow{
+    width: 50px;
+    border: 8px solid #000;
+    border-top:transparent ;
+    border-left:transparent ;
+    position: absolute;
+    height: 50px;
+    top: 50%;
+    right: 10%;
+    margin-top: -25px;
+    transform: rotate(-45deg);
+    
+
+}
+
+/* 섹션3 */
+#wrap #main #section3{
+    border-top:1px dashed #ddd ;
+    padding:10px;
+    width: 100%; height: 250px;}
+#wrap #main #section3 .container{width: 100%; height: 100%; }
+
+#wrap #main #section3 .container .content{
+    width: 100%; height: 100%;
+    position: relative;
+    margin-top:35 ;
+}
+/* 공지사항, 갤러리 공통 버튼박스 */
+#wrap #main #section3 .container .content .button-box{
+    width: 100%; height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    padding-left: 10px;
+}
+#wrap #main #section3 .container .content .button-box button{
+    
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+}
+/* 공지사항버튼 */
+#wrap #main #section3 .container .content .button-box button.notice-btn{
+    cursor: default;
+    border-bottom-color: transparent;
+}
+#wrap #main #section3 .container .content .button-box button.notice-btn.on{
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+/* 갤러리버튼 */
+#wrap #main #section3 .container .content .button-box button.gallery-btn{
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+#wrap #main #section3 .container .content .button-box button.gallery-btn.on{
+    cursor: default;
+    background-color: #fff;
+    border-bottom-color: transparent;
+}
+
+/* 공지사항 갤러리 공통콘텐츠 박스 */
+#wrap #main #section3 .container .content .contents{
+    width: 100%;
+    height: 195px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    position: absolute;
+    top: 35px;
+    z-index: 1;
+}
+#wrap #main #section3 .container .content .contents.notice{
+    display: block;
+}
+#wrap #main #section3 .container .content .contents.gallery{
+    display: none;
+}
+
+#wrap #main #section3 .container .content .contents.notice.on{
+    display: none;
+}
+#wrap #main #section3 .container .content .contents.gallery.on{
+    display: block;
+}
+
+#wrap #footer{
+    position: relative;
+    z-index: 1;
+    width: 100%; 
+    height: 100px; 
+    display: flex;
+}
+
+#wrap #footer .left{
+    width: 200px; 
+    height: 100px;
+    background-color: #cc9;
+}
+#wrap #footer .center{
+    width: calc(100% - 500px); 
+    height: 100px; 
+    background-color: #c99;}
+#wrap #footer .right{
+    width: 300px; 
+    height: 100px; 
+    background-color: #9c9;
+}
+/* 퀵메뉴 */
+#wrap .quick-menu{
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: auto;
+    background-color: #fff;
+}
+
+#wrap .quick-menu ul{width: 100%; padding: 0 10px; }
+
+#wrap .quick-menu ul li{width: 100%; padding: 10px 0; border-bottom: 1px dashed #ddd;}
+#wrap .quick-menu ul li a{width: 100%; display: block;}
+#wrap .quick-menu ul li a img{width: 100%; transition: all 1s;}
+#wrap .quick-menu ul li a:hover img{
+    opacity: 0.5;
+}
