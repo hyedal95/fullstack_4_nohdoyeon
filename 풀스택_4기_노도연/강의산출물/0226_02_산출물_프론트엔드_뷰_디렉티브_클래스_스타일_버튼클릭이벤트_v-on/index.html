@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼클릭 이벤트, 클래스, 스타일</title>
+    <script src="./script/lib/vue.js"></script>
+</head>
+<body>
+    <!--1. 뷰 탬플릿 -->
+    <div id="app">
+        <div class="container">
+            <div class="title">
+                
+                <!--브이-바인드 {on: true}addClass('on') 클래스 추가 {on: false}removeClass('on') 클래스 삭제 -->
+                <h1 :class="{on: isOn}">{{title}}</h1>
+            </div>
+            <div class="content">
+                <div class="button-box">
+                    <!-- 버튼 클릭 이벤트 -->
+                    <!-- v-on:click => @click (버튼 클릭 이벤트 대신해주는 문자) -->
+                    <!-- 클릭이벤트는 이벤트 리스너를 메서드(methods 훅)에서 클래스에 데이터 속성을 변경 -->
+                    <!-- <button v-on:click="메서드이름(함수이름표기)">타이틀색상변경</button> -->
+                    <button v-on:click="onClickTitle">타이틀색상변경1</button>
+                    <button @click="onClickDelete">타이틀 삭제</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--2. 스크립트 생성자 new Vue()-->
+    <script>
+        // 데이터 (상태관리) 설정하기
+        const date ={
+            title:'뷰 버튼클릭 이벤트, 클래스, 스타일 지정하기',
+            isOn: false//토글은 한번은 true, 또 한번은 false 두 가지 기능이 바뀌는 기능
+            
+        }
+
+
+
+        const vue= new Vue({
+            el: '#app',
+            data:data,
+            methods: { //메서디 훅 => data 속성값 변경할 수 있다.
+                    //메서드와 메서드는 쉼표로 구분하여 표기한다.
+                    //타이틀, 색상 변경 
+                    onClickTitle:function(){ //버튼 클릭하면 호출되는 메서드(함수) => 토글
+                        // 한 줄 코딩
+                        this.isOn = !this.isOn; // 자신의 값이 false ==true => false => not this.ison 
+                        // this.title = "뷰 버튼클릭 이벤트, 클래스, 스타일 지정하기" + this.isOn;
+                        
+                        // <if문으로 할 경우>
+                        if(this.isOn===true){
+                            this.title = "뷰 버튼클릭 이벤트, 클래스,컬러 노랑색 스타일 지정하기" 
+                        }
+                        else{
+                            this.title = "뷰 버튼클릭 이벤트, 클래스,컬러 파랑색 스타일 지정하기" 
+                        }
+                    },
+                    //타이틀 삭제
+                    onClickDelete(){ //: function 생략가능
+                        alert('타이틀 삭제')
+                        this.title="";
+                    
+                    }
+                    
+
+                }
+        })
+
+    </script>
+    <!--3. 스타일 -->
+    <style>
+        #app{
+            width: 100%; 
+            margin: 0 auto; 
+            padding: 50px 0;
+            background-color: #888;}
+        #app .container{width:100%;}
+        #app .container .title{width:100%; padding-bottom: 30px;}
+        #app .container .title h1{width: 100%; color: #00f; background-color: rgb(245, 255, 240); font-size: 24px; text-align: center;}
+        #app .container .title h1.on{color: #ff0; background-color: rgb(0, 0, 0);}
+        
+        #app .container .content{width: 100%;   display:flex; justify-content: center; align-items: center;}
+        #app .container .content .button-btn{width: 100%; text-align: center;}
+        #app .container .content .button-btn button{width: 100%;  width: auto; height: 30px;}
+    </style>
+</body>
+</html>
