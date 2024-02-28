@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼이벤트핸들링 % 전파차단</title>
+    <script src="./script/lib/vue.js"></script>
+</head>
+<body>
+    <!-- 탬플릿 -->
+    <div id="root">
+        <!-- 타이틀 -->
+        <h1>{{title}}</h1>
+
+        <!-- 이미지박스 -->
+        <div class="img-box" >
+            <!-- 이미지 클릭하면 모달창 띄우기 -->
+            <img :src="imgSrc" alt="이미지" @click="modalOpen">
+        </div>
+        <!-- 모달창 -->
+        <div class="modal" v-show="isShow" @click="modalClose">
+            <div class="wrap">
+                <div class="container">
+                    <!-- 모달창 이미지 클릭하면 다음 이미지 슬라이드 -->
+                    <img :src="imgSrc" alt="" @click.stop="nextImage">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 스크립트 -->
+    <script>
+        const vue = new Vue({
+            data(){
+                return{
+                    title:"버튼이벤트핸들링&전파차단",
+                    imgSrc:"./images/bottom01.jpg",
+                    isShow:false,
+                    cnt:1
+                }
+                
+            },
+            methods:{
+                    // 모달창 열기 메서드
+                    modalOpen(){
+                        this.isShow = true;
+                    },
+                    modalClose(){
+                        this.isShow = false;
+                    },
+                    nextImage(){
+                        this.cnt = this.cnt+1; //이미지 1번부터5번까지 
+                        if(this.cnt>5){
+                            this.cnt=1
+                        }
+                        this.imgSrc = `./images/bottom0${this.cnt}.jpg`;
+                    }
+            }
+        })
+        vue.$mount('#root');
+
+    </script>
+    <!-- 스타일 -->
+    <style>
+        *{margin: 0; padding: 0; vertical-align: middle; box-sizing: border-box;}
+        html,body{width: 100%; height: 100%;}
+        html{overflow-y: auto;}
+        body{
+            font:normal 14px/1 "맑은고딕", "arial";
+            color: #333;
+            background-color: #fff;
+        }
+        a{color: #333; text-decoration: none;}
+        ul{list-style: none;}
+
+
+        #root{width: 100%; height: 100%; padding: 50px 0; }
+        #root h1{font-size: 30px; text-align: center; color: #ff0;}
+        /* 이미지박스 */
+        #root .img-box{width: 400px; height: 400px; margin: 50px auto;}
+        #root .img-box img{width: 100%;}
+        /* 모달창 갤러리 */
+        #root .modal{
+            z-index: 5;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.5);
+
+        }
+        #root .modal .wrap{
+            width: 100%; height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #root .modal .wrap .container{ width: 800px; height: 800px;}
+        #root .modal .wrap .container img{width: 100%;}
+
+    </style>
+</body>
+</html>

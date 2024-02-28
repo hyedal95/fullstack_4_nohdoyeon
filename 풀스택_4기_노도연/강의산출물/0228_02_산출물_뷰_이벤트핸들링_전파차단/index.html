@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼이벤트핸들링 & 전파차단</title>
+    <!-- 뷰 라이브러리 설치 -->
+    <script src="./script/lib/vue.js"></script>
+</head>
+<body>
+    <!-- 템플릿 -->
+    <div id="app">
+        <h1 @click="modalOpenMethod">{{title}}</h1>
+        <div class="modal" v-show="isModalShow" @click="modalCloseMethod">
+            <div class="wrap">
+                <div class="container">
+                    <!-- 캡처링 : WINDOW => DOCUMENT =>(최상위 root) HTML => BODY => #app => .modal => .wrap => .container => img  -->
+                    <!-- 버블링 : img => .container => .wrap => .modal => #app => BODY => HTML (최상위 root) => DOCUMENT => WINDOW -->
+                    <!-- 버블링 : 이미지의 조상 이벤트로 전파되어 조상의 닫는 클릭이벤트가 실행된다. -->
+                    <!-- 웹에서는 유용하나, 조심해야한다.  -->
+                    <!-- 그래서 버블링을 막아줘야한다. 그래야 이미지만 클릭된다. = 전파차단 @click.stop -->
+                    <!-- 버블링 이벤트 전파차단  stopPropagation 스탑프로터게이션 .stop  -->
+                    <img id="modalImgBtn"   v-bind:src="modalImg" v-bind:alt="modalImgAlt" @click.stop="imgChangeMethod">
+                    <!-- preventDefault()  뷰에서는 .prevent -->
+                    <!-- 버튼 클릭 시 버튼의 원래 기능을 제거하는 것-->
+                    <button class="modal-close-btn"  @click.prevent="modalCloseMethod">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 스크립트 -->
+    <script>
+
+
+
+
+        // 뷰 작동 스크립트
+        const vue = new Vue({
+            data(){
+                return{
+                title:"버튼이벤트핸들링&이벤트차단",
+                modalImg:'./images/wedding-img8.jpg',
+                modalImgAlt:"웨딩 신랑 신부 이미지",
+                isModalShow:false,
+                cnt:8
+                }
+            },
+            methods:{
+                // :(콜론),(콤마)
+                
+                //모달창 열기 메서드(함수) => 자바스크립트 모두 들어간다.
+                //메서드 안에서는 메서드와 메서드 사이 콤마를 이용 구분한다.
+                modalOpenMethod(){
+                    this.isModalShow = true;
+                    
+                },
+                modalCloseMethod(){
+                    this.isModalShow = false;
+                },
+                imgChangeMethod(){ // 8개 이미지 롤링 갤러리
+                    this.cnt = this.cnt +1;
+                    if(this.cnt >15) {
+                        this.cnt=8;
+                    }
+                    this.modalImg =`./images/wedding-img${this.cnt}.jpg`
+
+                }
+
+            }
+        })
+        vue.$mount('#app');
+
+        //순수자바스크립트 버튼 클릭 이벤트 => 코딩이 복잡하고 길다 =>뷰 간략하게 표현 이벤트 구현
+        //이미지선택자  #modalImgBtn
+        //버튼선택자    .modal-close-btn
+        const modalImgBtn = document.querySelector('#modalImgBtn');
+        const modalCloseBtn = document.querySelector('.modal-close-btn');
+        
+        //이미지 클릭 이벤트 리스너 등록
+        modalCloseBtn.addEventListener('click',function(e){
+            e.stopPropagation();
+            modalCloseMethod();
+            console.log("이미지 클릭 버블링 이벤트 전파 차단 e.stopPropagation();");
+            alert("이미지 클릭 버블링 이벤트 전파 차단 e.stopPropagation();");
+            console.log(e);
+        })
+
+
+    </script>
+    <!-- 스타일 -->
+    <style>
+        *{margin: 0; padding: 0; vertical-align: middle; box-sizing: border-box;}
+        html,body{width: 100%; height: 100%;}
+        html{overflow-y: auto;}
+        body{
+            font:normal 14px/1 "맑은고딕", "arial";
+            color: #333;
+            background-color: #fff;
+        }
+        a{color: #333; text-decoration: none;}
+        ul{list-style: none;}
+
+        #app{width: 100%; padding: 50px 0;}
+        #app h1{
+            width: 100%; font-size: 30px; text-align: center; color: #00f; }
+        /* 모달창 */
+        #app .modal{width: 100%;
+        z-index: 5;
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,1); 
+        
+    }
+        #app .modal .wrap{
+            width: 100%; 
+            height: 100%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            top: 0;
+            left: 0;
+        }
+        #app .modal .wrap .container {width: 600px; height: 600px; }
+        #app .modal .wrap .container img{width: 100%; }
+        #app .modal .wrap .container button{width: 150px; height: 30px; }
+    </style>
+</body>
+</html>

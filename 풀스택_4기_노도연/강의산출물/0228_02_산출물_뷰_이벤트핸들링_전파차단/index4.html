@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰이벤트핸들링 & 전파차단</title>
+    <script src="./script/lib/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <!-- 이미지 나타내기 버튼 -->
+        <button @click="imgOpenMethod">클릭</button>
+        <!-- 모달창 -->
+        <div class="modal" @click="imgCloseMethod" v-show="ismodalShow">
+            <div class="wrap">
+                <div class="container">
+                    <img :src="imgSrc" alt="" @click.stop="imgNextMethod">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const vue = new Vue({
+            data:{
+                title:"뷰이벤트핸들링 &전파차단",
+                imgSrc :"./images/무제1.jpg",
+                ismodalShow: false,
+                cnt:1
+            },
+            methods:{
+                imgOpenMethod(){
+                    this.ismodalShow = true;
+                },
+                imgCloseMethod(){
+                    this.ismodalShow = false;
+                },
+                imgNextMethod(){
+                    this.cnt =this.cnt +1;
+                    if(this.cnt >4){
+                        this.cnt =1
+                    }
+                    this.imgSrc = `./images/무제${this.cnt}.jpg`
+                }
+            }
+        })
+        vue.$mount('#app');
+    </script>
+
+    <style>
+        #app{width: 100%; padding: 50px 0; }
+        #app h1{font-size: 30px; color: #f0f; text-align: center;}
+        /* 버튼 */
+        #app button{
+            display: flex; justify-content: center; align-items: center;
+            width: 150px; height: 30px; margin: 10px auto;}
+        /* 모달창 */
+        #app .modal{
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.5);
+            width: 100%; 
+            height: 100%;
+        }
+        #app .modal .wrap{width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+        #app .modal .wrap .container{width: calc(100% - 100px); height: calc(100% - 200px); }
+        #app .modal .wrap .container img{width: 100%; height: 100%;}
+
+    </style>
+</body>
+</html>
