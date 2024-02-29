@@ -1,0 +1,26 @@
+세팅 -> 맨밑 delete this repository 눌러서 삭제 가능 
+i want to delete this repository
+계속 물어보면서 삭제할 것이냐? 
+복사 붙여넣기해서 삭제하는 방법 
+
++
+
+수정한 내용 업데이트로 덮어쓰기하는 방법
+다운로드집 또는 
+
+clone https  복사한다.
+
+집에서 올린 또는 각종 위치에서 올린 원본을 클론하기해서 
+폴더 만들어서 에디터에 띄운다. 
+컨트롤 시프트 빽틱 
+터미널 나온다.
+
+메뉴 ... 터미널 눌러도 된다. 새 터미널 
+
+깃배쉬 들어가서 
+깃허브에 들어가서 코드에 있는 클론 주소 복사한다.
+
+에디터에다가 
+
+git clone https://github.com/hyedal95/nohdoyeon_web_project1.git
+
