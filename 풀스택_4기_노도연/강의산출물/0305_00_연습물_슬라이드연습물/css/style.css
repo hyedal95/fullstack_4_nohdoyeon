@@ -1,0 +1,95 @@
+@import url('./reset.css');
+
+#wrap{ width: 100%; height: 100%; margin: 0 auto;}
+#wrap #header{ width: 100%; height: 100px; background-color: black;}
+#wrap #main{width: 1340px; height: 1800px; margin: 0 auto; }
+/* 1 */
+/* 좌우 슬라이드 구현 */
+#wrap #main #section1{width: 1340px; height: 600px; }
+#wrap #main #section1 .slide-container{width: 100%; height: 100%;}
+#wrap #main #section1 .slide-container .slide-content{width: 100%; height: 100%; overflow: hidden; }
+#wrap #main #section1 .slide-container .slide-content .slide-wrap1{
+    width: 6700px; height: 100%;
+    position: relative;
+    margin-left: -1340px;
+    display: flex;
+
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap1 .slide{
+    width: 1340px; height: 100%;
+    background: url() no-repeat 50% 50%;
+    background-size: cover;
+
+}
+/* 메인이미지영역 */
+#wrap #main #section1 .slide-container .slide-content .slide-wrap1 .slide1{
+    background-image: url(../images/japan-2014617_1280.jpg);
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap1 .slide2{
+    background-image: url(../images/japan-2014618_1280.jpg);
+}
+#wrap #main #section1 .slide-container .slide-content .slide-wrap1 .slide3{
+    background-image: url(../images/japan-2014619_1280.jpg);
+}
+
+/* 2 */
+/* 상하 슬라이드 구현 */
+#wrap #main #section2{width: 100%; height: 600px; background-color: rgb(126, 177, 177);}
+#wrap #main #section2 .slide-container{width: 100%; height: 100%;}
+#wrap #main #section2 .slide-container .slide-content{width: 100%; height: 100%; overflow: hidden;}
+#wrap #main #section2 .slide-container .slide-content .slide-wrap2{
+    position: relative;
+    margin-top: -600px;
+    width: 100%; height: 3000px;}
+#wrap #main #section2 .slide-container .slide-content .slide-wrap2 .slide{
+    width: 100%; height: 600px;
+    background: url() no-repeat 50% 50%;
+    background-size: cover;
+}
+/* 메인이미지영역 */
+#wrap #main #section2 .slide-container .slide-content .slide-wrap2 .slide1{
+    background-image: url(../images/back-flip-1390075_1280.jpg);
+}
+#wrap #main #section2 .slide-container .slide-content .slide-wrap2 .slide2{
+    background-image: url(../images/backflip-345027_1280.jpg);
+}
+#wrap #main #section2 .slide-container .slide-content .slide-wrap2 .slide3{
+    background-image: url(../images/parkour-7245311_1280.jpg);
+}
+
+/* 3 */
+/* 페이드인아웃 구현 */
+#wrap #main #section3{width: 100%; height: 600px; background-color: rgb(58, 82, 82);}
+#wrap #main #section3 .slide-container{width: 100%; height: 100%;}
+#wrap #main #section3 .slide-container .slide-content{width: 100%; height: 100%;}
+#wrap #main #section3 .slide-container .slide-content .slide-wrap3{
+    position: relative;
+    width: 100%; 
+    height: 100%;
+}
+#wrap #main #section3 .slide-container .slide-content .slide-wrap3 .slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: url() no-repeat 50% 50%;
+    background-size: cover;
+}
+
+/* 메인이미지영역 */
+#wrap #main #section3 .slide-container .slide-content .slide-wrap3 .slide1{
+    z-index: 3;
+    background-image: url(../images/dog-1866530_1280.jpg);
+}
+#wrap #main #section3 .slide-container .slide-content .slide-wrap3 .slide2{
+    z-index: 2;
+    background-image: url(../images/dog-4372036_1280.jpg);
+}
+#wrap #main #section3 .slide-container .slide-content .slide-wrap3 .slide3{
+    z-index: 1;
+    background-image: url(../images/maltese-1123016_1280.jpg);
+}
+
+
+#wrap #footer{ width: 100%; height: 100px; background-color: black;}
