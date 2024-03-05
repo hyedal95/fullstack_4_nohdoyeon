@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼요소 입력상자</title>
+    <script src="./script/lib/vue.js"></script>
+
+</head>
+<body>
+    <!-- 템플릿 -->
+    <div id="root">
+        <h1>{{title}}</h1>
+        <div class="form-box">
+            <form>
+                <div>
+                    <label for="userId">아이디<i>*</i></label>
+                    <input 
+                        type="text" 
+                        id="userId" 
+                        name="userId" 
+                        placeholder="아이디를 입력하세요" 
+                        v-model.trim="아이디"
+                    > 
+                    <!-- placeholder="이름을 입력하세요" => '가이드텍스트' 또는 '안내문구'라고한다. -->
+                    <!-- 고객이름 --> <!-- 입력상자를 TEXT라고 한다. --> 
+                    <!-- v-model은 상태변수 -->
+                    <!-- v-model의 상태값을 입력해주면 data의 name에 저장된다. -->
+                    <!-- v-model은 상태값을 변경하고, trim은 입력상자 양 옆 빈공백을 제거한다. -->
+                    <!-- 입력상자를 디자인한 것은 ux라고한다. -->
+                    <!-- for는 반드시 input의 id랑 값이 동일하게 연결되어있어야한다. -->
+                </div>
+                <div>
+                    <label for="userPw1">비밀번호<i>*</i></label>
+                    <input 
+                        type="password" 
+                        id="userPw1" 
+                        name="userPw1" 
+                        placeholder="비밀번호를 입력하세요" 
+                        v-model.trim="비밀번호"
+                    > 
+                </div>
+                <div>
+                    <label for="userPw2">비밀번호확인<i>*</i></label>
+                    <input 
+                        type="password" 
+                        id="userPw2" 
+                        name="userPw2" 
+                        placeholder="비밀번호를 한번 더 입력하세요" 
+                        v-model.trim="비밀번호확인"
+                    > 
+                </div>
+                <div>
+                <label for="userName">이름<i>*</i></label>
+                <input 
+                    type="text" 
+                    id="userName" 
+                    name="userName" 
+                    placeholder="이름을 입력하세요" 
+                    v-model.trim="이름"
+                > 
+                </div>
+                <div>
+                    <label for="userEmail">이메일<i>*</i></label>
+                    <input 
+                        type="text" 
+                        id="userEmail" 
+                        name="userEmail" 
+                        placeholder="이메일을 입력하세요" 
+                        v-model.trim="이메일"
+                    > 
+                </div>
+                <div>
+                    <label for="userPhone">휴대폰<i>*</i></label>
+                    <input 
+                        type="text" 
+                        id="userPhone" 
+                        name="userPhone" 
+                        placeholder="숫자만 입력해주세요." 
+                        v-model.trim="휴대폰"
+                    > 
+                </div>
+                <div>
+                    <label for="userAdress">주소<i>*</i></label>
+                    <input 
+                        type="text" 
+                        id="userAdress" 
+                        name="userAdress" 
+                        placeholder="주소를 입력하세요" 
+                        v-model.trim="주소"
+                    > 
+                </div>
+            </form> 
+        </div>
+
+    </div>
+    <!-- 스크립트 -->
+    <script>
+        const vue = new Vue({
+            data:{ //모델(model)
+                title:'뷰 폼요소 입력상자',
+                아이디:" " ,    //리액티비티 (입력하면 바로바로 나타난다.) 입력상자 입력값 저장 trim 입력상자 양 옆 빈공백 제거 trim은 v-modal 뒤에 붙여서 쓴다.
+                비밀번호: "",
+                비밀번호확인: "",
+                이름: "",
+                이메일: "",
+                휴대폰: "",
+                주소: "",
+            }
+        })
+        vue.$mount('#root');
+
+    </script>
+    <!-- 스타일 -->
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box; vertical-align: middle;}
+        html,body{width: 100%; height: 100%;}
+        body{font: normal 14px/1 "맑은고딕", "arial";}
+        #root{text-align: center;}
+        #root .form-box{
+            margin-top: 10px;
+            width: 100%; padding:0 30px;}
+        #root .form-box form{width: 100%; max-width: 40%; margin: 0 auto;} /* 반응형 */
+        /* #root .form-box form input#uesrName{width: 100%; height: 100%;} 자신의 이름을 쓴다해서 input#uesrName '종속id'라고 말한다.  */
+        #root .form-box form div{
+            padding: 10px 0;
+            width: 100%; 
+        display: flex;}
+        /* 레이블 label : 이름표 */
+        #root .form-box form div label{
+            
+            width: 180px; 
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;  align-items: center;
+            text-align: left;
+        }
+        #root .form-box form div label i{color: #f00; vertical-align: top;}
+
+
+        /* 입력상자 */
+        #root .form-box form div input[type='text'],
+        #root .form-box form div input[type='password']{
+            width: 100%; 
+            height: 50px; 
+            font-size: 16px; 
+            padding: 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px ;
+
+            /* 테두리 밖으로 -1px 나간 상태 : 수정 => 인라인(라인 중심으로 들어오게한다. 선 겹치지않게)
+            outline-offset: 1px 이게 디폴트값이기에 -1px 해줘야한다.*/
+
+            outline:  1px solid transparent;
+            transition: all 0.5s;
+            outline-offset: -1px;
+        
+        } /* [type=''] 을 각괄호안에다가도 쓸 수 있다. */ 
+
+        
+        /* 플레이스홀더 => 가이드텍스트 || 안내 문구  사용법 ::placeholder */
+        #root .form-box form div input[type='text']::placeholder{
+            font-size: 16px;
+            color: #777;
+            font-weight: 500;
+
+        }
+
+        /* 포커스 스타일 수정 (폼 디자인) = ux 디자인 :focus ==> 커서가 입력상자 위치하면 포커스라고한다.  */
+        #root .form-box form div input[type='text']:focus{
+            outline-color: #444;
+            outline-width: 5px;
+            outline-style:solid;
+        }
+
+    </style>
+</body>
+</html>
