@@ -1,0 +1,101 @@
+@import url('./reset.css');
+
+#wrap{width: 100%;}
+#wrap #header{width: 100%; height: 156px; border-bottom: 1px solid #ccc;}
+
+#wrap #main{width: 100%;}
+
+#wrap #main #section1{width: 100%; }
+#wrap #main #section1 .container{width: 100%; max-width: 640px; margin: 0 auto;}
+#wrap #main #section1 .container .title{
+    padding-top: 60px;
+    width: 100%; text-align: center; 
+    border-bottom: 3px solid #222;
+}
+#wrap #main #section1 .container .title h2{font-size: 28px; font-weight: 500; padding-bottom: 30px;}
+#wrap #main #section1 .container .title p{text-align: right; width: 100%; padding-bottom: 10px;}
+#wrap #main #section1 .container .title p span{font-size: 12px; color: #777;}
+#wrap #main #section1 .container .title p span i{color: #c00;}
+
+#wrap #main #section1 .container .content{width: 100%; }
+#wrap #main #section1 .container .content form{width: 100%;}
+#wrap #main #section1 .container .content form .signup-box{width: 100%;}
+#wrap #main #section1 .container .content form .signup-box >ul{width: 100%; padding: 0 20px; } 
+#wrap #main #section1 .container .content form .signup-box >ul > li{
+    width: 100% ;  padding: 10px 0;}
+
+/* 입력상자  */
+/* 왼쪽 = 내용*/
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box{
+    position: relative;
+    width: 100%; 
+    padding: 0 130px 0 139px ;
+    display: flex;
+}
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 139px; 
+    height: 46px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .left label{width: 100%; font-size: 16px; font-weight: 600;}
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .left label i{
+    color: #c00;
+    vertical-align: top;
+
+}
+/* 센터 = 입력창 */
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .center{width:100%; background-color: #c9c;}
+
+/* type="텍스트 and 패스워드" */
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .center input[type='text'],
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .center input[type='password']
+{
+    width:100%; 
+    height: 46px;
+    border: 1px solid #ddd;
+    outline-offset: -1px;
+    outline: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0 15px;
+    transition: all 0.6s;
+}
+/* 인풋상자 내 박스 디자인 */
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .center input[type='text']:focus,
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .center input[type='password']:focus
+{
+    outline-color: #111;
+}
+
+/* 오른쪽 =중복확인버튼 */
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px; 
+}
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .right button{
+    border: 1px solid rgb(95, 0, 128);
+    width: 120px; 
+    height: 46px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(95, 0, 128);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    
+}
+#wrap #main #section1 .container .content form .signup-box >ul > li > .input-box .right button.off{
+    border-color: #ccc;
+    color: #ccc;
+    cursor: default;
+}
+
+#wrap #footer{width: 100%; height: 500px; }

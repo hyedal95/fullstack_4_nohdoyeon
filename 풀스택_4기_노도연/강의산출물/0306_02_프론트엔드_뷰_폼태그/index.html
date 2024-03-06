@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마켓컬리 회원가입 폼</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./script/lib/vue.js"></script>
+</head>
+<body>
+    <!-- 템플릿 -->
+
+    <div id="wrap">
+        <header id="header">
+
+        </header>
+        <main id="main">
+            <section id="section1">
+                <div class="container">
+                    <div class="title">
+                        <h2>회원가입</h2>
+                        <p><span><i>*</i>필수입력사항</span></p>
+                    </div>
+                    <div class="content" id="signUp"> 
+                        <form>
+                            <!-- 스크립트에 등록 -->
+                            <div class="signup-box">
+                                <ul>
+                                    <li>
+                                        <div class="input-box">
+                                            <div class="left">
+                                                <label for="userId">아이디<i>*</i></label>
+
+                                            </div>
+                                            <div class="center">
+                                                <input type="text" id="userId" name="userId" maxlength="16" placeholder="아이디를 입력해주세요." v-model.trim="아이디">
+                                            </div>
+                                            <div class="right">
+                                                <button>중복확인</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-box">
+                                            <div class="left">
+                                                <label for="userPw1">비밀번호<i>*</i></label>
+
+                                            </div>
+                                            <div class="center">
+                                                <input type="password" id="userPw1" name="userPw1" maxlength="16" placeholder="비밀번호를 입력해주세요." v-model.trim="비밀번호">
+                                            </div>
+                                            <div class="right">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-box">
+                                            <div class="left">
+                                                <label for="userPw2">비밀번호확인<i>*</i></label>
+
+                                            </div>
+                                            <div class="center">
+                                                <input type="password" id="userPw2" name="userPw2" maxlength="16" placeholder="비밀번호를 한 번 더 입력해주세요." v-model.trim="비밀번호확인">
+                                            </div>
+                                            <div class="right">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-box">
+                                            <div class="left">
+                                                <label for="userName">이름<i>*</i></label>
+
+                                            </div>
+                                            <div class="center">
+                                                <input type="text" id="userName" name="userName" placeholder="이름을 입력해주세요." v-model.trim="이름">
+                                            </div>
+                                            <div class="right">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-box">
+                                            <div class="left">
+                                                <label for="userPhone">휴대폰<i>*</i></label>
+
+                                            </div>
+                                            <div class="center">
+                                                <input type="text" id="userPhone" name="userPhone" placeholder="숫자만 입력해주세요." v-model.trim="휴대폰">
+                                            </div>
+                                            <div class="right">
+                                                <button class="off">인증번호 받기</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-box">
+                                            <div class="left">
+                                                <label for="userEmail">이메일<i>*</i></label>
+
+                                            </div>
+                                            <div class="center">
+                                                <input type="text" id="userEmail" name="userEmail" placeholder="예: abcd@gmail.com" v-model.trim="이메일">
+                                            </div>
+                                            <div class="right">
+                                                <button>중복확인</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+
+        </footer>
+    </div>
+
+    <!-- 스크립트 -->
+    <script>
+        const vue =new Vue({
+            data:{
+                아이디:'',
+                비밀번호:'',
+                비밀번호확인:'',
+                이름:'',
+                이메일:'',
+                휴대폰:''
+            }
+        });
+        vue.$mount('#signUp');
+    </script>
+
+</body>
+</html>
