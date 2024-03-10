@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component & Template & Script & Style</title>
+    
+    
+</head>
+<body>
+
+    <!-- 탬플릿 -->
+    <div id="wrap">
+        <!-- 헤더영역도 나중엔 스크롤 고정 만들 수 있다 -->
+        <header-component :t="headerTitle"></header-component>
+        <!-- 메인영역 => main-component만들어서 내부에 또 작업하기보다 이렇게 섹션에 컴포넌트 만들어주는 게 유용하다 -->
+        <main id="main">
+            <!-- 내부 스크립트를 만들자 -->
+            <section1-component :t="section1Title" :member="member"></section1-component>
+            <section2-component :t="section2Title"></section2-component>
+            <section3-component :t="section3Title"></section3-component>
+        </main>
+        <footer-component :t="footerTitle"></footer-component>
+
+        <!-- 예를 들어 모달 컴포넌트가 있다고 하면  -->
+        <modal-component :t="modalTitle"></modal-component>
+        <!-- 예를 들어 (오른쪽 고정)퀵메뉴 컴포넌트가 있다고 하면 -->
+        <quick-component :t="quickTitle"></quick-component>
+    </div>
+
+    <!-- 스크립트 -->
+    <!-- 뷰 라이브러리 -->
+    <script src="./script/lib/vue.js"></script>
+    
+    <!-- 뷰 제작 작성 -->
+    <script src="./script/kurly_vue/components/main/HeaderComponent.js"></script>
+    <script src="./script/kurly_vue/components/main/Section1Component.js"></script>
+    <script src="./script/kurly_vue/components/main/Section2Component.js"></script>
+    <script src="./script/kurly_vue/components/main/Section3Component.js"></script>
+    <script src="./script/kurly_vue/components/main/FooterComponent.js"></script>
+
+    <script src="./script/kurly_vue/components/main/ModalComponent.js"></script>
+    <script src="./script/kurly_vue/components/main/quick-component.js"></script>
+    <!-- index.js 가장 기본이 되는 건 아래에다가 둘 것 -->
+    <script src="./script/kurly_vue/index.js"></script>
+
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+
+
+    
+</body>
+</html>
