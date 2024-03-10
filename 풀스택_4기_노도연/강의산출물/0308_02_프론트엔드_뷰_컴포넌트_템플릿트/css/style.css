@@ -1,0 +1,46 @@
+@import url('./reset.css');
+@import url('/css/fonts.css');
+
+#wrap{width: 100%;}
+
+/* 헤더 */
+#wrap #header{width: 100%; height: 150px ; background-color: #99c; text-align: center; display: flex; align-items: center; justify-content: center;}
+
+#wrap #header .container{}
+#wrap #header .container .title{}
+#wrap #header .container .title h2{}
+
+#wrap #main{width: 100%;  background-color: #99c; text-align: center;}
+
+/* 섹션 공통영역 */
+#wrap #main section{width: 100%; height: 100vh; }  /* height: 100vh; 창높이를 전부 사용하겠다. */
+#wrap #main section .container{width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;}
+#wrap #main section .container .title{width: 100%;}
+#wrap #main section .container .title h2{width: 100%; font-size: 28px; font-weight: 500; color: #000;}
+
+
+/* 섹션 1 */
+#wrap #main #section1{background-color: rgba(200,0,0,0.2);}
+#wrap #main #section1 .container{}
+#wrap #main #section1 .container .title{}
+#wrap #main #section1 .container .title h2{}
+
+
+/* 섹션 2 */
+#wrap #main #section2{background-color: rgba(0,200,0,0.2);}
+#wrap #main #section2 .container{}
+#wrap #main #section2 .container .title{}
+#wrap #main #section2 .container .title h2{}
+
+
+/* 섹션 3 */
+#wrap #main #section3{background-color: rgba(0,0,200,0.2);}
+#wrap #main #section3 .container{}
+#wrap #main #section3 .container .title{}
+#wrap #main #section3 .container .title h2{}
+
+/* 푸터 */
+#wrap #footer{width: 100%; height: 300px; background-color: #cc9; text-align: center; display: flex; align-items: center; justify-content: center;}
+#wrap #footer .container{}
+#wrap #footer .container .title{}
+#wrap #footer .container .title h2{}

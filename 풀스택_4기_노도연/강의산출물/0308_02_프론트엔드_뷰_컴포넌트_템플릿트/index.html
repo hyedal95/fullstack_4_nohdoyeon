@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴포넌트 & 템플릿트</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./script/lib/vue.js"></script>
+</head>
+<body>
+    <!-- 컴포넌트 & 템플릿트 -->
+    <!-- 웹페이지에서는 스네이크형식(케밥-CASE)을 사용한다. 모두 소문자로 사용한다.  -->
+    <!--
+        1. 돔요소(DOM) => 케밥-CASE (소문자 사용)
+        <header-component></header-component>
+        ↓ 약자로 아래와 같이 쓸 수 있다.
+        <header-comp></header-comp>
+        2. script => 파스칼 케이스 
+        <HeaderComponent></HeaderComponent>
+
+        *프롭스(Props)
+        - 부모요소가 자식요소에게 데이터를 전달하는 통신 
+        - 단방향 통신 : 부모 => 자식
+    -->
+    
+
+    <div id="wrap">
+        <header-component :title="headerTitle"></header-component>
+        <main-component :s1title="section1Title" :s2title="section2Title" :s3title="section3Title"></main-component>
+        <footer-component :title="footerTitle"></footer-component>
+    </div>
+
+    <!-- 스크립트 -->
+    <script>
+        // 컴포넌트 (2가지 방식 있음)
+        // - 전역컴포넌트 ==global 글로벌 컴포넌트 =>(홈페이지 전체)
+        // - 지역컴포넌트 ==local 로컬 컴포넌트    =>(한정된 지역)
+
+        // 1. 전역컴포넌트와 템플릿  
+        /*  
+            Vue.component('컴포넌트이름',{
+                template:` (뺵틱)
+                
+                `(뺵틱)
+            }); 
+        */
+        // - 헤더컴포넌트 h 150
+        Vue.component('header-component',{
+            props:['title'], //부모가 보내준 프롭스(여러 개 속성 들어가서 복수형 -s) 값
+            template:`
+                <header id="header">
+                    <div class="container">
+                        <div class="title">
+                            <h2>{{title}}</h2>
+                        </div>
+                    </div>
+                </header>
+            `
+        });
+
+        // - 메인컴포넌트 h 창높이
+        Vue.component('main-component',{
+            props:['s1title','s2title','s3title'],
+            template:`
+                <main id="main">
+                    <section id="section1">
+                        <div class="container">
+                            <div class="title">
+                                <h2>{{s1title}}</h2>
+                            </div>
+                            
+                        </div>
+                    </section>
+                    <section id="section2">
+                        <div class="container">
+                            <div class="title">
+                                <h2>{{s2title}}</h2>
+                            </div>
+                            
+                        </div>
+                    </section>
+                    <section id="section3">
+                        <div class="container">
+                            <div class="title">
+                                <h2>{{s3title}}</h2>
+                            </div>
+                            
+                        </div>
+                    </section>
+                </main>
+            `
+        });        
+
+        // - 푸터컴포넌트 h 300
+        Vue.component('footer-component',{
+            props:['title'],
+            template:`
+                <footer id="footer">
+                    <div class="container">
+                        <div class="title">
+                            <h2>{{title}}</h2>
+                        </div>
+                    </div>
+                </footer>
+            `
+        });
+
+
+        //부모영역
+        const vue =new Vue({
+            data:{
+                title:'컴포넌트(Component) & 템플릿트(Template)',
+                headerTitle: '헤더(Header) 컴포넌트 (Component)',
+                section1Title: '메인(Main) 컴포넌트 (Component) 섹션(section)1',
+                section2Title: '메인(Main) 컴포넌트 (Component) 섹션(section)2',
+                section3Title: '메인(Main) 컴포넌트 (Component) 섹션(section)3',
+                footerTitle: '푸터(Footer) 컴포넌트 (Component)',
+                addrList:[
+                    {},
+                    {},
+                    {},
+                    {},
+                ]
+            }
+        });
+        vue.$mount('#wrap');
+
+
+
+    </script>
+
+    <!-- 스타일 -->
+    <style>
+
+    </style>
+
+</body>
+</html>
+
