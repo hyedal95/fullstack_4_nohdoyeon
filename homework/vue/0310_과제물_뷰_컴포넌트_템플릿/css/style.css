@@ -1,0 +1,47 @@
+@import url('./reset.css');
+
+#wrap{width: 100%;}
+
+/* 헤더컴포넌트영역 */
+#wrap #header{width: 100%; height: 200px; background-color: #c99; display: flex; justify-content: center; align-items: center;}
+
+
+/* 메인영역 - 섹션1~3 */
+#wrap #main{width: 100%; display: flex; flex-flow: row wrap; }
+/* 공통 섹션영역 */
+#wrap #main section{width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; }
+#wrap #main section .container{width: 100%;}
+#wrap #main section .container .title{width: 100%; text-align: center;}
+#wrap #main section .container .title h2{font-size: 26px; color: #333; font-size: 30px; font-weight: 600; color: #333;}
+#wrap #main section .container .content{width: 100%;}
+
+/* 섹션1 => 고정 화면*/
+#wrap #main #section1{background-color: rgba(200,0,0,0.5); height: 20vh;}
+#wrap #main #section1 .container .title{}
+#wrap #main #section1 .container .title h2{}
+#wrap #main #section1 .container .content{color: #ddd;}
+/* 섹션2 */
+#wrap #main #section2{background-color: rgba(0,200,0,0.5); width: 80vw;  height: 80vh;}
+#wrap #main #section2 .container .title{}
+#wrap #main #section2 .container .title h2{}
+#wrap #main #section2 .container .content{color: #ddd;}
+/* 섹션3 => 고정화면 */
+#wrap #main #section3{background-color: rgba(0,0,200,0.5);width: 20vw;  height: 80vh;}
+#wrap #main #section3 .container .title{}
+#wrap #main #section3 .container .title h2{}
+#wrap #main #section3 .container .content{color: #ddd;}
+
+/* 푸터컴포넌트영역 */
+#wrap #footer{width: 100%; height: 100px; background-color: #cc9; display: flex; justify-content: center; align-items: center;}
+#wrap #footer .container{width: 100%; height: 100%;}
+#wrap #footer .container .title{width: 100%; height: 100%;display: flex; justify-content: center; align-items: center; text-align: center;}
+#wrap #footer .container .title h2{font-size: 14px; font-weight: 400; }
+#wrap #footer .container .title h2 span{font-size: 14px; font-weight: 600; color: #000;}
+#wrap #footer .container .title h2 span p{font-size: 12px; font-weight: 400; color: #00f;}
+#wrap #footer .container .content{color: #ddd;}
+
+/* 모달컴포넌트영역 */
+#wrap .modal{width: 100%; height: 100px; background-color: #9c9; display: flex; justify-content: center; align-items: center;}
+
+/* 퀵메뉴컴포넌트영역 */
+#wrap .quick{width: 100%; height: 100px; background-color: #99c; display: flex; justify-content: center; align-items: center;}

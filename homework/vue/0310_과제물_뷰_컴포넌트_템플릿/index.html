@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0310_뷰_컴포넌트_템플릿_과제물</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- 템플릿 -->
+    <div id="wrap">
+        <header-component :t="headerTitle"></header-component>
+        <main id="main">
+            <section1-component :t="section1Title"></section1-component>
+            <section2-component :t="section2Title"></section2-component>
+            <section3-component :t="section3Title"></section3-component>
+        </main>
+        <footer-component :t="footerTitle"></footer-component>
+        <modal-component :t="modalTitle"></modal-component> <!-- 모달컴포넌트 -->
+        <quick-component :t="quickTitle"></quick-component> <!-- 퀵메뉴컴포넌트 -->
+    </div>
+    <!-- 스크립트 => 모듈화작업 -->
+
+    <script src="./script/lib/vue.js"></script>
+
+    <!-- 모듈화 작업 스크립트 모아두기-->
+    <script src="./script/doyeon_vue/component/main/1_HeaderComponent.js"></script>
+    <script src="./script/doyeon_vue/component/main/2_Section1Component.js"></script>
+    <script src="./script/doyeon_vue/component/main/3_Section2Component.js"></script>
+    <script src="./script/doyeon_vue/component/main/4_Section3Component.js"></script>
+    <script src="./script/doyeon_vue/component/main/5_FooterComponent.js"></script>
+    <script src="./script/doyeon_vue/component/main/6_ModalComponent.js"></script>
+    <script src="./script/doyeon_vue/component/main/7_QuickComponent.js"></script>
+
+    <!-- index.js는 맨 하단에 -->
+    <script src="./script/index.js"></script>
+
+    <!-- 스타일 => 문서연결완료 -->
+    
+</body>
+</html>
