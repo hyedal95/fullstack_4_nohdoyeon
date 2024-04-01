@@ -1,0 +1,382 @@
+@charset "UTF-8";
+@import url('./reset.css');
+#wrap {width:100%;}
+#wrap #header {position: relative; z-index: 3; width:100%;height: 156px;border-bottom: 1px solid #ccc;}
+#wrap #main {position: relative; z-index: 2; width:100%;}
+#wrap #main #section1 {width:100%;}
+#wrap #main #section1 .container {width:100%;max-width: 640px;margin:0 auto;}
+#wrap #main #section1 .container .title {width:100%;text-align: center;padding-top:60px;border-bottom: 2px solid #222;}
+#wrap #main #section1 .container .title h2 {font-size: 28px;font-weight: 500;padding-bottom: 50px;}
+#wrap #main #section1 .container .title p {text-align: right;width: 100%;padding-bottom: 10px;}
+#wrap #main #section1 .container .title p span {font-size: 12px;color:#777;}
+#wrap #main #section1 .container .title p span i {color:#ee6a7b;vertical-align: top;}
+
+#wrap #main #section1 .container .content {width: 100%;}
+#wrap #main #section1 .container .content form {width: 100%;}
+#wrap #main #section1 .container .content form .signup-box {width: 100%;user-select: none;}
+#wrap #main #section1 .container .content form .signup-box > ul {width: 100%;border-bottom: 1px solid #eee;}
+#wrap #main #section1 .container .content form .signup-box > ul > li {width: 100%;padding: 10px 20px;}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box {width:100%;padding: 0 130px 0 139px;position: relative;}
+
+/* 왼쪽 박스 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .left {width:139px;position: absolute;top:0;left:0;height: 46px;display: flex;align-items: center;}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .left label {font-size: 14px;font-weight: 600;}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .left label i {color: #ee6a7b;vertical-align: top;}
+
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center {width:100%;}
+
+/* 가운데 박스 */
+/* 텍스트 입력상자, 패스워드 입력상자, 주소검색버튼 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center input[type='text'], /* 아이디, 이름, 이메일, 휴대폰 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center input[type='password'], /* 비밀번호, 비밀번호확인 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center input[type='button']{  /* 주소검색버튼 */
+    width: 100%;
+    height: 46px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    padding: 0 15px;
+    transition: all 0.6s;
+    font-size: 16px;
+    color:#333;
+    background: #fff;
+}
+
+/* 주소검색버튼 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center input[type='button']{
+    color:#5f0080;
+    border-color: #5f0080;
+    cursor: pointer;
+    font-size: 14px;
+    background: url(../images/ico_search.svg) no-repeat calc(50% - 30px) calc(50% + 1px);
+}
+
+/* 입력상자 포커스 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center input[type='text']:focus {
+    outline-color: #111;
+}
+
+/* 주소검색 안내문구 p */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center p.addre-guide-text {
+    font-size: 12px;
+    color:#666;
+    padding-top: 10px;
+}
+
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center #userAddress2{
+    margin: 10px 0;
+}
+
+/* 성별 라디오버튼 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center .radio-box {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center .radio-box label {color:#333;}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center .radio-box label input[type='radio']{
+    /* 라디오버튼 모양 사용안함 appearance: none; */
+    appearance: none;
+
+    width:24px;
+    height:24px;
+
+    border:1px solid #ccc;
+    border-radius: 50%;
+}
+/* 라디오버튼 선택하면(체크드) */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center .radio-box label input[type='radio']:checked {
+    border-width: 6px;
+    border-color: #5f0080;
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center .radio-box label span {font-size: 14px;margin-left: 10px;}
+
+/* 생년월일 박스 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center .birth-box {
+    width:100%;
+    border:1px solid #ccc; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center .birth-box input[type='text']{
+    border:0;
+    outline:0;
+    text-align: center;
+    font-size: 14px;
+    width:25%;
+    padding: 0;
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .center .birth-box i {    
+    width:3%;
+    text-align: center;
+    color:#ccc;
+}
+
+
+/* 가로줄 이용약관동의 윗줄 */
+#wrap #main #section1 .container .content form .signup-box > ul > li.hr {
+    padding: 20px 0 10px 0;    
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li.hr hr {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #111;
+}
+
+
+/* 이용약관동의 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service {
+    padding-right: 0;
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box {
+    line-height: 38px;
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box span {
+    margin-left: 10px;
+}
+
+/* 체크박스 둥근 아이콘 디자인 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box label input[type='checkbox'] {
+    width:24px;
+    height:24px;
+    appearance: none;
+    background: url(../images/icon_check_off.svg) no-repeat 50% 50%;
+    border: 0;
+}
+/* 체크박스: 체크드(선택되면) */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box label input[type='checkbox']:checked {
+    background-image: url(../images/icon_check_on.svg);
+}
+
+/* 체크박스 아래 p 태그 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center p {
+    font-size: 12px;
+    color: #666;
+    padding-left: 34px;
+    letter-spacing: -1px;
+    padding-bottom: 10px;
+}
+/* 필수, 선택  */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box em {
+    color: #aaa;
+    margin-left: 10px;
+}
+
+/* SNS 이메일 체크박스 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box.sns-email-check {
+    padding-left: 34px;
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box.sns-email-check label:nth-child(2) {
+    margin-left: 50px;
+}
+/* SNS 이메일 체크박스 => 형제요소 p  + 다음   ~ 모든 형제 */
+/* #wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box.sns-email-check + p { */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box.service .center .check-box.sns-email-check ~ p {
+    font-size: 12px;
+    color:#666;
+    padding-left: 85px;
+    background: url(../images/ico_sub_dot.svg) no-repeat 70px calc(50% - 4px);
+}
+
+/* 오른쪽 박스 */
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .right {width:120px;position: absolute;top:0;right:0;}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .right button {
+    width:120px;
+    height: 46px;
+    border:1px solid #5f0080;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5f0080;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#wrap #main #section1 .container .content form .signup-box > ul > li .row-box .right button.off {
+    border-color:#ccc;
+    color: #ccc;
+    cursor: default;
+}
+
+/* 전송버튼 */
+#wrap #main #section1 .container .content form .submit-box {
+    width:100%;
+    text-align: center;
+    padding: 40px 0;
+}
+#wrap #main #section1 .container .content form .submit-box button {
+    width: 240px;
+    height: 56px;
+    background: #5f0080;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #5f0080;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* 푸터 */
+#wrap #footer {position: relative; z-index: 1;}
+/* 모달 */
+#wrap .modal{
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.07);
+    overflow: hidden;
+}
+
+#wrap .modal .wrap{
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+#wrap .modal .wrap .container{
+    position: relative; /* 기준이되어준다. */
+    z-index: 1;
+    width: 530px;
+    height: 620px;
+    background-color: #fff;
+    /* padding: 39px 29px; */
+    border: 1px solid #222;
+}
+#wrap .modal .wrap .container .window-title{
+    background: rgb(213,228,246);
+    width: 100%; 
+    height: 30px;
+
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+#wrap .modal .wrap .container .window-title h1{
+    padding-left: 5px;
+    line-height: 50px;
+}
+#wrap .modal .wrap .container .window-title h1 img{
+    width: 17px;
+    height: 17px;
+    transform: translateY(-2px);
+
+}
+#wrap .modal .wrap .container .window-title h1 strong{
+    width: 400px;
+    height: 100%;
+    color: #000;
+    font-size: 12px;
+    font-weight: normal;
+    
+}
+#wrap .modal .wrap .container .window-title button{
+    font-size: 20px;
+    color: #000;
+    width: 30px;
+    height: 30px;
+    font-weight: 100; 
+    background-color: transparent; 
+    border: 0;
+    cursor: pointer;
+}
+#wrap .modal .wrap .container .window-title button:hover{
+    background: #c00;
+    color: #fff;
+}
+
+/* 내용박스 */
+
+#wrap .modal .wrap .container .content .title{
+    padding-bottom: 40px;
+    text-align: center;
+    padding: 39px 29px;
+    
+}
+#wrap .modal .wrap .container .content .title h2{
+    font-size: 24px;
+    font-weight: 600;
+}
+#wrap .modal .wrap .container .content .title h2 strong{
+    font-size: 30px;
+    color: rgb(95,0,128);
+}
+#wrap .modal .wrap .container .content .title h2 span{
+    color: #444;
+}
+#wrap .modal .wrap .container .content .title h3{
+    font-size: 16px; font-weight: 500;
+    padding-top: 10px;
+}
+
+
+#wrap .modal .wrap .container .content .contents{
+    width: 100%;
+    padding: 39px 29px;
+}
+#wrap .modal .wrap .container .content .contents ul{
+    width: 100%;
+    height: 100%;
+    
+}
+#wrap .modal .wrap .container .content .contents ul li{width: 100%; margin: 10px 0;}
+#wrap .modal .wrap .container .content .contents ul li:first-child{padding-right: 130px; position: relative;}
+#wrap .modal .wrap .container .content .contents ul li input{
+    border-radius: 3px; 
+    padding: 0 10px;
+    
+
+}
+#wrap .modal .wrap .container .content .contents ul li input:focus{
+    outline-offset: -1px; outline: 1px solid #555;
+}
+#wrap .modal .wrap .container .content .contents ul li input[type="text"]{
+    width: 100%; 
+    height: 44px; 
+    border: 1px solid #ccc;
+}
+#wrap .modal .wrap .container .content .contents ul li input[type="button"]{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff url(../images/icon_zoom.svg) no-repeat calc(50% - 25px) 50%;
+    background-size: 25px auto;
+    width: 120px; 
+    height: 44px; 
+    border: 1px solid rgb(95,0,128);
+    cursor: pointer;
+    font-size: 14px;
+    color: rgb(95,0,128);
+    
+}
+
+#wrap .modal .wrap .container .content .contents ul li p{
+    font-size: 12px;
+    line-height: 130%;
+    color: #999;
+}
+#wrap .modal .wrap .container .content .contents ul li button{
+    background: rgb(95,0,128);
+    width: 100%; 
+    height: 44px; 
+    border: 1px solid rgb(95,0,128);
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 20px;
+}
+#wrap .modal .wrap .container #layer{
+    position:absolute; /* //콘텐츠 안에 갇혀야함. */
+    top: 30px;
+    left: 0;
+    overflow:hidden;
+    z-index:2;
+    -webkit-overflow-scrolling:touch;
+    width: 100%;
+    height: calc(100% - 30px);
+}
