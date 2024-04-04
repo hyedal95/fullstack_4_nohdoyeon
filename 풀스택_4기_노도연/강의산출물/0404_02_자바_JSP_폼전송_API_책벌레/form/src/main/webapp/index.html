@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입폼_노도연</title>
+<style>
+	*{margin:0; padding:0; vertical-align:middle; box-sizing:border-box; background: yellow; }
+	ul{list-style:none;}
+	
+	#wrap{
+		
+		width:100%;
+		max-width:1000px;
+		margin: 0 auto;
+		
+	}
+	#wrap .title{
+		margin: 50px 0;
+		text-align:center;
+	}
+	#wrap .title h1{
+		color:#00f;
+		font-size:30px;
+		font-weight: 600;
+	}
+	
+	#wrap .content{width:100%;}
+	#wrap .content form{padding:20px;}
+	#wrap .content form ul{width:100%;}
+	#wrap .content form ul li{
+	margin:10px 0;
+	line-height:45px;
+	}
+	#wrap .content form ul li label{
+	width:120px;
+	line-height:45px;
+	float:left;
+	}
+	
+	#wrap .content form ul li input[type="date"],
+	#wrap .content form ul li input[type="text"]{
+	width: calc(100% - 120px);
+	line-height:45px;
+	background:#fff;
+	}
+	
+	#wrap .content form ul .lang{
+	height:400px;
+	}
+	
+
+	#wrap .content form ul .lang h2{
+	width:100%;
+	height:45px;
+	line-height:45px;
+	display:flex;
+	align-item:center;
+	justify-content:center;
+	}
+	#wrap .content form ul .lang label{
+	width: 130px ;
+	}
+	#wrap .content form ul .lang input[type="radio"]{
+	
+	margin-right:20px;
+	}
+	
+	#wrap .content form ul li button{
+		font-size:16px;
+		color: #444;
+		padding: 10px 30px;
+		
+		display:flex;
+		justify-content: center;
+		align-item:center;
+	}
+	
+	#wrap .content form ul .lang .text-box{
+		width:100%;
+		height: calc(100% - 50px);
+		over-flow-y:auto;
+		background:#fff;
+		padding:10px;
+	}
+	
+	#wrap .content form ul .lang .text-box textarea{
+	width: 100%;
+	height: calc(100% - 50px);
+	font-size: 16px;
+	
+	background:#fff;
+	}
+</style>
+</head>
+<body>
+	
+	<div id="wrap">
+		<div class="title">
+			<h1>독서기록장</h1>
+			
+		</div>
+		
+		<div class="content">
+			<form action="./form_UserDto.jsp" name="form" id="form" method="get">
+				<ul>
+					<li>
+						<label for="userName">작성자 :</label>
+						<input type="text" name="userName" id="userName" placeholder="이름을 입력해주세요.">
+					</li>
+					<li>
+						<label for="usertitle">책이름 :</label>
+						<input type="text" name="usertitle" id="usertitle" placeholder="책이를 입력해주세요.">
+					</li>
+					<li>
+						<label for="userBookName">지은이 :</label>
+						<input type="text" name="userBookName" id="userBookName" placeholder="지은이를 입력해주세요.">
+					</li>
+					<li>
+						<label for="userDate1">독서 시작한 날 :</label>
+						<input type="date" name="userDate1" id="userDate1" placeholder="읽은 기간을 입력해주세요.">
+					</li>
+					<li>
+						<label for="userDate2">독서 마지막 날 :</label>
+						<input type="date" name="userDate2" id="userDate2" placeholder="다 읽은 기간을 입력해주세요.">
+					</li>
+					<li class="lang">
+						<h2>내용과 느낌을 적어주세요.</h2>
+						<div class="text-box">
+						<textarea name="userText">
+						
+						</textarea>
+						</div>
+					</li>
+					<li>
+						<button type="submit">전송하기</button>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
