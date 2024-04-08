@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>팬페이지 방명록</title>
+
+<script src="./script/lib/jquery-1.9.0.min.js"> </script>
+<script src="./script/fanpage.js" defer> </script>
+<link rel='icon' href='#'>
+
+<style>
+*{margin:0; padding:0; vertical-align:middle; box-sizing:boarder-box;}
+ul{list-style:none;}
+
+#wrap{width:100%;}
+#wrap .container{padding:10px;}
+#wrap .container .title{width: 100%; height:100px;}
+#wrap .container .title h1{ font-size: 50px; color:#00f; text-align:center;} 
+
+#wrap .container .content{width:100%;}
+#wrap .container .content form{width:100%; margin-bottom:20px;}
+#wrap .container .content form ul{width:100%;}
+#wrap .container .content form ul li{width:100%; display:flex; margin: 20px 0;}
+#wrap .container .content form ul li span{width:100px; }
+#wrap .container .content form ul li input[type="text"]{
+	width: calc(100% - 100px);
+}
+
+#wrap .container .content form ul .button-box{width:100%; text-align:left;}
+#wrap .container .content form ul .button-box button{width:100px;}
+
+#wrap .container .content table{ border:1px solid #ccc;}
+#wrap .container .content table th{ border:1px solid #ccc;}
+#wrap .container .content table th:nth-child(1){width: 100px;}
+#wrap .container .content table th:nth-child(2){width: calc(100% - 100px); }
+</style>
+</head>
+<body>
+	<div id= "wrap">
+		<div class="container">
+			<div class="title">
+				<h1>TO. 르세라핌</h1>
+			</div>
+			<div class="content">
+				<form >
+					<ul>
+						<li><span>닉네임</span><input type="text" name="userNickName" id="userNickName" placeholder="ex)너꺼하자"></li>
+						<li><span>내용</span><textarea  name="userText" id="userText"></textarea></li>
+						<div class="button-box">
+							<button type="submit" class="submit-btn">방명록 남기기</button>
+						</div>
+					</ul>
+				</form>
+				<hr>
+				<table>
+					<thead>
+						<tr>
+							<th>닉네임</th>
+							<th>내용</th>
+						</tr>
+					</thead>
+					
+					<tbody class="fanpage-list">
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

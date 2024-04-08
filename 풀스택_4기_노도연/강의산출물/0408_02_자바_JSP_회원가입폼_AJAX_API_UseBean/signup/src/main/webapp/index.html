@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>회원가입폼</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="icon" href="./images/icon.png">
+	<script src="./script/lib/jquery-1.9.0.min.js"></script>
+	<script src="./script/signup.js" defer></script>
+</head>
+<body>
+<div id="wrap">
+	<div class="container">
+		<div class="title">
+			<h1>회원가입폼</h1>
+		</div>
+		<div class="content">
+			<form >
+				<ul>
+					<li><input type="text" id="userId" name="userId" placeholder="아이디를 입력하세요."></li>
+					<li><input type="password" id="userPw" name="userPw" placeholder="비밀번호를 입력하세요."></li>
+					<li><input type="text" id="userName" name="userName" placeholder="이름을 입력하세요."></li>
+					<li><input type="text" id="userEmail" name="userEmail" placeholder="이메일을 입력하세요."></li>
+					<li><input type="text" id="userHp" name="userHp" placeholder="핸드폰번호를 입력하세요."></li>
+					<li>
+						<label><input type="radio" id="userFemale" name="userGender" value="여성">여성</label>
+						<label><input type="radio" id="userMale" name="userGender" value="남성">남성</label>
+						<label><input type="radio" id="none" name="userGender" value="선택안함" >선택안함</label>
+					
+					</li>
+					<li><input type="text" id="userAddress" name="userAddress" placeholder="주소를 입력하세요."></li>
+					<div class="button-box">
+						<button type="submit" class="submit-btn">회원가입</button>
+					</div>
+				</ul>
+			</form>	
+			
+			<table>
+				<thead>
+					<tr>
+						<th>아이디</th>
+						<th>비밀번호</th>
+						<th>이름</th>
+						<th>이메일</th>
+						<th>전화번호</th>
+						<th>성별</th>
+						<th>주소</th>
+					</tr>
+				</thead>
+				
+				<tbody class="signup-list">
+				
+				</tbody>
+				
+			</table>
+			
+		</div>
+	</div>
+</div>
+</body>
+</html>
