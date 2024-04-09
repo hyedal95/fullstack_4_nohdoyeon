@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>아이디, 이름 회원가입</title>
+	<link rel="icon" href="#">
+	<script src="./script/lib/jquery-1.9.0.min.js"></script>
+	<script src="./script/member.js" defer></script>
+	<style>
+	*{margin:0; padding:0; vertical-align:middle; box-sizing:border-box;
+		text-align:center; }
+	ul{list-style:none;}
+	li{margin:10px 0;}
+	div{padding:50px 0; }
+	input[type="text"]{font-size:30px;}
+	button{
+	margin-top:10px;
+	font-size:25px;}
+	</style>
+</head>
+<body>
+
+	<div>
+		<form>
+			<ul>
+				<li>
+					<input type="text" name="userId" id="userId" placeholder="아이디를 입력하세요!">
+				</li>
+				<li>
+					<input type="text" name="userName" id="userName" placeholder="이름을 입력하세요!">
+				</li>
+			</ul>
+
+			<button type="submit" class="submit-btn" value="회원가입">회원가입</button>
+		</form>
+		
+	</div>
+
+</body>
+</html>
