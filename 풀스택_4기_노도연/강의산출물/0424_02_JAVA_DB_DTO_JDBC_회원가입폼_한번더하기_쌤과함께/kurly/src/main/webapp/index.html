@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입폼</title>
+</head>
+<body>
+	<div id="wrap">
+		<form name='signup' method='post' action='http://localhost:8080/kurly/signupAction.jsp'>
+			<ul>
+				<li>
+					<input type='text' name='userId' id='userId' placeholder='아이디 입력 ' />
+				</li>
+				<li>
+					<input type='password' name='userPw' id='userPw' placeholder='비밀번호 입력 ' />
+				</li>
+				<li>
+					<input type='text' name='userName' id='userName' placeholder='이름 입력 ' />
+				</li>
+				<li>
+					<input type='text' name='userHp' id='userHp' placeholder='휴대폰번호 입력 ' />
+				</li>
+			</ul>
+			<div>
+				<button type='submit' class='submit-btn'>가입</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

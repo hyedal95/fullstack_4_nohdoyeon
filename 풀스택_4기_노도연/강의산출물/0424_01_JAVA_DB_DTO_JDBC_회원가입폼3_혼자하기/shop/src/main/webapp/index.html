@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>방문자리뷰</title>
+</head>
+<body>
+	<div id="wrap">
+		<form name='review' method='post' action='http://localhost:8080/shop/review_action.jsp'>
+			<ul>
+				<li>
+					<input type='text' name='userName' id='userName' placeholder='이름' />
+				</li>
+				<li>
+					<input type='text' name='userStore' id='userStore' placeholder='방문한 곳 입력하세요.' />
+				</li>
+				<li>
+					<input type='text' name='userMeum' id='userMeum' placeholder='먹은 음식 입력하세요.' />
+				</li>
+				<li>
+					<input type='text' name='userText' id='userText' placeholder='리뷰를 작성해주세요.' />
+				</li>
+			</ul>
+			<div>
+				<button type='submit' class='submit-btn'>글 남기기</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

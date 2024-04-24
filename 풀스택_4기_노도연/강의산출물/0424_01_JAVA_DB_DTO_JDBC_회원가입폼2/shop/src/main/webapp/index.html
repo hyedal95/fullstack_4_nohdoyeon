@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>쇼핑몰 회원가입폼</title>
+	
+
+</head>
+<body>
+<div id='wrap'>
+	<!-- 전송방식은 post, 액션은 어디로 보낼래? 액션.jsp 경로 -->
+	<form name='signup' method='post' action='http://localhost:8080/shop/signup_action.jsp'>
+		<ul>
+			<li>
+				<input type='text' name='userId' id='userId' placeholder='아이디를 입력하세요.' />
+			</li>
+			<li>
+				<input type='password' name='userPw' id='userPw' placeholder='비밀번호 입력하세요.' />
+			</li>
+			<li>
+				<input type='text' name='userName' id='userName' placeholder='이름 입력하세요.' />
+			</li>
+			<li>
+				<input type='text' name='userHp' id='userHp' placeholder='휴대폰 입력하세요.' />
+			</li>
+			<li>
+				<input type='text' name='userEmail' id='userEmail' placeholder='이메일 입력하세요.' />
+			</li>
+			<li>
+				<input type='text' name='userAddr' id='userAddr' placeholder='주소 입력하세요.' />
+			</li>
+			
+		</ul>
+		<div>
+			<!-- 버튼 타입이 submit 이기 때문에 버튼을 누르면 액션으로 전송된다. -->
+			<button type='submit' class='submit-btn'>회원가입</button>
+		</div>
+	</form>
+</div>
+</body>
+</html>
