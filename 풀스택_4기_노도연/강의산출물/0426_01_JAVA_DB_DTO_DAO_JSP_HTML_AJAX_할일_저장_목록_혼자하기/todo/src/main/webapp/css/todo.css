@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+*{margin:0; padding:0; vertical-align:middle; box-sizing:border-box;}
+body{
+	font: nomal 14px/1 "맑은고딕", "arial";
+	color: #333;
+	background: #fff;
+}
+ul{
+	list-style:none;
+}
+
+#wrap{width:100%;}
+#wrap #header{}
+#wrap #main{}
+#wrap #main #section{}
+#wrap #main #section form{}
+#wrap #main #section form ul{}
+#wrap #main #section form ul li{}
+#wrap #main #section form ul li input{}
+#wrap #main #section form button{}
+
+#wrap #footer{}

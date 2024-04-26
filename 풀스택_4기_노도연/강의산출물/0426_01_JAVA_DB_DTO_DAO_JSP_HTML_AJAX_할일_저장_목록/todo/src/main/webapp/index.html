@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>ToDo List</title>
+	<link rel="stylesheet" href="./css/style.css" >
+	<script src="./script/lib/jquery-1.9.0.min.js"></script>
+	<script src="./script/todo.js" defer></script>
+
+</head>
+<body>
+	<div id="wrap">
+		<h1>TODO LIST</h1>
+		
+		<form method='get' action='http://localhost:8080/todo/todo_action.jsp'>
+			<ul>
+				<li>
+					<input type="text" name="todo" id="todo" placeholder="할일을 입력하세요." />
+				</li>
+			</ul>
+
+			<button type="submit">FORM전송 할일저장</button>
+			<button type="button" class="save-btn">할일저장</button>
+			<button type="button" class="list-btn">할일목록</button>
+
+		</form>
+		
+		<br/><br/><br/>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>글번호</th>
+					<th>할일</th>
+					<th>날짜</th>
+				</tr>
+			</thead>
+			<tbody class="todo-list">
+				
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
