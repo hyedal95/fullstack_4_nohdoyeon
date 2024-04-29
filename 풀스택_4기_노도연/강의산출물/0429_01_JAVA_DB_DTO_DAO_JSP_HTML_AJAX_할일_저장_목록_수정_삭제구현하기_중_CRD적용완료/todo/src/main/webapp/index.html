@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>ToDo List</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="icon" href="#">
+	<script src="./script/lib/jquery-1.9.0.min.js"></script>
+	<script src="./script/todo.js" defer></script>
+	
+	
+</head>
+<body>
+	
+	<div id="wrap">
+		<div class="todo-title">
+			<h1>ToDo List</h1>
+		</div>
+		
+		<form class="todo-form" action="./todo_insert_action.jsp" method="post">
+			<!-- 할일 입력 폼 -->
+			<div>
+				<input type="text" name="todoInput" id="todoInput" placeholder="할일을 입력하세요." />
+				<button class="save-btn">+</button>
+			</div>
+		</form>
+		
+		<!-- 할 일 목록 리스트 -->
+		<ul class="todo-list">
+
+			
+		</ul>
+		
+		
+	</div>
+	
+		
+</body>
+</html>
