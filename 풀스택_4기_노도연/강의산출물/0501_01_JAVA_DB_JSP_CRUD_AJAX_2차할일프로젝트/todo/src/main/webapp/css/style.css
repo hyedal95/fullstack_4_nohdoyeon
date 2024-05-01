@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@import url('./fonts.css');
+@import url('./reset.css');
+
+#wrap{width: 100%; max-width:700px; margin:0 auto;}
+
+/* 할일 타이틀*/
+#wrap .todo-title{padding:50px 0;}
+#wrap .todo-title h1{text-align:center; font-size:32px; font-weight:800; color: rgba(95,0,128,1); user-select:none;}
+#wrap .todo-title h1 strong{font-size:20px; color: #5f0080;}
+
+/* 할일 입력폼*/
+#wrap .todo-form{width:100%; padding-bottom:40px;}
+#wrap .todo-form div{width:100%; padding-right:51px;position:relative;}
+#wrap .todo-form div input[type='text']{
+	padding:0 15px; 
+	width:100%; 
+	height:50px; 
+	border:1px solid rgba(95,0,128,0.5); 
+	outline:0; 
+	font-size:16px;
+	border-radius:2px;
+}
+#wrap .todo-form div button{
+	width:50px; 
+	height:100%; 
+	position:absolute; right:0; top:0; 
+	background:rgba(95,0,128,1); 
+	border:0; 
+	border-radius:5px;
+	cursor:pointer;
+	}
+#wrap .todo-form div button i{font-size:28px; color:#fff; }
+
+/* 할일 목록 */
+#wrap .todo-box{width:100%; padding: 20px 0;}
+#wrap .todo-box h2{font-size:24px; font-weight:600; color: rgba(95,0,128,1); user-select:none;}
+#wrap .todo-box ul{width:100%;}
+#wrap .todo-box ul li{width:100%; padding: 10px 0;}
+#wrap .todo-box ul li div{
+	width:100%; 
+	height:60px; 
+	background: rgba(255,255,255,0.3); 
+	padding: 0 100px 0 50px;
+	position:relative;
+	display:flex;
+	align-items:center;
+	
+}
+#wrap .todo-box ul li div input[type='checkbox']{
+	width:25px; 
+	height:25px; 
+	position:absolute; left:10px; top:17.5px;
+	appearance:none;  /*기존 디자인 모양을 쓰지않겠다 */
+	background: url(../img/icon_check_off.svg) no-repeat 50% 50% ; /* no-repeat 써야 이미지 반복이 안된다. */
+	background-size: 25px 25px;
+}
+#wrap .todo-box ul li div input[type='checkbox']:checked{
+	background-image: url(../img/icon_check_on.svg) ;
+}
+#wrap .todo-box ul li div input[type='text']{
+	padding:0 15px;
+	width:100%; 
+	border:0;
+	outline:0;
+	background:#fff;
+	font-size: 16px;
+	
+}
+#wrap .todo-box ul li div span{position:absolute; right:0; top:15px;}
+#wrap .todo-box ul li div span button{width:30px; height:30px; border:0; background: none; cursor:pointer;}
+#wrap .todo-box ul li div span button i{color:rgba(95,0,128,1); font-size:25px; transition:all 0.3s;}
+#wrap .todo-box ul li div span button i:hover{color:rgba(95,0,128,0.5);}
+
+/* 완료된 할일 */
+#wrap .todo-box ul.todo-done-list {opacity: 0.5;  }
+/* 입력상자는 유저 셀렉트 논을 설정해도 소용이 없다. */
+#wrap .todo-box ul.todo-done-list li div input[type='text']{text-decoration: line-through;}
