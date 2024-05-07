@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <g id="ico-cal-today" transform="translate(-975 -134)">
+    <rect id="사각형_2467" data-name="사각형 2467" width="34" height="34" rx="17" transform="translate(975 134)" fill="none"/>
+    <path id="ico_today" d="M9.422,2.2a.8.8,0,0,1,1.056,0l7.155,6.36a.795.795,0,1,1-1.056,1.188l-.267-.237v6a1.59,1.59,0,0,1-1.59,1.59H5.18a1.59,1.59,0,0,1-1.59-1.59v-6l-.267.237A.795.795,0,1,1,2.267,8.561ZM5.18,8.1v7.416H7.565V11.54a.8.8,0,0,1,.795-.795h3.18a.8.8,0,0,1,.795.795v3.975H14.72V8.1L9.95,3.859Zm5.565,7.416v-3.18H9.155v3.18Z" transform="translate(982.05 141.448)" fill="#222"/>
+  </g>
+</svg>

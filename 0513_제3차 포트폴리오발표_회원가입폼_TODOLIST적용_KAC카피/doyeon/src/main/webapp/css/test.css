@@ -1,0 +1,35 @@
+@import url("./reset.css");
+#wrap{width: 100%;}
+#wrap #header{width: 100%; height:100px; background-color: transparent;}
+#wrap #header .inner{    
+    position: relative;
+    width: 1400px;
+    margin: 0px auto;
+    display: flex;
+}
+#wrap #header .inner .left{width: 200px; height: 100%; }
+#wrap #header .inner .center{width: 1000px; height: 100%;}
+#wrap #header .inner .center #nav{width: 1000px; display:flex; justify-content: center; align-items: center;}
+#wrap #header .inner .center #nav ul{width: 1000px; display: flex; }
+#wrap #header .inner .center #nav ul li{width: 200px;}
+#wrap #header .inner .center #nav ul li a{width: 1000px; font-size: 20px; display: flex; justify-content: center; align-items: center;}
+#wrap #header .inner .center #nav ul li >.main{
+    display: none;
+    opacity: 1;
+    display: flex;
+    position: absolute;
+    left: -75px;
+    bottom: 0;
+    transform: translateY(100%);
+    flex-flow: row nowrap;
+    z-index: 200;
+}
+#wrap #header .inner .center #nav ul li >.main >li{
+    height: 60px;
+    line-height: 60px;
+    margin-left: 60px;
+    white-space: nowrap;
+}
+#wrap #header .inner .right{width: 200px; height: 100%;}
+#wrap #main{width: 100%; height: 100vh;}
+#wrap #footer{}

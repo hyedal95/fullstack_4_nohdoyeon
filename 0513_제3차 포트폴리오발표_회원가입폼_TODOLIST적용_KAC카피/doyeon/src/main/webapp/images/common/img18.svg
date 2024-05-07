@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="34" viewBox="0 0 22 34">
+  <g id="ico-cal-prev" transform="translate(0 34) rotate(-90)">
+    <rect id="사각형_67" data-name="사각형 67" width="34" height="22" rx="4" fill="none"/>
+    <g id="그룹_79" data-name="그룹 79" transform="translate(11 5)">
+      <rect id="사각형_44" data-name="사각형 44" width="12" height="12" fill="none"/>
+      <path id="패스_65" data-name="패스 65" d="M0,4,4,0,8,4" transform="translate(2 3.85)" fill="none" stroke="#b28f8f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+    </g>
+  </g>
+</svg>

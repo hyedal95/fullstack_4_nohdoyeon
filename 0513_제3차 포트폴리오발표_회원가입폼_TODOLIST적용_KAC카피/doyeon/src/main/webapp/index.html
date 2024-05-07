@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>공항주차</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<div id="wrap">
+
+	<form name="selectOne" method="post">
+		<input type="hidden" name="menuParamNo" />
+		
+	</form>
+	<header id="header">
+	
+	<!--accNav-->
+	<div id="accNav">
+	    <a href="#container">본문 바로가기</a>
+	</div>
+	<!--//accNav-->
+	
+	<h2 class="hidden">헤더 시작</h2>
+	<!--inner-->
+	<div class="inner">
+		<!-- logo -->
+		<h1 class="logo">
+			<a href="/" title="한국공항공사">
+				<img src="/resources/images/common/logo-w.svg" alt="한국공항공사">
+			</a>
+		</h1>
+		<!-- //logo -->
+		<!--gnb-->
+		<nav id="gnb" class="web">
+			<ul class="depth01">
+				<li>
+					<a href="/reservation/recheck.do">주차예약</a>
+					<!--depth02-->
+					<ul class="depth02">
+						<li><a href="/reservation/recheck.do">주차예약 신청</a></li>
+						<li><a href="/reservation/resView.do">예약조회/변경</a></li>
+					</ul>
+					<!--//depth02-->
+				</li>
+				<li>
+					<a href="/humandiscount/intro.do">다자녀할인등록</a>
+					<!--depth02-->
+					<ul class="depth02">
+						<li><a href="/humandiscount/intro.do">사전(사후) 등록신청</a></li>
+						<li><a href="/humandiscount/viewChk.do">신청내역 확인/변경</a></li>
+					</ul>
+					<!--//depth02-->
+				</li>
+				<li>
+					<a href="/refund/privacy.do">주차요금환불</a>
+					<!--depth02-->
+					<ul class="depth02">
+						<li><a href="/refund/privacy.do">요금 환불 신청</a></li>
+						<li><a href="/refund/search.do">신청결과 조회</a></li>
+					</ul>
+					<!--//depth02-->
+				</li>
+				<li class="period">
+	                <a href="/period/applyPage.do">상주직원 정기권</a>
+	                <!--depth02-->
+	                <ul class="depth02">
+	                    <li><a href="/period/noticeList.do">공지사항</a></li>
+	                    <li><a href="/period/applyPage.do">이용안내</a></li>
+	                    <li><a href="/period/periodApply.do">정기권 현황/신청</a></li>
+	                    <li><a href="/period/refundList.do">정기권 환불</a></li>
+	                </ul>
+	                <!--//depth02-->
+	            </li>
+				<li>
+					<a href="/notice/notice.do">이용안내</a>
+					<!--depth02-->
+					<ul class="depth02">
+						<li><a href="/notice/notice.do">이용안내</a></li>
+						<li><a href="/notice/questionsList.do">자주묻는 질문</a></li>
+						<li><a href="/notice/privacyInfo.do">개인정보처리방침</a></li>
+					</ul>
+					<!--//depth02-->
+				</li>
+			</ul>
+			
+		</nav>
+		<!--//gnb-->
+		<!--btnMoGnb-->
+		<button type="button" class="btnMoGnb mobile"><span class="hidden">모바일gnb버튼</span></button>
+		<!--//btnMoGnb-->
+		
+		<!--moGnb-->
+		<div class="moGnb mobile">
+			<div class="inner pos-r">
+				<!-- logo -->
+				<h1 class="logo">
+					<a href="#" title="한국공항공사">
+						<img src="/resources/images/common/logo-w.svg" alt="한국공항공사">
+					</a>
+				</h1>
+				<!-- //logo -->
+				<!--depth01-->
+				<ul class="depth01">
+					<li>
+						<a href="/reservation/recheck.do">주차예약</a>
+						<!--depth02-->
+						<ul class="depth02">
+							<li><a href="/reservation/recheck.do">주차예약 신청</a></li>
+							<li><a href="/reservation/resView.do">예약조회/변경</a></li>
+						</ul>
+						<!--//depth02-->
+					</li>
+					<li>
+						<a href="/humandiscount/intro.do">다자녀할인등록</a>
+						<!--depth02-->
+						<ul class="depth02">
+							<li><a href="/humandiscount/intro.do">사전(사후) 등록신청</a></li>
+							<li><a href="/humandiscount/viewChk.do">신청내역 확인/변경</a></li>
+						</ul>
+					<!--//depth02-->
+					</li>
+				</ul>
+				<ul class="depth01">
+					<li>
+						<a href="/refund/privacy.do">주차요금환불</a>
+						<!--depth02-->
+						<ul class="depth02">
+							<li><a href="/refund/privacy.do">요금 환불 신청</a></li>
+							<li><a href="/refund/search.do">신청결과 조회</a></li>
+						</ul>
+						<!--//depth02-->
+					</li>
+					<li>
+						<a href="/period/applyPage.do">상주직원 정기권</a>
+						<!--depth02-->
+						<ul class="depth02">
+	                        <li><a href="/period/noticeList.do">공지사항</a></li>
+	                        <li><a href="/period/applyPage.do">이용안내</a></li>
+	                        <li><a href="/period/periodApply.do">정기권 현황/신청</a></li>
+	                        <li><a href="/period/refundList.do">정기권 환불</a></li>
+	                    </ul>
+						<!--//depth02-->
+					</li>
+				</ul>
+				<ul class="depth01" style="width: 50%;">
+	                <li>
+	                    <a href="/notice/notice.do">이용안내</a>
+	                    <!--depth02-->
+	                    <ul class="depth02">
+	                        <li><a href="/notice/notice.do">이용안내</a></li>
+	                        <li><a href="/notice/questionsList.do">자주묻는 질문</a></li>
+	                    </ul>
+	                    <!--//depth02-->
+	                </li>
+	            </ul>
+				<!--//depth01-->
+				<button type="button" class="button gnbClose"><span class="hidden">닫기</span></button>
+			</div>
+		</div>
+		<!--//moGnb-->
+	</div>
+	<!--//inner-->
+	
+	<div class="header-sub-bg"></div>
+	
+	
+	</header>
+	<script type="text/javascript">
+	$(function(){
+		jQuery.datetimepicker.setLocale('ko');
+		moment.locale('ko');
+	});
+	</script>
+		<main id="container">
+			<h2 class="hidden">메인 본문 시작</h2>
+			<!--mainArea-->
+			<div class="mainArea">
+				<!--mainSlide-->
+				<div class="mainSlide">
+					<!--mSlider-->
+					<div class="mSlider">
+						<!--swiper-wrapper-->
+						<div class="swiper-wrapper">
+							<!--swiper-slide-->
+							<div class="swiper-slide slide01">
+								<img src="/resources/images/common/img-visual-01.png" alt="한국공항공사 이미지">
+							</div>
+							<!--//swiper-slide-->
+							<!--swiper-slide-->
+							<div class="swiper-slide slide02">
+								<img src="/resources/images/common/img-visual-02.png" alt="한국공항공사 이미지">
+							</div>
+							<!--//swiper-slide-->
+							<!--swiper-slide-->
+							<div class="swiper-slide slide03">
+								<img src="/resources/images/common/img-visual-03.png" alt="한국공항공사 이미지">
+							</div>
+							<!--//swiper-slide-->
+						</div>
+						<!--//swiper-wrapper-->
+					</div>
+					<!--//mSlider-->
+					<!--slideInfo-->
+					<div class="slideInfo">
+						<div class="inner">
+							<!--txtArea-->
+							<div class="txtArea">
+								<p class="subTxt">AIRPORT SMART RESERVATION</p>
+								<p class="mainTxt">똑똑한 스마트 공항으로<br/>미래를 준비합니다.</p>
+							</div>
+							<!--//txtArea-->
+							<!--btnControl-->
+							<div class="btnControl web">
+								<div class="swiper-button">
+									<a href="#" class="btn_prev" role="button" aria-label="이전"><span class="hidden">이전</span></a>
+									<a href="#" class="btn_next" role="button" aria-label="다음"><span class="hidden">다음</span></a>
+								</div>
+								<div class="swiper-pagination"></div>
+								<div class="playlist">
+									<a href="#" class="btn_play" style="display: none"><span class="hidden">재생</span></a>
+									<a href="#" class="btn_stop" style=""><span class="hidden">정지</span></a>
+								</div>
+							</div>
+							<!--//btnControl-->
+						</div>
+					</div>
+					<!--//slideInfo-->
+					<div class="swiper-pagination mobile"></div>
+					</div>
+				<!--//mainSlide-->
+				<!--mainCont-->
+				<div class="mainCont">
+					<div class="tabContWrap type01">
+						<!--tabNav-->
+						<div class="tabNav">
+							<ul class="tabList">
+							<li class="active"><a href="javascript:void(0);" class="reservation boldFont">주차예약</a></li>
+							<li><a href="javascript:void(0);" class="inquiry boldFont"><p>예약<span>조회/변경/취소</span></p></a></li>
+							</ul>
+						</div>
+						<!--//tabNav-->
+						<!--tabCont-->
+						<div class="tabCont active">
+							<div class="inner">
+								<!--table-->
+								<div class="table type02">
+									<form id="reservationVO" name="reservationVO" action="/" method="post">
+										<table>
+											<caption>주차예약 테이블이며 공항선택, 입차일시, 출차일시, 차량선택 등의 정보를 나타냅니다.</caption>
+											<tbody>
+												<tr>
+													<th scope="col"><label for="label01">공항선택</label></th>
+													<td>
+														<select id="parkingDivCd" name="parkingDivCd" title="공항 선택" class="valid">
+															<option value="" selected="selected">공항을 선택해주세요.</option>
+															
+																<option value="PLT-002">김포공항</option>
+															
+																<option value="PLT-003">김해공항</option>
+															
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<th scope="col"><label for="parkingNm">주차장선택</label></th>
+													<td>
+														<select id="parkingNm" name="parkingNm" title="주차장 선택" aria-required="true" class="valid"></select>
+													</td>
+												</tr>
+												<tr>
+													<th scope="col"><label for="resInDttm">입차일시</label></th>
+													<td>
+														<input id="resInDttm" name="resInDttm" title="입차일자 입력" placeholder="예약 입차일을 선택해주세요." class="cal valid" readonly="readonly" type="text" value=""/>
+													</td>
+												</tr>
+												<tr>
+													<th scope="col"><label for="resOutDttm">출차일시</label></th>
+													<td>
+														<input id="resOutDttm" name="resOutDttm" title="출차일시 입력" placeholder="예약 출차일을 선택해주세요." class="cal valid" readonly="readonly" type="text" value=""/>
+													</td>
+												</tr>
+												<tr>
+													<th scope="col"><label for="carKind">차량선택</label></th>
+													<td>
+														<select id="carKind" name="carKind" title="차량 종류 선택" aria-required="true" class="valid">
+															<option value="DC001">일반 차량</option>
+															<option class="showText" value="DC002">장애인 차량</option>
+														</select>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!--//table-->
+									<!--btnArea-->
+									<div class="btnArea txt-center">
+									    <button type="button" class="button mainBtn reservation" id="resBtn">예약진행</button>
+									</div>
+									<!--//btnArea-->
+								</div>
+							</div>
+							<!--//tabCont-->
+							<!--tabCont-->
+							<div class="tabCont">
+								<div class="inner">
+									<!--table-->
+									<div class="table type02">
+										<table>
+											<caption>예약조회 테이블이며 인증방법, 내용입력, 휴대폰 번호, 비밀번호 등의 정보를 나타냅니다.</caption>
+											<tbody>
+											<tr>
+												<th scope="col"><label for="certWay">인증방법</label></th>
+												<td>
+													<select id="certWay" name="certWay" title="인증방법 선택">
+														<option value="">인증방법을 선택해주세요.</option>
+														<option value="1">차량번호</option>
+														<option value="2">이메일</option>
+														<option value="3">예약번호</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<th scope="col"><label for="certValue">내용입력</label></th>
+												<td>
+													<input id="certValue" name="certValue" title="내용 입력" placeholder="인증선택 내용을 입력해주세요." type="text" class="resValid" value=""/>
+												</td>
+											</tr>
+											<tr>
+												<th scope="col"><label for="mobile">휴대폰 번호</label></th>
+												<td>
+													<input id="mobile" name="mobile" title="휴대폰 번호 입력" placeholder="&#39;-&#39; 없이 입력해주세요." type="text" class="resValid" value=""/>
+												</td>
+											</tr>
+											<tr>
+												<th scope="col"><label for="password">비밀번호</label></th>
+												<td>
+													<input id="password" name="password" title="비밀번호 입력" placeholder="비밀번호를 입력해주세요." type="password" class="resValid" value=""/>
+												</td>
+											</tr>
+											<tr>
+												<th scope="col"><label for="passwordCk">비밀번호 확인</label></th>
+												<td>
+													<input type="password" id="passwordCk" title="비밀번호 재입력" placeholder="비밀번호를 한번 더 입력해주세요."/>
+													<a href="#"  onclick="goPasswordfindView(); return false;" class="findPwBtn">비밀번호찾기</a>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+									</form>
+								</div>
+								<!--//table-->
+								
+								<!--btnArea-->
+								<div class="btnArea txt-center">
+								    <button type="button" class="button mainBtn reservationView"><p>예약<span>조회/변경/취소</span></p></button>
+								</div>
+								<!--//btnArea-->
+							</div>
+						</div>
+						<!--//tabCont-->
+					</div>
+				</div>
+				<!--//mainCont-->
+			</div>
+			<!--//mainArea-->
+		</main>
+	<!--//container-->
+	
+	
+	
+	
+	
+	<!--aside-->
+	<div id="aside" class="">
+		<div class="pos-r">
+			<div class="asideToggle"><a href="javascript:void(0);">주차요금 간편계산</a></div>
+	
+			<!-- asideInner -->
+			<div class="asideInner">
+				<div class="asideHead">
+					<p class="title">주차요금 간편 계산</p>
+				</div>
+				<!-- asideCont -->
+				<div class="asideCont">
+					<!--table-->
+					<div class="table type03">
+						<table>
+							<caption>주차요금 간편 계산 테이블이며 공항, 주차장, 할인유형, 이용일시 등의 정보를 나타냅니다.</caption>
+							<colgroup>
+								<col style="width: 24%;min-width: 100px;">
+								<col style="width: auto">
+							</colgroup>
+							<tbody>
+							<tr>
+								<th scope="row" class="txt-left"><label for="parkingCd">공항<span class="redDot" title="필수입력">*</span></label></th>
+								<td>
+									<select name="parkingCd" id="parkingCd" class="" title="공항 선택">
+										<option value="">공항 선택</option>
+										
+											
+										
+											
+												<option value="PLT-002">김포공항</option>
+											
+										
+											
+												<option value="PLT-003">김해공항</option>
+											
+										
+											
+												<option value="PLT-004">제주공항</option>
+											
+										
+											
+												<option value="PLT-005">대구공항</option>
+											
+										
+											
+												<option value="PLT-006">광주공항</option>
+											
+										
+											
+												<option value="PLT-007">여수공항</option>
+											
+										
+											
+												<option value="PLT-008">울산공항</option>
+											
+										
+											
+												<option value="PLT-009">군산공항</option>
+											
+										
+											
+												<option value="PLT-010">원주공항</option>
+											
+										
+											
+												<option value="PLT-011">청주공항</option>
+											
+										
+											
+												<option value="PLT-012">무안공항</option>
+											
+										
+											
+												<option value="PLT-013">사천공항</option>
+											
+										
+											
+												<option value="PLT-014">양양공항</option>
+											
+										
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="txt-left"><label for="parkingLot">주차장<span class="redDot" title="필수입력">*</span></label></th>
+								<td>
+									<select name="parkingLot" id="parkingLot" class="" title="주차장 선택">
+										<option value="">주차장을 선택해주세요.</option>
+										
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="txt-left"><label for="discountType">할인유형<span class="redDot" title="필수입력">*</span></label></th>
+								<td>
+									<select id="discountType" name="discountType" title="할인유형 선택">
+										<option value="DC001">일반</option>
+										<option value="DC005">경차</option>
+										<option value="DC002">장애인(1~3급)</option>
+										<option value="DC003">장애인(4~6급)</option>
+										<option value="DC006">저공해(1,2종)</option>
+										<option value="DC007">저공해(3종)</option>
+										<option value="DC012">다자녀</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="txt-left"><label for="">이용일시<span class="redDot" title="필수입력">*</span></label></th>
+								<td>
+									<div class="flex">
+										<input type="text" id="inDttm" class="cal picker" title="이용시작날짜 입력" readonly="readonly">
+										<span class="hyphen">-</span>
+										<input type="text" id="outDttm" class="cal picker" title="이용종료날짜 입력" readonly="readonly">
+									</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--//table-->
+					<!--btnArea-->
+					<div class="btnArea flex txt-center">
+						<button type="button" class="button white retry">다시계산하기</button>
+						<button type="button" class="button dkBlue calculate">계산하기</button>
+					</div>
+					<!--//btnArea-->
+					<div class="skyBox"><p id="amt"/>예상 주차요금은 &nbsp;원 입니다.</div>
+					<p class="colorType green">* 예상 주차요금은 실제 요금과 차이가 발생할 수 있습니다.</p>
+				</div>
+				<!-- //asideCont -->
+				<!--btnClose-->
+				<button type="button" class="btnClose"><span class="hidden">닫기</span></button>
+				<!--//btnClose-->
+			</div>
+			<!-- //asideInner -->
+		</div>
+	</div>
+	<!--//aside-->
+	
+	<footer id="footer">
+		<!--inner-->
+		<div class="inner">
+			<div class="fLogo">
+				<img src="/resources/images/common/footer-logo.svg" alt="한국공항공사">
+			</div>
+			<!--fMenu-->
+			<ul class="fMenu">
+				<li><a href="/notice/privacyInfo.do" class="green">개인정보처리방침</a></li>
+				<li><a href="http://www.airport.co.kr" target="_airport" class="airport">한국공항공사</a></li>
+				<li>
+					
+			            <a href="/period/applyPage.do" class="green">상주직원 정기권</a>
+		            
+		            
+				</li>
+			</ul>
+			<!--//fMenu-->
+			<!--fNotice-->
+			<div class="fNotice">
+				<p>한국공항공사 주차장 관련 문의 ( ☏ 1544-7877 ) <a href="javascript:void(0);" onclick="airportNumberList(); return false;" class="btn_pop">공항별 안내번호</a></p>
+				<p class="copyright">COPYRIGHT Ⓒ KAC. ALL RIGHTS RESERVED.</p>
+			</div>
+			<!--//fNotice-->
+		</div>
+		<div id="dimmed" style="display:none;"></div>
+		<div class="alert tell" style="display:none;">
+			<!--alertPd-->
+			<div class="alertPd">
+				<p>공항별 주차안내번호</p>
+				<div class="table type05">
+					<table>
+						<caption>공항별 주차안내번호 테이블입니다.</caption>
+						<colgroup>
+							<col style="width: 40%;">
+							<col style="width: auto;">
+						</colgroup>
+						<tbody><tr>
+						<th scope="row">대표번호</th>
+							<td>1544-7877</td>
+						</tr>
+						<tr>
+							<th scope="row">김포공항</th>
+							<td>02-2660-2515</td>
+						</tr>
+						<tr>
+							<th scope="row">김해공항</th>
+							<td>051-974-3718</td>
+						</tr>
+						<tr>
+							<th scope="row">제주공항</th>
+							<td>064-797-2701</td>
+						</tr>
+						<tr>
+							<th scope="row">대구공항</th>
+							<td>053-980-5254</td>
+						</tr>
+						<tr>
+							<th scope="row">광주공항</th>
+							<td>062-940-0327</td>
+						</tr>
+						<tr>
+							<th scope="row">여수공항</th>
+							<td>061-689-6255</td>
+						</tr>
+						<tr>
+							<th scope="row">울산공항</th>
+							<td>052-219-6318</td>
+						</tr>
+						<tr>
+							<th scope="row">군산공항</th>
+							<td>063-469-8323</td>
+						</tr>
+						<tr>
+							<th scope="row">원주공항</th>
+							<td>033-340-8315</td>
+						</tr>
+						<tr>
+							<th scope="row">청주공항</th>
+							<td>043-210-6677</td>
+						</tr>
+						<tr>
+							<th scope="row">무안공항</th>
+							<td>061-455-2314</td>
+						</tr>
+						<tr>
+							<th scope="row">양양공항</th>
+							<td>033-670-7397</td>
+						</tr>
+						<tr>
+							<th scope="row">사천공항</th>
+							<td>055-831-9374</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--//alertPd-->
+			<!--btnArea-->
+			<div class="btnArea">
+				<button type="button" class="button dkBlue" id="footerClose">확인</button>
+			</div>
+			<!--//btnArea-->
+		</div>
+		<!--//inner-->
+	</footer>
+	<script>
+	
+	function airportNumberList() {
+		$(".alert.tell").css("display", "block");
+		$(".dimmed, #dimmed").css("display", "block");
+	}
+	
+	/**
+	 * 숫자 콤마를 적용후 돌려준다.
+	 * @param x
+	 * @returns
+	 */
+	function numberWithCommas(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	
+	$(function() {
+		$("#footerClose").click(function() {
+			$(".alert.tell").css("display", "none");
+			$(".dimmed, #dimmed").css("display", "none");
+		});
+		
+		$('#parkingCd').on('change',function(){
+			$("#parkingLot").empty();
+			$.ajax({
+				  url      : "/main/parkingList.json"
+				, type     : "POST"
+				, data     : { parkingCd : $("#parkingCd").val() }
+				, success  : function(data){
+					for(var i =0; i<data.parkingList.length; i++){
+		                 $("#parkingLot").append("<option value="+data.parkingList[i].value+">"+data.parkingList[i].label+"</option>");
+		             }
+					
+				}
+			});
+		});
+		
+		//입력정보 초기화
+		$(".retry").click(function() {
+			$("#parkingCd").val("");
+			$("#parkingLot").val("");
+			$("#discountType").val("DC001");
+			$("#inDttm").val("");
+			$("#outDttm").val("");
+			$("#amt").html("예상 주차요금은 &nbsp;원 입니다.");
+		});
+		
+		$(".calculate").click(function() {
+			
+			if($("#parkingCd").val() == ""){
+				$("#amt").html("공항을 선택해주세요.")
+			}else if($("#parkingLot").val() == ""){
+				$("#amt").html("주차장을 선택해주세요.")
+			}else if($("#inDttm").val() == null || $("#inDttm").val() == "") {
+				$("#amt").html("입차일자를 선택해주세요.");
+			}else if($("#outDttm").val() == null || $("#outDttm").val() == "") {
+				$("#amt").html("출차일자를 선택해주세요.");
+			}/* else if(moment($("#outDttm").val()).diff(moment($("#inDttm").val()), 'hours') < 2) {
+				$("#amt").html("주차예약은 현재 시간 기준 최소 2시간 이상 사용 시 예약 가능합니다.");
+			}else if(moment($("#outDttm").val()).diff(moment($("#inDttm").val()), 'days') > 30) {
+				$("#amt").html("주차예약은 현재 날짜 기준 최대 30일까지 사용 시 예약 가능합니다.");
+			} */else{
+				$.ajax({
+					  url      : "/main/calculateAmt.json"
+					, type     : "POST"
+					, data     : { 
+						sectnId    : $("#parkingLot").val(),
+						inDttm     : $("#inDttm").val(),
+						outDttm    : $("#outDttm").val(),
+						discountCd : $("#discountType").val()
+						
+					}
+					, success  : function(data){
+						if(data.calculateAmt != null && data.calculateAmt != ""){
+							$("#amt").html("예상 주차요금은 &nbsp;<strong>"+numberWithCommas(data.calculateAmt)+"</strong>원 입니다.");
+						}
+						
+					}
+				});
+			}
+			
+		});
+		
+		$(".picker").datetimepicker({
+			//format: 'Y-m-d H:00:00'
+			format: 'Y-m-d H:i:00',
+	        formatTime: 'H:i',
+	        formatDate: 'Y/m/d',
+	        step: 10,
+		});
+	});
+	</script>
+	</div>
+	
+	<div class="modal fade findPassword" id="findPassword" tabindex="-1" role="dialog" aria-labelledby="findPassword" aria-hidden="true" style="z-index: 1070">
+		<div class="popup">
+			<!--popupPd-->
+			<div class="popupPd">
+				<div class="popHead">비밀번호 변경</div>
+				<div class="popCont">
+				
+					<div class="certifyArea">
+						<!--table-->
+						<div class="table type07">
+							<table>
+								<caption>비밀번호 찾기 테이블입니다.</caption>
+								<tbody>
+							<!--	<tr>
+										<th scope="col"><label for="certWay">예약번호</label></th>
+									</tr>
+									<tr>
+										<td><input type="text" id="resNo" title="예약번호 입력" placeholder="예약번호를 입력해주세요."></td>
+									</tr>
+									<tr>
+										<th scope="col"><label for="empMobile">휴대폰번호</label></th>
+									</tr> -->
+									<tr>
+										<td>
+											<div class="flex tell">
+											<select name="empMobile1" id="empMobile1" title="휴대폰 앞자리 선택">
+												<option value="010">010</option>
+											</select> 
+											<input type="text" id="empMobile2" title="휴대폰번호 중간자리 입력" placeholder="1234" minlength="4" maxlength="4"> 
+											<input type="text" id="empMobile3" title="휴대폰번호 끝자리 입력" placeholder="5678" minlength="4" maxlength="4">
+											<button type="button" id="sendChkNo" class="button white">인증번호발송</button>
+											</div>
+										</td>
+									</tr>
+									<tr class="num">
+										<th scope="col"><label for="certificationNo">인증번호</label></th>
+									</tr>
+									<tr class="num">
+										<td>
+											<div class="flex">
+												<div class="inputWrap">
+													<input type="text" id="certificationNo" title="인증번호 입력">
+													<span class="time"><i class="ico"></i><span id="timer" /></span>
+												</div>
+												<button type="button" class="button white" onclick="timeExtensionBtn()">시간연장</button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--//table-->
+						<!--btnArea-->
+						<div class="btnArea num" >
+						    <button type="button" class="button blue" id="certification">인증</button>
+						</div>
+						<!--//btnArea-->
+					</div>
+					<!--############### 비밀번호 변경 ###############-->
+					<div class="findPwArea"  style="display:none;">
+						<div class="table type07">
+							<table>
+								<caption>비밀번호 찾기 테이블입니다.</caption>
+								<tbody>
+									<tr>
+										<th scope="col"><label for="newPassword">변경할 비밀번호</label></th>
+									</tr>
+									<tr>
+										<td><input type="password" id="newPassword" title="변경할 비밀번호 입력" placeholder="변경하실 비밀번호를 입력해주세요."></td>
+									</tr>
+									<tr>
+										<th scope="col"><label for="newPasswordCk">비밀번호 확인</label></th>
+									</tr>
+									<tr>
+										<td><input type="password" id="newPasswordCk" title="변경할 비밀번호 재입력" placeholder="변경하실 비밀번호를 다시 입력해주세요."></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+					<div id="msg" class="skyBox changePwBtn">휴대폰번호 입력 후 인증을 완료해주세요.</div>
+					<!--btnArea-->
+					<div class="btnArea flex txt-center certifyArea">
+						<button type="button" class="button gray cancel" id="cancel">취소</button>
+						<button type="button" class="button dkBlue w138 notuse certification"  disabled="disabled"  id="next">다음</button>
+					</div>
+					<div class="btnArea flex txt-center findPwArea" style="display:none;">
+						<button type="button" class="button gray" id="prev">이전</button>
+						<!--############### 비밀번호 변경 ###############-->
+						 <button type="button" class="button dkBlue w138" id="targetBtn">비밀번호 변경</button> 
+						<!--############### 비밀번호 초기화 ###############-->
+						<!--<button type="button" class="button dkBlue w138 notuse" id="clearPwBtn">비밀번호 초기화</button>-->
+					</div>
+					<!--//btnArea-->
+					<button type="button" class="button btnClose" data-dismiss="modal" aria-label="Close" id="btnClose">
+						<span class="hidden" aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<!--############### 비밀번호 초기화 ###############-->
+				<!-- <p class="colorType green bottomTxt">※비밀번호 초기화 하신 후에 로그인 하셔서 새로운 비밀번호로 변경 해 주세요.</p> -->
+				<!--##########################################-->
+			</div>
+			<!--//popupPd-->
+		</div>
+	</div>
+
+</body>
+</html>
