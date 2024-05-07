@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import url('./fonts.css');
+@import url('./reset.css');
+
+#wrap{width: 100%; max-width:700px; margin:0 auto; }
+
+/* 할일 타이틀*/
+
+#wrap h1{
+	padding:50px 0;
+	text-align:center; font-size:32px; font-weight:800; color: #ffff00; user-select:none;}
+#wrap h1 img{width:32px; height:32px; background:#fff; margin-right:10px;}
+
+/* 할일 입력폼*/
+#wrap form{width:100%; padding-bottom:40px; margin:0 auto;}
+#wrap form div{width:100%;  margin:0 auto;}
+#wrap form div ul{width:100%;}
+#wrap form div ul li{width:100%; margin:10px 0;}
+
+#wrap form div ul li input[type='password'],
+#wrap form div ul li input[type='text']{
+	padding:0 15px; 
+	width:100%; 
+	height:50px; 
+	border:1px solid #ffff00; 
+	outline:0; 
+	font-size:16px;
+	border-radius:2px;
+}
+#wrap form div > div{width:100%; display:flex; align-items:center;  justify-content: center;}
+#wrap form div>div> button{width:100px; height:50px; background:#ffff00;  color: #000; font-weight:600; transform:all 1s; cursor:pointer;}
+#wrap form div>div> button:hover{opacity:0.8;}
+table{width:100%; background:#fff;}
+table th, td,tr{border: 1px solid #ddd; background:#fff;}
