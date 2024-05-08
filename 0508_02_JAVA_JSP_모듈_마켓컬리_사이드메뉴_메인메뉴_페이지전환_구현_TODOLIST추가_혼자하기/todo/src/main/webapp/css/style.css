@@ -1,0 +1,213 @@
+@charset "UTF-8";
+@import url('./reset.css');
+
+#wrap{width:100%;}
+
+#wrap #header{width:100%; height:100px; background:#ddd; padding:0 100px; display:flex;  align-items:center; justify-content: center;}
+#wrap #header .left{width:200px; height:100%; background:#f00; line-height:100%;}
+#wrap #header .center{width:calc(100% - 400px); height:100%; }
+#wrap #header .center #nav{width:100%; height:100%; }
+#wrap #header .center #nav ul {width:100%; height:100%;  display:flex;}
+#wrap #header .center #nav ul li{width:20%; height:100%;}
+#wrap #header .center #nav ul li a{width:100%;  height:100%; font-size:20px; display:flex; align-items:center; justify-content: center;  }
+#wrap #header .right{width:200px; height:100%;}
+#wrap #header .right ul{width:100%; height:100%; display:flex; }
+#wrap #header .right ul li{width:50%; height:100%;  display:flex; align-items:center; justify-content: center; }
+
+#wrap #header .right ul li a{height:auto; width:100%;}
+#wrap #header .right ul li a:hover{opacity:0.2;}
+#wrap #header .right ul li a:nth-child(1){border-right:2px solid #000; display:flex; align-items:center; justify-content: center;}
+/* 메인공통 */
+#wrap .main{width:100%; height: calc(100vh - 200px); background:#fff;}
+#wrap .main h1{width:100%; height:100%; font-size:50px;  display:flex; align-items:center; justify-content: center;}
+
+/* 섹션1 메인슬라이드 컨테이너*/
+
+#wrap .main .container {height: 100%; }
+#wrap .main .container .content{height: 100%; position: relative; user-select: none;}
+#wrap .main .container .content .slide-container{width: 100%;  height: 100%; overflow:hidden; position: relative; z-index: 1; cursor:'grab';}
+#wrap .main .container .content .slide-container .slide-content{width: 100%; height: 100%;}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap{width: 1300%;  height: 100%; display:flex; margin-left: -100%; position: relative; left: 0%;}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide{width: 100%; height: 100%; }
+/* 백그라운드 이미지 설정 */
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide .img-box{
+    width: 100%; height: 100%;  /* 100vh */
+    background: url() no-repeat 50% 50%;
+    background-size: cover; /* 이미지 너비높이 맞춰서 커버해라 */
+}
+/* 백그라운드 이미지 지정 */
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide01 .img-box{background-image: url(../img/slide01.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide02 .img-box{background-image: url(../img/slide02.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide03 .img-box{background-image: url(../img/slide03.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide04 .img-box{background-image: url(../img/slide04.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide05 .img-box{background-image: url(../img/slide05.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide06 .img-box{background-image: url(../img/slide06.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide07 .img-box{background-image: url(../img/slide07.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide08 .img-box{background-image: url(../img/slide08.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide09 .img-box{background-image: url(../img/slide09.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide10 .img-box{background-image: url(../img/slide10.jpg);}
+#wrap .main .container .content .slide-container .slide-content .slide-wrap .slide11 .img-box{background-image: url(../img/slide11.jpg);}
+
+
+/* 페이지버튼 박스 */
+#wrap .main .container .content .page-btn-box{
+    position: absolute; 
+    bottom: 120px; 
+    left: 0; 
+    width: 100%;  
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+/* #wrap #main .container .content .page-btn-box .page-container{display: inline-flex; justify-content: center; align-items: center; } */
+/* #wrap #main .container .content .page-btn-box .page-container{display: inline-flex; background: rgb(255,0,0); } */
+#wrap .main .container .content .page-btn-box .page-container{  display: flex; align-items: center; }
+#wrap .main .container .content .page-btn-box .page-container span{display: flex; margin: 0 8px;}
+#wrap .main .container .content .page-btn-box .page-container span a{
+    width: 8px; 
+    height: 8px; 
+    border: 1px solid transparent;
+    background: rgba(255,255,255,0.4); 
+    border-radius: 50%;
+    margin: 0 10px;
+}
+/* 현재 슬라이드 위치 : 동그라미버튼 테두리가 흰색, 배경 투명 1.8배 줌효과 부드럽게 확대된다.*/
+#wrap .main .container .content .page-btn-box .page-container span a.on{
+    width: 8px; 
+    height: 8px; 
+    border: 1.5px solid #fff;
+    background: rgba(255,255,255,0); 
+    transform: scale(1.8);
+    transition: all 0.3s;
+}
+
+#wrap .main .container .content .page-btn-box .page-container span button{
+    border: 0;
+    background: none;
+    cursor: pointer;
+    width: 12px;
+    text-align: center;
+}
+
+/*일시정지버튼 : 삼각모양 UI디자인 테두리를 이용*/
+#wrap .main .container .content .page-btn-box .page-container span button.stop i{
+    display: inline-block;
+    border-left: 8px solid #fff; /* 위 오른쪽 아래 왼쪽 */ 
+    border-top:6px solid transparent;
+    border-bottom:6px solid transparent;
+    border-right:8px solid transparent;
+    margin: 0;
+}  /* 마주보는 것은 대응해줘야함. */
+/* 플레이버튼 */
+#wrap .main .container .content .page-btn-box .page-container span button.play i{
+    
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    margin: 0 1.5px;
+    
+} 
+
+
+#wrap .main .container .content .page-btn-box .page-container span button.play i::before{
+    content:'';  /* 필수 */
+    display: inline-block; 
+    width: 3px; 
+    height: 12px;
+    background: #fff;
+    margin-right: 1px;
+}
+#wrap .main .container .content .page-btn-box .page-container span button.play i::after{
+    content: ''; /* 필수 */
+    display: inline-block; 
+    width: 3px; 
+    height: 12px;
+    background: #fff;
+    margin-left: 1px;
+}
+
+/* 서브1 회사소개 */
+/* 서브2 todolist */
+
+#wrap #sub2{width: 100%; height: calc(100vh - 200px); padding:0 400px; margin:0 auto; background:#000; overflow-y: scroll;}
+
+/* 할일 타이틀*/
+#wrap #sub2 .todo-title{padding:50px 0;}
+#wrap #sub2 .todo-title h1{text-align:center; font-size:32px; font-weight:800; color: rgba(255,212,0,1); user-select:none;}
+#wrap #sub2 .todo-title h1 strong{font-size:20px; color: #FFFD44;}
+
+/* 할일 입력폼*/
+#wrap #sub2 .todo-form{width:100%; padding-bottom:40px;}
+#wrap #sub2 .todo-form div{width:100%; padding-right:51px;position:relative;}
+#wrap #sub2 .todo-form div input[type='text']{
+	padding:0 15px; 
+	width:100%; 
+	height:50px; 
+	border:1px solid rgba(255,212,0,1); 
+	outline:0; 
+	font-size:16px;
+	border-radius:2px;
+}
+#wrap #sub2 .todo-form div button{
+	width:50px; 
+	height:100%; 
+	position:absolute; right:0; top:0; 
+	background:rgba(255,212,0,1); 
+	border:0; 
+	border-radius:5px;
+	cursor:pointer;
+	}
+#wrap #sub2 .todo-form div button i{font-size:28px; color:#fff; }
+
+/* 할일 목록 */
+#wrap #sub2 .todo-box{width:100%; padding: 20px 0;}
+#wrap #sub2 .todo-box h2{font-size:24px; font-weight:600; color: rgba(255,212,0,1); user-select:none;}
+#wrap #sub2 .todo-box ul{width:100%;}
+#wrap #sub2 .todo-box ul li{width:100%; padding: 10px 0;}
+#wrap #sub2 .todo-box ul li div{
+	width:100%; 
+	height:60px; 
+	background: rgba(255,255,255,0.3); 
+	padding: 0 100px 0 50px;
+	position:relative;
+	display:flex;
+	align-items:center;
+	
+}
+#wrap #sub2 .todo-box ul li div input[type='checkbox']{
+	width:25px; 
+	height:25px; 
+	position:absolute; left:10px; top:17.5px;
+	appearance:none;  /*기존 디자인 모양을 쓰지않겠다 */
+	background: url(../img/icon_check_off.svg) no-repeat 50% 50% ; /* no-repeat 써야 이미지 반복이 안된다. */
+	background-size: 25px 25px;
+}
+#wrap #sub2 .todo-box ul li div input[type='checkbox']:checked{
+	background-image: url(../img/icon_check_on.svg);
+}
+#wrap #sub2 .todo-box ul li div input[type='text']{
+	padding:0 15px;
+	width:100%; 
+	border:0;
+	outline:0;
+	background:#fff;
+	font-size: 16px;
+	
+}
+#wrap #sub2 .todo-box ul li div span{position:absolute; right:0; top:15px;}
+#wrap #sub2 .todo-box ul li div span button{width:30px; height:30px; border:0; background: none; cursor:pointer;}
+#wrap #sub2 .todo-box ul li div span button i{color:rgba(255,212,0,1); font-size:25px; transition:all 0.3s;}
+#wrap #sub2 .todo-box ul li div span button i:hover{color:rgba(255,212,0,0.5);}
+
+/* 완료된 할일 */
+#wrap #sub2 .todo-box ul.todo-done-list {opacity: 0.5;  }
+/* 입력상자는 유저 셀렉트 논을 설정해도 소용이 없다. */
+#wrap #sub2 .todo-box ul.todo-done-list li div input[type='text']{text-decoration: line-through;}
+/* 서브1 */
+
+
+
+
+#wrap #footer{width:100%; height:100px; background:#ddd;}
+#wrap #footer p{width:100%; height:100px; font-size:14px; color:#333; display:flex; align-items:center; justify-content: center;}
