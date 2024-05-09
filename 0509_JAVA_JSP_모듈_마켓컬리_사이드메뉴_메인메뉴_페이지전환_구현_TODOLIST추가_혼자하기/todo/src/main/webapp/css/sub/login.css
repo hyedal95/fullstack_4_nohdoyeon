@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#wrap #login{width:100%; backgroud:#000;}
+#wrap #login .container{width:100%;}
+#wrap #login .container .content{width:100%; max-width: 500px;margin:100px auto;}
+#wrap #login .container .content .title{width:100%; height:30px; display:flex; align-items:center; justify-content:center;}
+#wrap #login .container .content .title h2{font-size:20px; font-weight:600; color:#ffd400;} 
+
+
+
+#wrap #login .container .content .form-box{width:100%; padding:10px 0;}
+#wrap #login .container .content .form-box form{width:100%;}
+#wrap #login .container .content .form-box form ul{width:100%; }
+#wrap #login .container .content .form-box form ul li{width:100%; height:54px; margin:10px 0; }
+#wrap #login .container .content .form-box form ul li input[type="text"],
+#wrap #login .container .content .form-box form ul li input[type="password"]
+{width:100%; height:100%; border-radius:5px; padding:0 10px; outline-color:#ffd400; border:1px solid #ffd400; }
+#wrap #login .container .content .form-box form ul li .find-box{width:100%; height:100%; display:flex; align-items:center; justify-content:flex-end;}
+#wrap #login .container .content .form-box form ul li .find-box a{font-size:15px; color:#ffd400;}
+#wrap #login .container .content .form-box form ul li .find-box a:hover{opacity: 0.5;}
+#wrap #login .container .content .form-box form ul li .find-box a.on{opacity: 0.5;}
+#wrap #login .container .content .form-box form ul li .find-box span{width:10px; display:flex; align-items:center; justify-content:center; color:#fff; }
+
+#wrap #login .container .content .form-box form ul li button{width:100%; height:100%; border:0; border-radius:5px; cursor:pointer;}
+#wrap #login .container .content .form-box form ul li button.login-btn{ border:1px solid #ffd400; background:#ffd400; color:#fff;}
+#wrap #login .container .content .form-box form ul li button.signup-btn{ border:1px solid #ffd400; background:#fff; color:#ffd400;}
+#wrap #login .container .content .form-box form ul li button span{font-weight:600;}
+ 
